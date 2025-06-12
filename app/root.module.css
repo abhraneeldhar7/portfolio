@@ -34,7 +34,9 @@
     position: relative;
     height: 200px;
     width: 200px;
+    
 }
+
 
 .profileImageContainer:hover .profilePicBlurImage {
     filter: blur(20px);
@@ -58,6 +60,16 @@
     height: 200px;
     width: 200px;
     border-radius: 10px;
+    animation:  profilePicScroll;
+    animation-timeline: view(10px 0px);
+}
+
+@keyframes profilePicScroll{
+    to{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
 }
 
 .socialsDiv {
