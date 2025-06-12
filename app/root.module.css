@@ -7,7 +7,7 @@
 .detailsHolder {
     max-width: 600px;
     margin: 0px auto;
-    padding: 30px 15px;
+    padding-top: 30px;
 }
 
 .heroSection {
@@ -126,6 +126,9 @@
 
 
 @media(max-width:500px){
+    .detailsHolder{
+        padding: 30px 15px;
+    }
     .projectItem{
         flex-direction: column;
         gap: 15px;
