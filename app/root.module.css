@@ -221,6 +221,7 @@
     transition: all 0.2s;
     object-fit: cover;
     animation: unBlur linear 0.5s;
+    background-color: black;
 }
 
 .projectItem:hover img {
