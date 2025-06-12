@@ -1,6 +1,5 @@
 .main {
     min-height: 100vh;
-    height: 200vh;
     position: relative;
 }
 
@@ -8,6 +7,7 @@
     max-width: 650px;
     margin: 0px auto;
     padding-top: 30px;
+    padding-bottom: 100px;
 }
 
 .heroSection {
@@ -110,14 +110,16 @@
 }
 
 
-.bio{
+.bio {
     margin: 25px 0px;
     font-size: 24px;
 }
-.bio p{
+
+.bio p {
     opacity: 0.8;
 }
-.bio p span{
+
+.bio p span {
     font-size: 14px;
     color: #27f7e9;
     background-color: #016d66;
@@ -144,7 +146,10 @@
 .projectItem {
     display: flex;
     gap: 20px;
+    transition: all 0.3s;
+    border-radius: 10px;
 }
+
 
 .projectItem img {
     border-radius: 10px;
@@ -157,8 +162,8 @@
 }
 
 
-.projectItem img:hover {
-    opacity: 0.8;
+.projectItem:hover img {
+    opacity: 0.7;
 }
 
 .showMore {
@@ -184,15 +189,15 @@
     transform: rotate(90deg);
 }
 
-@keyframes unBlur{
-    from{
+@keyframes unBlur {
+    from {
         filter: blur(20px);
-        opacity: 0;
         transform: scale(1.1);
+        opacity: 0;
     }
-    to{
+
+    to {
         filter: blur(0px);
-        opacity: 1;
         transform: scale(1);
     }
 }
