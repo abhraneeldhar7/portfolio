@@ -60,8 +60,16 @@
     height: 200px;
     width: 200px;
     border-radius: 10px;
+    animation: profilePicScroll linear;
+    animation-timeline: view(80% 0%);
 }
 
+
+@keyframes profilePicScroll{
+    to{
+        transform: scale(2);
+    }
+}
 .socialsDiv {
     display: flex;
     gap: 5px;
