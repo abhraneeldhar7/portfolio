@@ -104,7 +104,10 @@ export default function RotPage() {
 
 
         <div className={styles.bio}>
-          <p>Always have been facinated by computers of all sizes and now have the luxury to work with <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span> </p>
+          <p>Always have been facinated by computers of all sizes and now have the luxury to work with: </p>
+          <div className="flex flex-wrap justify-center gap-[10px] w-[100%] my-[0.5em]">
+            <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span>
+          </div>
         </div>
 
 
