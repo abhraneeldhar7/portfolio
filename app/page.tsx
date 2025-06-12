@@ -40,43 +40,43 @@ export default function RotPage() {
   const [showMoreProject, setShowMoreProject] = useState("less");
 
 
-  const reviews = [
+  const techStack1 = [
     {
-      name: "Jack",
-      username: "@jack",
-      body: "I've never seen anything like this before. It's amazing. I love it.",
-      img: "https://avatar.vercel.sh/jack",
+      name: "Next.js",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764539/nextjs_gyqxdo.png"
     },
     {
-      name: "Jill",
-      username: "@jill",
-      body: "I don't know what to say. I'm speechless. This is amazing.",
-      img: "https://avatar.vercel.sh/jill",
+      name: "Cloudinary",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763872/cloudinary_jcjz1e.webp"
     },
     {
-      name: "John",
-      username: "@john",
-      body: "I'm at a loss for words. This is amazing. I love it.",
-      img: "https://avatar.vercel.sh/john",
+      name: "Auth.js",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763872/authjs_g9rfwm.webp"
     },
     {
-      name: "Jane",
-      username: "@jane",
-      body: "I'm at a loss for words. This is amazing. I love it.",
-      img: "https://avatar.vercel.sh/jane",
+      name: "PostgreSQL",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/psotgresql_ggzxtu.png"
     },
     {
-      name: "Jenny",
-      username: "@jenny",
-      body: "I'm at a loss for words. This is amazing. I love it.",
-      img: "https://avatar.vercel.sh/jenny",
-    },
-    {
-      name: "James",
-      username: "@james",
-      body: "I'm at a loss for words. This is amazing. I love it.",
-      img: "https://avatar.vercel.sh/james",
-    },
+      name: "Supabase",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/supabase_eban6b.png"
+    }]
+  const techStack2 = [{
+    name: "React Native",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/react_fxopt7.png"
+  }, {
+    name: "Python",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/python_gtxoax.webp"
+  }, {
+    name: "MongoDB",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/mongodb_msjbae.svg"
+  }, {
+    name: "FastAPI",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763870/FastAPI_prcozs.png"
+  }, {
+    name: "Git",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764943/gitlogo_ozinof.png"
+  }
   ];
 
 
@@ -233,9 +233,20 @@ export default function RotPage() {
           <h1 className="text-[27px]">Daily Tool-Box</h1>
 
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-            <Marquee pauseOnHover className="[--duration:20s]">
-              {reviews.map((review, index) => (
-                <h2 key={index}>{review.name}</h2>
+            <Marquee pauseOnHover className="[--duration:35s]">
+              {techStack1.map((tech, index) => (
+                <div key={index} className={styles.techStackItem}>
+                  <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
+                  <p>{tech.name}</p>
+                </div>
+              ))}
+            </Marquee>
+            <Marquee reverse pauseOnHover className="[--duration:35s]">
+              {techStack2.map((tech, index) => (
+                <div key={index} className={styles.techStackItem}>
+                  <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
+                  <p>{tech.name}</p>
+                </div>
               ))}
             </Marquee>
 
