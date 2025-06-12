@@ -7,6 +7,8 @@ import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
 import { useState } from "react"
+import { Marquee } from "@/components/magicui/marquee"
+import { h2 } from "motion/react-client"
 
 export default function RotPage() {
 
@@ -34,6 +36,47 @@ export default function RotPage() {
 
   const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3));
   const [showMoreProject, setShowMoreProject] = useState("less");
+
+
+  const reviews = [
+    {
+      name: "Jack",
+      username: "@jack",
+      body: "I've never seen anything like this before. It's amazing. I love it.",
+      img: "https://avatar.vercel.sh/jack",
+    },
+    {
+      name: "Jill",
+      username: "@jill",
+      body: "I don't know what to say. I'm speechless. This is amazing.",
+      img: "https://avatar.vercel.sh/jill",
+    },
+    {
+      name: "John",
+      username: "@john",
+      body: "I'm at a loss for words. This is amazing. I love it.",
+      img: "https://avatar.vercel.sh/john",
+    },
+    {
+      name: "Jane",
+      username: "@jane",
+      body: "I'm at a loss for words. This is amazing. I love it.",
+      img: "https://avatar.vercel.sh/jane",
+    },
+    {
+      name: "Jenny",
+      username: "@jenny",
+      body: "I'm at a loss for words. This is amazing. I love it.",
+      img: "https://avatar.vercel.sh/jenny",
+    },
+    {
+      name: "James",
+      username: "@james",
+      body: "I'm at a loss for words. This is amazing. I love it.",
+      img: "https://avatar.vercel.sh/james",
+    },
+  ];
+
 
 
   return (
@@ -104,7 +147,7 @@ export default function RotPage() {
 
 
         <div className={styles.bio}>
-          <p>Always have been facinated by computers of all sizes and now have the luxury to work with: </p>
+          <p>Always have been facinated by computers of all sizes and now have the luxury to work with</p>
           <div className="flex flex-wrap justify-center gap-[10px] w-[100%] my-[0.5em]">
             <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span>
           </div>
@@ -113,14 +156,14 @@ export default function RotPage() {
 
         <div className={styles.statusDiv}>
           <div className={styles.learningDiv}>
-            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40}/>
+            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40} />
             <div>
               <h2>Learning</h2>
               <p>React Native</p>
             </div>
           </div>
           <div className={styles.learningDiv}>
-            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749751267/FastAPI_wpfgdm.png" className={styles.lilLogo} height={40} width={40}/>
+            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749751267/FastAPI_wpfgdm.png" className={styles.lilLogo} height={40} width={40} />
             <div>
               <h2>Learning</h2>
               <p>Fast API</p>
@@ -165,6 +208,19 @@ export default function RotPage() {
           </div>
 
         </div>
+
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {reviews.map((review,index) => (
+              <h2 key={index}>{review.name}</h2>
+            ))}
+          </Marquee>
+        
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+        </div>
+
+
       </div>
     </div>)
 }
