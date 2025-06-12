@@ -8,6 +8,22 @@ import { cn } from "@/lib/utils";
 
 export default function RotPage() {
 
+  const projectsList = [{
+    name: "Bugspot",
+    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749742202/Gemini_Generated_Image_fe8y5bfe8y5bfe8y_1_gf7snv.jpg",
+    description: "Collaborative team-builder social media with blogs community and in-built team builder for projects and events. Features markdown bloggins, most in-depth profile builder, projects showcase and collaborator and events team-builder.",
+    url: "https://bugspot.vercel.app"
+  }, {
+    name: "IIC protal",
+    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
+    description: "Official registration and submission portal for IIC.\nFeatures 3 fully customisable portals and one general purpose form builder, profile editor and in-depth admin panel",
+    url: "https://hackurwayonlinesubmission.vercel.app"
+  },{
+    name: "SoloDev",
+    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749743470/Screenshot_2025-06-12_212044_y4jlyz.png",
+    description: "One stop reference sheet website for developers who work on everything by themselves. With fully responsive layout to fit 2nd monitor",
+    url: "https://solo-dev.vercel.app"
+  }]
   return (
     <div className={styles.main}>
       <div className={cn(
@@ -18,12 +34,11 @@ export default function RotPage() {
         "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
       )}
       />
-      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[#000000]"></div>
 
 
 
       <div className={styles.detailsHolder}>
-
         <div className={styles.heroSection}>
           <div className={styles.profileImageContainer}>
             <Image height={40} width={40} alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg" className={styles.profilePicBlurImage} unoptimized />
@@ -51,12 +66,6 @@ export default function RotPage() {
               </div>
             </Link>
 
-            <Link href="linkedin.com/in/abhraneeldhar" target="_blank">
-              <div className={styles.socialsItem}>
-                <Linkedin size={15} color="white" />
-                <p>LinkedIn</p>
-              </div>
-            </Link>
 
             <Link href="https://bugspot.vercel.app/profile/101766837132725568508" target="_blank">
               <div className={styles.socialsItem}>
@@ -72,6 +81,13 @@ export default function RotPage() {
               </div>
             </Link>
 
+            <Link href="linkedin.com/in/abhraneeldhar" target="_blank">
+              <div className={styles.socialsItem}>
+                <Linkedin size={15} color="white" />
+                <p>LinkedIn</p>
+              </div>
+            </Link>
+
 
           </div>
         </div>
@@ -81,11 +97,17 @@ export default function RotPage() {
           <h1 className="text-[27px]">Proof of work</h1>
 
           <div className={styles.projectsHolder}>
-            <div className={styles.projectItem}>
-              <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749735487/Screenshot_2025-06-12_190457_zbgesw.png" height={150} width={300} unoptimized />
-
-              <p>Collaborative team-builder social media with blogs community and in-built team builder for projects and events</p>
-            </div>
+            {projectsList.map((project, index) => (
+              <div key={index} className="flex flex-col gap-[10px]">
+                <div className={styles.projectItem}>
+                  <Image alt="" src={project.imgUrl} height={150} width={300} unoptimized />
+                  <p>{project.description}</p>
+                </div>
+                {index < projectsList.length-1 &&
+                  <div className="h-[1px] w-[90%] mx-[auto] bg-[#d4d4d4] opacity-[0.4]"></div>
+                }
+              </div>
+            ))}
           </div>
 
         </div>
