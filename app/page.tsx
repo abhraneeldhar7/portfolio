@@ -111,6 +111,25 @@ export default function RotPage() {
         </div>
 
 
+        <div className={styles.statusDiv}>
+          <div className={styles.learningDiv}>
+            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40}/>
+            <div>
+              <h2>Learning</h2>
+              <p>React Native</p>
+            </div>
+          </div>
+          <div className={styles.learningDiv}>
+            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749751267/FastAPI_wpfgdm.png" className={styles.lilLogo} height={40} width={40}/>
+            <div>
+              <h2>Learning</h2>
+              <p>Fast API</p>
+            </div>
+          </div>
+
+        </div>
+
+
         <div className={styles.projectsSection}>
           <h1 className="text-[27px]">Proof of work</h1>
 

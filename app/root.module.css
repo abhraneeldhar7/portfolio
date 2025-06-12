@@ -131,10 +131,62 @@
     white-space: nowrap;
 }
 
+.statusDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.statusDiv .learningDiv {
+    display: flex;
+    gap: 10px;
+    background-color: #fffff9;
+    color: black;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.statusDiv .learningDiv img {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    animation: breathing 1s infinite linear;
+}
+
+.statusDiv .learningDiv h2 {
+    font-size: 22px;
+    line-height: 1.2em;
+    font-family: "Poppins";
+}
+
+.statusDiv .learningDiv p {
+    font-size: 15px;
+    line-height: 1.2em;
+}
+
+.statusDiv .learningDiv {
+    width: 250px;
+}
+
+
+@keyframes breathing {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 .projectsSection {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .projectsHolder {
@@ -208,6 +260,7 @@
 @media(max-width:500px) {
     .detailsHolder {
         padding: 30px 15px;
+        padding-bottom: 100px;
     }
 
     .projectItem {
