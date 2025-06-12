@@ -1,10 +1,12 @@
+"use client"
 import styles from "./root.module.css"
 import Image from "next/image"
 import Xlogo from "../public/x-social-media-white-icon.svg"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { ChevronLeft, ChevronRight, Github, Linkedin, Mail } from "lucide-react"
 import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
+import { useState } from "react"
 
 export default function RotPage() {
 
@@ -18,12 +20,22 @@ export default function RotPage() {
     imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
     description: "Official registration and submission portal for IIC.\nFeatures 3 fully customisable portals and one general purpose form builder, profile editor and in-depth admin panel",
     url: "https://hackurwayonlinesubmission.vercel.app"
-  },{
+  }, {
     name: "SoloDev",
     imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749743470/Screenshot_2025-06-12_212044_y4jlyz.png",
     description: "One stop reference sheet website for developers who work on everything by themselves. With fully responsive layout to fit 2nd monitor",
     url: "https://solo-dev.vercel.app"
+  }, {
+    name: "Nebula",
+    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749744678/Screenshot_2025-06-12_214101_suvhah.png",
+    description: "Online document editor with friends system to share docs around.Features an in-built anonymous chat room",
+    url: "https://nebula0.vercel.app"
   }]
+
+  const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3));
+  const [showMoreProject, setShowMoreProject] = useState("less");
+
+
   return (
     <div className={styles.main}>
       <div className={cn(
@@ -97,17 +109,34 @@ export default function RotPage() {
           <h1 className="text-[27px]">Proof of work</h1>
 
           <div className={styles.projectsHolder}>
-            {projectsList.map((project, index) => (
+            {projectDisplayList.map((project, index) => (
               <div key={index} className="flex flex-col gap-[10px]">
                 <div className={styles.projectItem}>
                   <Image alt="" src={project.imgUrl} height={150} width={300} unoptimized />
                   <p>{project.description}</p>
                 </div>
-                {index < projectsList.length-1 &&
+                {index < projectsList.length - 1 &&
                   <div className="h-[1px] w-[90%] mx-[auto] bg-[#d4d4d4] opacity-[0.4]"></div>
                 }
               </div>
             ))}
+            <div onClick={() => {
+              if (showMoreProject == "less") {
+                setProjectDisplayList(projectsList);
+                setShowMoreProject("more");
+              }
+              else {
+                setProjectDisplayList(projectsList.slice(0, 3));
+                setShowMoreProject("less");
+              }
+            }} className={styles.showMore}>
+              {showMoreProject == "less" && <>
+                Show more <ChevronRight size={20} />
+              </>}
+              {showMoreProject == "more" && <>
+                <ChevronLeft size={20} />Show less
+              </>}
+            </div>
           </div>
 
         </div>

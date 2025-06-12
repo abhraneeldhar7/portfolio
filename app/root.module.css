@@ -134,10 +134,50 @@
     height: 150px;
     transition: all 0.2s;
     object-fit: cover;
+    animation: unBlur linear 0.5s;
 }
-.projectItem img:hover{
+
+
+.projectItem img:hover {
     opacity: 0.8;
 }
+
+.showMore {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    background-color: #101010;
+    padding: 7px;
+    border-radius: 7px;
+    transition: all 0.1s;
+}
+
+.showMore svg {
+    transition: all 0.2s;
+}
+
+.showMore:hover {
+    background-color: #202025;
+}
+
+.showMore:hover svg {
+    transform: rotate(90deg);
+}
+
+@keyframes unBlur{
+    from{
+        filter: blur(20px);
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to{
+        filter: blur(0px);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 
 @media(max-width:500px) {
