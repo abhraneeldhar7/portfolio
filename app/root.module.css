@@ -60,13 +60,11 @@
     height: 200px;
     width: 200px;
     border-radius: 10px;
-    animation: profilePicScroll linear;
-    animation-timeline: view(80% 0%);
 }
 
 
 @keyframes profilePicScroll{
-    to{
+    100%{
         transform: scale(2);
     }
 }
@@ -224,9 +222,16 @@
     animation: unBlur linear 0.5s;
 }
 
-
 .projectItem:hover img {
     opacity: 0.7;
+}
+.seperateDiv{
+    background-color: var(--primary);
+    border-radius: 10px;
+    width: 90%;
+    height: 1px;
+    opacity: 0.4;
+    margin: 0px auto;
 }
 
 .showMore {
@@ -234,10 +239,11 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
-    background-color: #101010;
+    background-color: var(--bgColor2);
     padding: 7px;
     border-radius: 7px;
     transition: all 0.1s;
+    color: var(--fgColor);
 }
 
 .showMore svg {
@@ -245,7 +251,7 @@
 }
 
 .showMore:hover {
-    background-color: #202025;
+    background-color: var(--bgColor);
 }
 
 .showMore:hover svg {
@@ -265,7 +271,9 @@
     }
 }
 
-
+.techStack{
+    margin-top: 40px;
+}
 
 
 

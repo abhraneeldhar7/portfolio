@@ -8,7 +8,9 @@ import Link from "next/link"
 import { cn } from "@/lib/utils";
 import { useState } from "react"
 import { Marquee } from "@/components/magicui/marquee"
-import { h2 } from "motion/react-client"
+import { div, h2 } from "motion/react-client"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
 
 export default function RotPage() {
 
@@ -78,6 +80,9 @@ export default function RotPage() {
   ];
 
 
+  const { theme: currentTheme, setTheme: setCurrentTheme } = useTheme();
+
+
 
   return (
     <div className={styles.main}>
@@ -85,11 +90,12 @@ export default function RotPage() {
         "z-[-1]",
         "absolute inset-0",
         "[background-size:20px_20px]",
-        "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-        "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+        "[background-image:radial-gradient(var(--fgColor)_1px,transparent_1px)]",
+        "dark:[background-image:radial-gradient(var(--fgColor)_1px,transparent_1px)]",
+        "[opacity:0.25]"
       )}
       />
-      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[#000000]"></div>
+      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-[var(--bgColor)] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[var(--bgColor)]"></div>
 
 
 
@@ -153,6 +159,17 @@ export default function RotPage() {
           </div>
         </div>
 
+        <Button onClick={() => {
+          if (currentTheme == "dark") {
+            setCurrentTheme("light");
+          }
+          else {
+            setCurrentTheme("dark")
+          }
+        }}>
+          {currentTheme}
+        </Button>
+
 
         <div className={styles.statusDiv}>
           <div className={styles.learningDiv}>
@@ -184,7 +201,9 @@ export default function RotPage() {
                   <p>{project.description}</p>
                 </div>
                 {index < projectDisplayList.length - 1 &&
-                  <div className="h-[1px] w-[90%] mx-[auto] bg-[#d4d4d4] opacity-[0.4]"></div>
+                  // <div className={styles.seperateDiv}></div>
+                  <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>
+                  // <div></div>
                 }
               </div>
             ))}
@@ -209,18 +228,22 @@ export default function RotPage() {
 
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:20s]">
-            {reviews.map((review,index) => (
-              <h2 key={index}>{review.name}</h2>
-            ))}
-          </Marquee>
-        
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+
+        <div className={styles.techStack}>
+          <h1 className="text-[27px]">Daily Tool-Box</h1>
+
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+            <Marquee pauseOnHover className="[--duration:20s]">
+              {reviews.map((review, index) => (
+                <h2 key={index}>{review.name}</h2>
+              ))}
+            </Marquee>
+
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
+          </div>
+
         </div>
-
-
       </div>
     </div>)
 }
