@@ -118,7 +118,7 @@ export default function RotPage() {
                   <Image alt="" src={project.imgUrl} height={150} width={300} unoptimized />
                   <p>{project.description}</p>
                 </div>
-                {index < projectsList.length - 1 &&
+                {index < projectDisplayList.length - 1 &&
                   <div className="h-[1px] w-[90%] mx-[auto] bg-[#d4d4d4] opacity-[0.4]"></div>
                 }
               </div>
