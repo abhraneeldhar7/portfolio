@@ -60,6 +60,9 @@ export default function RotPage() {
     {
       name: "Supabase",
       iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/supabase_eban6b.png"
+    },{
+      name:"shadCn",
+      iconUrl:"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765234/shadcn_xvjz01.png"
     }]
   const techStack2 = [{
     name: "React Native",
@@ -76,6 +79,9 @@ export default function RotPage() {
   }, {
     name: "Git",
     iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764943/gitlogo_ozinof.png"
+  },{
+    name:"Radix UI",
+    iconUrl:"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765176/radixui_nmbq9s.png"
   }
   ];
 
@@ -159,7 +165,7 @@ export default function RotPage() {
           </div>
         </div>
 
-        <Button onClick={() => {
+        {/* <Button onClick={() => {
           if (currentTheme == "dark") {
             setCurrentTheme("light");
           }
@@ -168,9 +174,9 @@ export default function RotPage() {
           }
         }}>
           {currentTheme}
-        </Button>
+        </Button> */}
 
-
+{/* 
         <div className={styles.statusDiv}>
           <div className={styles.learningDiv}>
             <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40} />
@@ -186,8 +192,7 @@ export default function RotPage() {
               <p>Fast API</p>
             </div>
           </div>
-
-        </div>
+        </div> */}
 
 
         <div className={styles.projectsSection}>
