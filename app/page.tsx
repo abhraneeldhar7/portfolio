@@ -99,9 +99,12 @@ export default function RotPage() {
                 <p>LinkedIn</p>
               </div>
             </Link>
-
-
           </div>
+        </div>
+
+
+        <div className={styles.bio}>
+          <p>Always have been facinated by computers of all sizes and now have the luxury to work with <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span> </p>
         </div>
 
 

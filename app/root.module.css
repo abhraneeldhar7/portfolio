@@ -110,6 +110,25 @@
 }
 
 
+.bio{
+    margin: 25px 0px;
+    font-size: 24px;
+}
+.bio p{
+    opacity: 0.8;
+}
+.bio p span{
+    font-size: 14px;
+    color: #27f7e9;
+    background-color: #016d66;
+    padding: 3px 7px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    line-height: 1em;
+    opacity: 1;
+}
+
+
 .projectsSection {
     display: flex;
     flex-direction: column;
