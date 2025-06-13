@@ -123,7 +123,7 @@ export default function RotPage() {
           <motion.div
             style={{
               transition: "all 0.1s ease", zIndex: 10, maxWidth: 650,
-              width: "100%",borderRadius:"0px 0px 10px 10px"
+              width: "100%", borderRadius: "0px 0px 10px 10px"
             }}
             animate={isScrolled ? "scrolled" : "normal"}
             variants={{
@@ -138,41 +138,46 @@ export default function RotPage() {
               }
             }}>
             <motion.div className="relative">
-              <Link href="https://www.instagram.com/abhraneeldhar/" target="_blank">
-                <motion.img
-                  src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
-                  alt="Animated image"
-                  initial={{
+
+              <motion.img
+                src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
+                alt="Animated image"
+                initial={{
+                  height: 200,
+                  width: 200,
+                  borderRadius: 10,
+                  margin: "0px auto",
+
+                }}
+                animate={isScrolled ? "scrolled" : "normal"}
+                variants={{
+                  normal: {
                     height: 200,
                     width: 200,
                     borderRadius: 10,
-                    margin: "0px auto",
-                    
-                  }}
-                  animate={isScrolled ? "scrolled" : "normal"}
-                  variants={{
-                    normal: {
-                      height: 200,
-                      width: 200,
-                      borderRadius: 10,
-                      top: 0,
-                      left: 0,
-                    },
-                    scrolled: {
-                      height: 40,
-                      width: 40,
-                      borderRadius: 50,
-                      position: "absolute",
-                      top: 10,
-                      left: 10,
-                    },
-                  }}
-                  // transition={{ stiffness: 300, damping: 20 }}
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </Link>
+                    top: 0,
+                    left: 0,
+                  },
+                  scrolled: {
+                    height: 40,
+                    width: 40,
+                    borderRadius: 50,
+                    position: "absolute",
+                    top: 10,
+                    left: 10,
+                  },
+                }}
+
+                whileHover={{
+                  boxShadow: "0 0 30px 2px rgba(255, 255, 255, 0.5)"
+                }}
+
+                // transition={{ stiffness: 300, damping: 20 }}
+                style={{
+                  objectFit: "cover",
+                  transition: "box-shadow 0.1s"
+                }}
+              />
             </motion.div>
           </motion.div>
 
@@ -230,7 +235,7 @@ export default function RotPage() {
             <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span>
           </div>
         </div>
-{/* 
+        {/* 
         <Button onClick={() => {
           if (currentTheme == "dark") {
             setCurrentTheme("light");
