@@ -122,7 +122,7 @@ export default function RotPage() {
         <div className={styles.heroSection}>
           <motion.div
             style={{
-              transition: "all 0.3s ease", zIndex: 10, maxWidth: 650,
+              transition: "all 0.1s ease", zIndex: 10, maxWidth: 650,
               width: "100%"
             }}
 
@@ -134,7 +134,7 @@ export default function RotPage() {
               scrolled: {
                 top: 0,
                 position: "fixed",
-                height: 50,
+                height: 60,
                 backdropFilter: "blur(10px)"
               }
             }}>
@@ -147,6 +147,7 @@ export default function RotPage() {
                     height: 200,
                     width: 200,
                     borderRadius: 10,
+                    
                   }}
                   animate={isScrolled ? "scrolled" : "normal"}
                   variants={{
@@ -163,12 +164,14 @@ export default function RotPage() {
                       width: 40,
                       borderRadius: 50,
                       position: "absolute",
-                      top: 5,
+                      top: 10,
                       left: 10,
                     },
                   }}
+                  // transition={{ stiffness: 300, damping: 20 }}
                   style={{
-                    objectFit: "cover"
+                    objectFit: "cover",
+                    transition: "all 0.1s"
                   }}
                 />
               </Link>
