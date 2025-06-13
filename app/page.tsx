@@ -170,7 +170,6 @@ export default function RotPage() {
                   transition={{ stiffness: 300, damping: 20 }}
                   style={{
                     objectFit: "cover",
-                    transition: "all 0.1s "
                   }}
                 />
               </Link>
