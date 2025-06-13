@@ -8,6 +8,7 @@
     margin: 0px auto;
     padding: 30px 0px;
     padding-bottom: 40px;
+    position: relative;
 }
 
 .heroSection {
@@ -30,37 +31,6 @@
     font-size: 20px;
 }
 
-.profileImageContainer {
-    position: relative;
-    height: 200px;
-    width: 200px;
-
-}
-
-
-.profileImageContainer:hover .profilePicBlurImage {
-    filter: blur(20px);
-    opacity: 0.5;
-}
-
-.profilePicBlurImage {
-    position: absolute;
-    z-index: 1;
-    transition: all 0.3s;
-
-}
-
-.profilePic {
-    position: absolute;
-    z-index: 3;
-}
-
-.profilePic,
-.profilePicBlurImage {
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
-}
 
 
 @keyframes profilePicScroll {
@@ -203,31 +173,9 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 5px;
+    z-index: 1;
 }
 
-/* 
-.projectItem {
-    display: flex;
-    gap: 20px;
-    transition: all 0.3s;
-    border-radius: 10px;
-}
-
-
-.projectItem img {
-    border-radius: 10px;
-    min-width: 240px;
-    width: 240px;
-    height: 150px;
-    transition: all 0.2s;
-    object-fit: cover;
-    animation: unBlur linear 0.5s;
-    background-color: black;
-}
-
-.projectItem:hover img {
-    opacity: 0.7;
-} */
 
 .seperateDiv {
     background-color: var(--primary);
@@ -262,18 +210,6 @@
     transform: rotate(90deg);
 }
 
-/* @keyframes unBlur {
-    from {
-        filter: blur(20px);
-        transform: scale(1.1);
-        opacity: 0;
-    }
-
-    to {
-        filter: blur(0px);
-        transform: scale(1);
-    }
-} */
 
 .techStack {
     margin-top: 40px;

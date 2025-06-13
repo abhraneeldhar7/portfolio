@@ -13,6 +13,8 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import ProjectCard from "@/components/projectCard/projectCard"
 import { ProjectType } from "@/lib/types"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+
 
 export default function RotPage() {
 
@@ -93,7 +95,12 @@ export default function RotPage() {
 
 
   const { theme: currentTheme, setTheme: setCurrentTheme } = useTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 140);
+  });
 
 
   return (
@@ -113,12 +120,67 @@ export default function RotPage() {
 
       <div className={styles.detailsHolder}>
         <div className={styles.heroSection}>
-          <div className={styles.profileImageContainer}>
-            <Image height={40} width={40} alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg" className={styles.profilePicBlurImage} unoptimized />
-            <Link href="https://www.instagram.com/abhraneeldhar/" target="_blank">
-              <Image height={40} width={40} alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg" className={styles.profilePic} unoptimized />
-            </Link>
-          </div>
+          <motion.div
+            style={{ transition: "all 0.3s ease", zIndex: 20 }}
+            initial={{
+              maxWidth: 650,
+              width: "100%",
+            }}
+            animate={isScrolled ? "scrolled" : "normal"}
+            variants={{
+              normal: {
+                position: "static",
+
+              },
+              scrolled: {
+                top: 0,
+                position: "fixed",
+                width: "100%"
+              }
+            }}
+          >
+            <div className="relative">
+              <Link href="https://www.instagram.com/abhraneeldhar/" target="_blank">
+                <motion.img
+                  src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
+                  alt="Animated image"
+                  initial={{
+                    height: 200,
+                    width: 200,
+                    borderRadius: 10,
+                  }}
+                  animate={isScrolled ? "scrolled" : "normal"}
+                  variants={{
+                    normal: {
+                      height: 200,
+                      width: 200,
+                      borderRadius: 10,
+                      top: 0,
+                      left: 0,
+                      margin: "0px auto",
+                    },
+                    scrolled: {
+                      height: 40,
+                      width: 40,
+                      borderRadius: "50%",
+                      position: "absolute",
+                      top: 10,
+                      left: 10,
+                    },
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  style={{
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+              </Link>
+            </div>
+          </motion.div>
+
+
+
+
           <div className="flex flex-col items-center gap-[2px]">
             <h1>Abhraneel Dhar</h1>
             <p className={styles.SWEpara}>Software Engineer</p>
@@ -267,5 +329,5 @@ export default function RotPage() {
           <p className="text-[14px] text-center opacity-[0.7] w-[90%]">One shared pursuit shall tell you the difference between a regular contributor and the guy who goes to war with the market to put your vision ahead of competitors.</p>
         </div>
       </div>
-    </div>)
+    </div >)
 }
