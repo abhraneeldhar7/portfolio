@@ -167,7 +167,7 @@ export default function RotPage() {
                       left: 10,
                     },
                   }}
-                  transition={{ stiffness: 300, damping: 20 }}
+                  // transition={{ stiffness: 300, damping: 20 }}
                   style={{
                     objectFit: "cover",
                   }}
