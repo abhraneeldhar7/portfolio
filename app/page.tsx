@@ -11,29 +11,35 @@ import { Marquee } from "@/components/magicui/marquee"
 import { div, h2 } from "motion/react-client"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import ProjectCard from "@/components/projectCard/projectCard"
+import { ProjectType } from "@/lib/types"
 
 export default function RotPage() {
 
-  const projectsList = [{
+  const projectsList: ProjectType[] = [{
     name: "Bugspot",
-    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749742202/Gemini_Generated_Image_fe8y5bfe8y5bfe8y_1_gf7snv.jpg",
+    imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749742202/Gemini_Generated_Image_fe8y5bfe8y5bfe8y_1_gf7snv.jpg",
     description: "Collaborative team-builder social media with blogs community and in-built team builder for projects and events. Features markdown bloggins, most in-depth profile builder, projects showcase and collaborator and events team-builder.",
-    url: "https://bugspot.vercel.app"
+    liveLink: "https://bugspot.vercel.app",
+    techStack:["Next.js","Typescript","Auth js","MongoDb","Cloudinary"]
   }, {
     name: "IIC protal",
-    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
+    imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
     description: "Official registration and submission portal for IIC.\nFeatures 3 fully customisable portals and one general purpose form builder, profile editor and in-depth admin panel",
-    url: "https://hackurwayonlinesubmission.vercel.app"
+    liveLink: "https://hackurwayonlinesubmission.vercel.app",
+    techStack:["Next.js","Typescript","Auth js","Mongodb","Cloudinary"]
   }, {
     name: "SoloDev",
-    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749743470/Screenshot_2025-06-12_212044_y4jlyz.png",
+    imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749743470/Screenshot_2025-06-12_212044_y4jlyz.png",
     description: "One stop reference sheet website for developers who work on everything by themselves. With fully responsive layout to fit 2nd monitor",
-    url: "https://solo-dev.vercel.app"
+    liveLink: "https://solo-dev.vercel.app",
+    techStack:["Next.js","Supabase","Typescript"]
   }, {
     name: "Nebula",
-    imgUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749744678/Screenshot_2025-06-12_214101_suvhah.png",
+    imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749744678/Screenshot_2025-06-12_214101_suvhah.png",
     description: "Online document editor with friends system to share docs around.Features an in-built anonymous chat room",
-    url: "https://nebula0.vercel.app"
+    liveLink: "https://nebula0.vercel.app",
+    techStack:["Next.js","Typescript","Auth js","Mongodb","Supabase"]
   }]
 
   const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3));
@@ -60,9 +66,9 @@ export default function RotPage() {
     {
       name: "Supabase",
       iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763871/supabase_eban6b.png"
-    },{
-      name:"shadCn",
-      iconUrl:"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765234/shadcn_xvjz01.png"
+    }, {
+      name: "shadCn",
+      iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765234/shadcn_xvjz01.png"
     }]
   const techStack2 = [{
     name: "React Native",
@@ -79,9 +85,9 @@ export default function RotPage() {
   }, {
     name: "Git",
     iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764943/gitlogo_ozinof.png"
-  },{
-    name:"Radix UI",
-    iconUrl:"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765176/radixui_nmbq9s.png"
+  }, {
+    name: "Radix UI",
+    iconUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749765176/radixui_nmbq9s.png"
   }
   ];
 
@@ -176,7 +182,7 @@ export default function RotPage() {
           {currentTheme}
         </Button> */}
 
-{/* 
+        {/* 
         <div className={styles.statusDiv}>
           <div className={styles.learningDiv}>
             <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40} />
@@ -201,10 +207,11 @@ export default function RotPage() {
           <div className={styles.projectsHolder}>
             {projectDisplayList.map((project, index) => (
               <div key={index} className="flex flex-col gap-[10px]">
-                <div className={styles.projectItem}>
+                {/* <div className={styles.projectItem}>
                   <Image alt="" src={project.imgUrl} height={150} width={300} unoptimized />
                   <p>{project.description}</p>
-                </div>
+                </div> */}
+                <ProjectCard projectDetails={project} />
                 {index < projectDisplayList.length - 1 &&
                   // <div className={styles.seperateDiv}></div>
                   <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>
