@@ -2,7 +2,7 @@
 import styles from "./root.module.css"
 import Image from "next/image"
 import Xlogo from "../public/x-social-media-white-icon.svg"
-import { ChevronLeft, ChevronRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Linkedin, Mail } from "lucide-react"
 import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
@@ -207,16 +207,10 @@ export default function RotPage() {
           <div className={styles.projectsHolder}>
             {projectDisplayList.map((project, index) => (
               <div key={index} className="flex flex-col gap-[10px]">
-                {/* <div className={styles.projectItem}>
-                  <Image alt="" src={project.imgUrl} height={150} width={300} unoptimized />
-                  <p>{project.description}</p>
-                </div> */}
+
                 <ProjectCard projectDetails={project} />
                 {index < projectDisplayList.length - 1 &&
-                  // <div className={styles.seperateDiv}></div>
-                  <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>
-                  // <div></div>
-                }
+                  <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>}
               </div>
             ))}
             <div onClick={() => {
@@ -266,6 +260,10 @@ export default function RotPage() {
             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
           </div>
 
+        </div>
+
+        <div className={styles.pageFooter}>
+          <p className="opacity-[0.7] text-[17px] flex items-center gap-[5px]">resume <ArrowUpRight size={16} /></p>
         </div>
       </div>
     </div>)

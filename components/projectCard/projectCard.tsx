@@ -14,7 +14,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
     return (
         <div className={styles.main} onClick={() => { setShowFooter(!showFooter) }}>
             <div className={styles.projectItem}>
-                <Image alt="" src={projectDetails.imageUrl} height={150} width={300} />
+                <Image alt="" src={projectDetails.imageUrl} height={150} width={300} priority={true} />
                 <p>{projectDetails.description}</p>
             </div>
             <div className={`${styles.footerDiv} ${showFooter && styles.showFooter}`}>
