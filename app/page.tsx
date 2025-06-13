@@ -146,6 +146,7 @@ export default function RotPage() {
                     height: 200,
                     width: 200,
                     borderRadius: 10,
+                    margin: "0px auto",
                     
                   }}
                   animate={isScrolled ? "scrolled" : "normal"}
@@ -156,7 +157,6 @@ export default function RotPage() {
                       borderRadius: 10,
                       top: 0,
                       left: 0,
-                      margin: "0px auto",
                     },
                     scrolled: {
                       height: 40,
