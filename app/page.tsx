@@ -121,25 +121,25 @@ export default function RotPage() {
       <div className={styles.detailsHolder}>
         <div className={styles.heroSection}>
           <motion.div
-            style={{ transition: "all 0.3s ease", zIndex: 20 }}
-            initial={{
-              maxWidth: 650,
-              width: "100%",
+            // className="bg-[red]"
+            style={{
+              transition: "all 0.3s ease", zIndex: 10, maxWidth: 650,
+              width: "100%", padding: "5px 10px", borderRadius: 7
             }}
+
             animate={isScrolled ? "scrolled" : "normal"}
             variants={{
               normal: {
                 position: "static",
-
               },
               scrolled: {
                 top: 0,
                 position: "fixed",
-                width: "100%"
+                height: 50,
+                backdropFilter: "blur(10px)"
               }
-            }}
-          >
-            <div className="relative">
+            }}>
+            <motion.div className="relative">
               <Link href="https://www.instagram.com/abhraneeldhar/" target="_blank">
                 <motion.img
                   src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
@@ -162,7 +162,7 @@ export default function RotPage() {
                     scrolled: {
                       height: 40,
                       width: 40,
-                      borderRadius: "50%",
+                      borderRadius: 50,
                       position: "absolute",
                       top: 10,
                       left: 10,
@@ -171,11 +171,11 @@ export default function RotPage() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{
                     objectFit: "cover",
-                    display: "block",
+                    // display: "block",
                   }}
                 />
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
 
 
@@ -233,7 +233,7 @@ export default function RotPage() {
           </div>
         </div>
 
-        {/* <Button onClick={() => {
+        <Button onClick={() => {
           if (currentTheme == "dark") {
             setCurrentTheme("light");
           }
@@ -242,25 +242,8 @@ export default function RotPage() {
           }
         }}>
           {currentTheme}
-        </Button> */}
+        </Button>
 
-        {/* 
-        <div className={styles.statusDiv}>
-          <div className={styles.learningDiv}>
-            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749750359/React_Native_Logo_gskkfe.png" className={styles.lilLogo} height={40} width={40} />
-            <div>
-              <h2>Learning</h2>
-              <p>React Native</p>
-            </div>
-          </div>
-          <div className={styles.learningDiv}>
-            <Image alt="" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749751267/FastAPI_wpfgdm.png" className={styles.lilLogo} height={40} width={40} />
-            <div>
-              <h2>Learning</h2>
-              <p>Fast API</p>
-            </div>
-          </div>
-        </div> */}
 
 
         <div className={styles.projectsSection}>
