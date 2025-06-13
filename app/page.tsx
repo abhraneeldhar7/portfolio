@@ -167,7 +167,7 @@ export default function RotPage() {
                       left: 10,
                     },
                   }}
-                  // transition={{ stiffness: 300, damping: 20 }}
+                  transition={{ stiffness: 300, damping: 20 }}
                   style={{
                     objectFit: "cover",
                     transition: "all 0.1s "
@@ -231,7 +231,7 @@ export default function RotPage() {
             <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span>
           </div>
         </div>
-
+{/* 
         <Button onClick={() => {
           if (currentTheme == "dark") {
             setCurrentTheme("light");
@@ -241,7 +241,7 @@ export default function RotPage() {
           }
         }}>
           {currentTheme}
-        </Button>
+        </Button> */}
 
 
 
