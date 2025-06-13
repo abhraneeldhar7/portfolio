@@ -4,5 +4,6 @@ export interface ProjectType {
     imageUrl: string,
     githubRepo?: string | null,
     liveLink: string,
-    techStack: string[]
+    techStack: string[],
+    blogLink?:string|null
 }

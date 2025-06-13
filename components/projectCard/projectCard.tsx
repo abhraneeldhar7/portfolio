@@ -4,7 +4,7 @@ import styles from "./projectCard.module.css"
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Book, BookOpenText, Github } from "lucide-react";
 import Link from "next/link";
 import { Marquee } from "../magicui/marquee";
 
@@ -33,16 +33,26 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
                 }
 
                 <div className="flex gap-[10px] items-center">
-                    <Link href={projectDetails.liveLink} target="_blank">
-                        <Button>
-                            Visit <ArrowUpRight size={20} />
+                    {projectDetails.blogLink && 
+                        <Button variant="ghost" >
+                            Read<BookOpenText size={20} />
                         </Button>
-                    </Link>
-                    <Link href="" target="_blank">
-                        <Button variant="secondary" className="bg-black">
-                            <Github size={20} color="white" /> Github
-                        </Button>
-                    </Link>
+                    }
+
+                    {projectDetails.githubRepo &&
+                        <Link href={projectDetails.githubRepo} target="_blank">
+                            <Button variant="secondary" className="bg-black">
+                                <Github size={20} color="white" /> Github
+                            </Button>
+                        </Link> }
+
+                    {projectDetails.liveLink &&
+                        <Link href={projectDetails.liveLink} target="_blank">
+                            <Button>
+                                Visit <ArrowUpRight size={20} />
+                            </Button>
+                        </Link>
+                    }
                 </div>
             </div>
         </div>
