@@ -123,9 +123,8 @@ export default function RotPage() {
           <motion.div
             style={{
               transition: "all 0.1s ease", zIndex: 10, maxWidth: 650,
-              width: "100%"
+              width: "100%",borderRadius:"0px 0px 10px 10px"
             }}
-
             animate={isScrolled ? "scrolled" : "normal"}
             variants={{
               normal: {
