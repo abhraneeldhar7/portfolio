@@ -204,6 +204,7 @@
     gap: 10px;
     margin-top: 5px;
 }
+
 /* 
 .projectItem {
     display: flex;
@@ -287,8 +288,10 @@
     gap: 7px;
     font-size: 14px;
 }
-.techStackItem img{
-    border-radius: 50%;
+
+.techStackItem img {
+    border-radius: 5px;
+    object-fit: contain;
 }
 
 

@@ -21,25 +21,25 @@ export default function RotPage() {
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749742202/Gemini_Generated_Image_fe8y5bfe8y5bfe8y_1_gf7snv.jpg",
     description: "Collaborative team-builder social media with blogs community and in-built team builder for projects and events. Features markdown bloggins, most in-depth profile builder, projects showcase and collaborator and events team-builder.",
     liveLink: "https://bugspot.vercel.app",
-    techStack:["Next.js","Typescript","Auth js","MongoDb","Cloudinary"]
+    techStack: ["Next.js", "Typescript", "Auth js", "MongoDb", "Cloudinary"]
   }, {
     name: "IIC protal",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
     description: "Official registration and submission portal for IIC.\nFeatures 3 fully customisable portals and one general purpose form builder, profile editor and in-depth admin panel",
     liveLink: "https://hackurwayonlinesubmission.vercel.app",
-    techStack:["Next.js","Typescript","Auth js","Mongodb","Cloudinary"]
+    techStack: ["Next.js", "Typescript", "Auth js", "Mongodb", "Cloudinary"]
   }, {
     name: "SoloDev",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749743470/Screenshot_2025-06-12_212044_y4jlyz.png",
     description: "One stop reference sheet website for developers who work on everything by themselves. With fully responsive layout to fit 2nd monitor",
     liveLink: "https://solo-dev.vercel.app",
-    techStack:["Next.js","Supabase","Typescript"]
+    techStack: ["Next.js", "Supabase", "Typescript"]
   }, {
     name: "Nebula",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749744678/Screenshot_2025-06-12_214101_suvhah.png",
     description: "Online document editor with friends system to share docs around.Features an in-built anonymous chat room",
     liveLink: "https://nebula0.vercel.app",
-    techStack:["Next.js","Typescript","Auth js","Mongodb","Supabase"]
+    techStack: ["Next.js", "Typescript", "Auth js", "Mongodb", "Supabase"]
   }]
 
   const [projectDisplayList, setProjectDisplayList] = useState(projectsList.slice(0, 3));
