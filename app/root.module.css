@@ -7,6 +7,7 @@
     max-width: 650px;
     margin: 0px auto;
     padding: 30px 0px;
+    padding-bottom: 40px;
 }
 
 .heroSection {
@@ -293,16 +294,32 @@
     object-fit: contain;
 }
 
-.pageFooter{
+.pageFooter {
     margin-top: 60px;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     justify-content: center;
 }
 
+.resumeBtn{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.resumeBtn svg{
+    transition: all 0.2s;
+}
+.resumeBtn:hover svg {
+    transform: translateY(-2px);
+}
 
 
 @media(max-width:500px) {
     .detailsHolder {
         padding: 30px 15px;
+        padding-bottom: 40px;
     }
 }

@@ -263,7 +263,8 @@ export default function RotPage() {
         </div>
 
         <div className={styles.pageFooter}>
-          <p className="opacity-[0.7] text-[17px] flex items-center gap-[5px]">resume <ArrowUpRight size={16} /></p>
+          <p className={`opacity-[0.7] text-[17px] flex items-center gap-[5px] ${styles.resumeBtn}`}>resume <ArrowUpRight size={16} /></p>
+          <p className="text-[14px] text-center opacity-[0.7] w-[90%]">One shared pursuit shall tell you the difference between a regular contributor and the guy who goes to war with the market to put your vision ahead of competitors.</p>
         </div>
       </div>
     </div>)
