@@ -17,19 +17,20 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
                 <Image alt="" src={projectDetails.imageUrl} height={150} width={300} />
                 <p>{projectDetails.description}</p>
             </div>
-            {<div className={`${styles.footerDiv} ${showFooter && styles.showFooter}`}>
-
-                <div className="overflow-hidden relative">
-                    <Marquee pauseOnHover className="[--duration:20s]">
-                        {projectDetails.techStack.map((tech, index) => (
-                            <div key={index} className={styles.techStackItem}>
-                                <p className={styles.techStack}>{tech}</p>
-                            </div>
-                        ))}
-                    </Marquee>
-                    <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
-                </div>
+            <div className={`${styles.footerDiv} ${showFooter && styles.showFooter}`}>
+                {showFooter &&
+                    <div className="overflow-hidden relative">
+                        <Marquee pauseOnHover className="[--duration:20s]">
+                            {projectDetails.techStack.map((tech, index) => (
+                                <div key={index} className={styles.techStackItem}>
+                                    <p className={styles.techStack}>{tech}</p>
+                                </div>
+                            ))}
+                        </Marquee>
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
+                    </div>
+                }
 
                 <div className="flex gap-[10px] items-center">
                     <Link href={projectDetails.liveLink} target="_blank">
@@ -43,7 +44,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
                         </Button>
                     </Link>
                 </div>
-            </div>}
+            </div>
         </div>
     )
 }
