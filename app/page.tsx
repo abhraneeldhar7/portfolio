@@ -197,7 +197,7 @@ export default function RotPage() {
               </div>
             </Link>
 
-            <Link href="github.com/abhraneeldhar7" target="_blank">
+            <Link href="https://github.com/abhraneeldhar7" target="_blank">
               <div className={styles.socialsItem}>
                 <Github size={15} color="white" />
                 <p>Github</p>
@@ -219,7 +219,7 @@ export default function RotPage() {
               </div>
             </Link>
 
-            <Link href="linkedin.com/in/abhraneeldhar" target="_blank">
+            <Link href="https://www.linkedin.com/in/abhraneeldhar/" target="_blank">
               <div className={styles.socialsItem}>
                 <Linkedin size={15} color="white" />
                 <p>LinkedIn</p>
