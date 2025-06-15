@@ -1,1 +1,1 @@
-This portfolio is open source, I don't ming cloning few features but if you see any similar portfolio floating around, check the first commit date.
+This portfolio is open source, I don't mind cloning few features but if you see any similar portfolio floating around, check the first commit date.
