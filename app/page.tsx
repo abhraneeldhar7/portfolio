@@ -137,7 +137,7 @@ export default function RotPage() {
                 backdropFilter: "blur(10px)"
               }
             }}>
-            <motion.div className="relative">
+            <motion.div className="relative h-[100%] w-[100%]">
 
               <motion.img
                 src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
@@ -146,7 +146,8 @@ export default function RotPage() {
                   height: 200,
                   width: 200,
                   borderRadius: 10,
-                  margin: "10px 10px",
+                  margin: "0px auto",
+                  position: "static"
                 }}
                 animate={isScrolled ? "scrolled" : "normal"}
                 variants={{
@@ -154,8 +155,8 @@ export default function RotPage() {
                     height: 200,
                     width: 200,
                     borderRadius: 10,
-                    top: 0,
-                    left: 0,
+                    // top: 0,
+                    // left: 0,
                   },
                   scrolled: {
                     height: 40,
