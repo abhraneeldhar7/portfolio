@@ -146,8 +146,7 @@ export default function RotPage() {
                   height: 200,
                   width: 200,
                   borderRadius: 10,
-                  margin: "0px auto",
-
+                  margin: "10px 10px",
                 }}
                 animate={isScrolled ? "scrolled" : "normal"}
                 variants={{
@@ -172,7 +171,7 @@ export default function RotPage() {
                   boxShadow: "0 0 30px 2px rgba(255, 255, 255, 0.5)"
                 }}
 
-                // transition={{ stiffness: 300, damping: 20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{
                   objectFit: "cover",
                   transition: "box-shadow 0.1s"
