@@ -22,7 +22,7 @@ export default function RotPage() {
     name: "Bugspot",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749742202/Gemini_Generated_Image_fe8y5bfe8y5bfe8y_1_gf7snv.jpg",
     description: "Collaborative team-builder social media with blogs community and in-built team builder for projects and events. Features markdown bloggins, most in-depth profile builder, projects showcase and collaborator and events team-builder.",
-    liveLink: "https://bugspot.vercel.app",
+    liveLink: "https://bugspot.in",
     techStack: ["Next.js", "Typescript", "Auth js", "MongoDb", "Cloudinary"]
   }, {
     name: "IIC protal",
@@ -205,7 +205,7 @@ export default function RotPage() {
             </Link>
 
 
-            <Link href="https://bugspot.vercel.app/profile/101766837132725568508" target="_blank">
+            <Link href="https://bugspot.in/profile/101766837132725568508" target="_blank">
               <div className={styles.socialsItem}>
                 <Image alt="" src={bugspotLogo} unoptimized />
                 <p>Bugspot</p>
