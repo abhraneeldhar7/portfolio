@@ -110,6 +110,8 @@ export default function RotPage() {
     setIsScrolled(latest > 140);
   });
 
+  const [displayTab, setDisplayTab] = useState("photos");
+
 
   return (
     <div className={styles.main}>
@@ -213,7 +215,6 @@ export default function RotPage() {
           </motion.div>
 
 
-
           <div className="flex flex-col items-center gap-[2px]">
             <h1>Abhraneel Dhar</h1>
             <p className={styles.SWEpara}>Software Engineer</p>
@@ -267,80 +268,120 @@ export default function RotPage() {
         </div>
 
         <div className={styles.tabsHolder}>
-          <div className={`${styles.tabItem} ${styles.tabItemActive}`}>
+          <div className={`${styles.tabItem} ${displayTab == "info" && styles.tabItemActive}`} onClick={() => { setDisplayTab("info") }}>
             <CircleUserRound size={18} /> Info
             <div className={styles.hoverThing} />
           </div>
-          <div className={`${styles.tabItem}`}>
+          <div className={`${styles.tabItem} ${displayTab == "photos" && styles.tabItemActive}`} onClick={() => { setDisplayTab("photos") }}>
             <Smile size={18} /> Photos
             <div className={styles.hoverThing} />
           </div>
-          <div className={`${styles.tabItem}`}>
+          <div className={`${styles.tabItem} ${displayTab == "articles" && styles.tabItemActive}`} onClick={() => { setDisplayTab("articles") }}>
             <Rss size={18} /> Articles
             <div className={styles.hoverThing} />
           </div>
         </div>
 
-        <div className={styles.projectsSection}>
-          <h1 className="text-[27px]">Proof of work</h1>
+        {displayTab == "info" && <>
+          <div className={styles.projectsSection}>
+            <h1 className="text-[27px]">Proof of work</h1>
 
-          <div className={styles.projectsHolder}>
-            {projectDisplayList.map((project, index) => (
-              <div key={index} className="flex flex-col gap-[10px]">
+            <div className={styles.projectsHolder}>
+              {projectDisplayList.map((project, index) => (
+                <div key={index} className="flex flex-col gap-[10px]">
 
-                <ProjectCard projectDetails={project} />
-                {index < projectDisplayList.length - 1 &&
-                  <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>}
+                  <ProjectCard projectDetails={project} />
+                  {index < projectDisplayList.length - 1 &&
+                    <div className="bg-[var(--fgColor)] h-[1px] w-[90%] mx-auto opacity-[0.4]"></div>}
+                </div>
+              ))}
+              <div onClick={() => {
+                if (showMoreProject == "less") {
+                  setProjectDisplayList(projectsList);
+                  setShowMoreProject("more");
+                }
+                else {
+                  setProjectDisplayList(projectsList.slice(0, 3));
+                  setShowMoreProject("less");
+                }
+              }} className={styles.showMore}>
+                {showMoreProject == "less" && <>
+                  Show more <ChevronRight size={20} />
+                </>}
+                {showMoreProject == "more" && <>
+                  <ChevronLeft size={20} />Show less
+                </>}
               </div>
-            ))}
-            <div onClick={() => {
-              if (showMoreProject == "less") {
-                setProjectDisplayList(projectsList);
-                setShowMoreProject("more");
-              }
-              else {
-                setProjectDisplayList(projectsList.slice(0, 3));
-                setShowMoreProject("less");
-              }
-            }} className={styles.showMore}>
-              {showMoreProject == "less" && <>
-                Show more <ChevronRight size={20} />
-              </>}
-              {showMoreProject == "more" && <>
-                <ChevronLeft size={20} />Show less
-              </>}
+            </div>
+
+          </div>
+
+          <div className={styles.techStack}>
+            <h1 className="text-[27px]">Daily Tool-Box</h1>
+
+            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+              <Marquee pauseOnHover className="[--duration:35s]">
+                {techStack1.map((tech, index) => (
+                  <div key={index} className={styles.techStackItem}>
+                    <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
+                    <p>{tech.name}</p>
+                  </div>
+                ))}
+              </Marquee>
+              <Marquee reverse pauseOnHover className="[--duration:35s]">
+                {techStack2.map((tech, index) => (
+                  <div key={index} className={styles.techStackItem}>
+                    <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
+                    <p>{tech.name}</p>
+                  </div>
+                ))}
+              </Marquee>
+
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
             </div>
           </div>
+        </>}
 
-        </div>
 
 
-        <div className={styles.techStack}>
-          <h1 className="text-[27px]">Daily Tool-Box</h1>
+        {displayTab == "photos" && <>
+          <div className={styles.photosSection}>
+            <h1 className="text-[27px]">Photos</h1>
 
-          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-            <Marquee pauseOnHover className="[--duration:35s]">
-              {techStack1.map((tech, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
-                  <p>{tech.name}</p>
+            <div className={styles.imgHolderHolder}>
+
+              <div className={styles.photoHolder}>
+                <Image height={50} width={50} className="h-[fit-content] w-[100%] object-contain rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_4_2025-06-28_22-37-54_p4yw42.jpg" alt="" unoptimized />
+
+                <div className="flex gap-[10px] h-[400px]">
+                  <Image height={50} width={50} className="flex-1 h-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_12_2025-06-28_22-37-54_uqiygy.jpg" alt="" unoptimized />
+
+                  <div className="flex flex-1 flex-col gap-[10px]">
+                    <Image height={50} width={50} className="w-[100%] h-[50%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_9_2025-06-28_22-37-54_uuchk4.jpg" alt="" unoptimized />
+                    <Image height={50} width={50} className="w-[100%] h-[50%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_5_2025-06-28_22-37-54_llb7jk.jpg" alt="" unoptimized />
+                  </div>
                 </div>
-              ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:35s]">
-              {techStack2.map((tech, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <Image alt="" src={tech.iconUrl} height={20} width={20} unoptimized />
-                  <p>{tech.name}</p>
-                </div>
-              ))}
-            </Marquee>
 
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[var(--bgColor)]"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[var(--bgColor)]"></div>
+              </div>
+              <div className={styles.photoHolder}>
+                <Image height={50} width={50} className="h-[fit-content] w-[100%] object-contain rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_3_2025-06-28_22-37-54_a6sbyo.jpg" alt="" unoptimized />
+
+                <div className="flex gap-[10px]">
+                  <Image height={50} width={50} className="flex-1 object-cover object-center rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_13_2025-06-28_22-37-54_adgtqn.jpg" alt="" unoptimized />
+                  <Image height={50} width={50} className="flex-1 h-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130835/photo_11_2025-06-28_22-37-54_qmieiu.jpg" alt="" unoptimized />
+                </div>
+                <Image height={50} width={50} className="h-[100%] w-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_2025-06-28_22-40-33_mrklgq.jpg" alt="" unoptimized />
+
+
+              </div>
+
+            </div>
+
+
           </div>
 
-        </div>
+        </>}
 
         <div className={styles.pageFooter}>
           <p className={`opacity-[0.7] text-[17px] flex items-center gap-[5px] ${styles.resumeBtn}`}>resume <ArrowUpRight size={16} /></p>

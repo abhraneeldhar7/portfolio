@@ -150,7 +150,7 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 .tabsHolder .tabItem:hover .hoverThing {
@@ -247,6 +247,30 @@
     object-fit: contain;
 }
 
+
+.imgHolderHolder {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.photoHolder{
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.photoHolder img{
+    transition: all 0.3s;
+    box-shadow: none;
+}
+.photoHolder img:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.56);
+}
+
+
 .pageFooter {
     margin-top: 60px;
     display: flex;
@@ -272,9 +296,15 @@
 }
 
 
+
+
+
 @media(max-width:500px) {
     .tabsHolder .tabItem:hover .hoverThing {
         opacity: 0;
     }
 
+    .imgHolderHolder {
+        flex-direction: column;
+    }
 }
