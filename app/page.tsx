@@ -2,7 +2,7 @@
 import styles from "./root.module.css"
 import Image from "next/image"
 import Xlogo from "../public/x-social-media-white-icon.svg"
-import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Linkedin, Mail, Moon, Sun } from "lucide-react"
 import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
@@ -145,8 +145,7 @@ export default function RotPage() {
                 backdropFilter: "blur(10px)"
               }
             }}>
-            <motion.div className="relative h-[100%] w-[100%]">
-
+            <motion.div className="relative h-[100%] w-[100%] flex items-center justify-end px-[15px]">
               <motion.img
                 src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749725680/meeee_d5jlhm.jpg"
                 alt="Animated image"
@@ -186,6 +185,29 @@ export default function RotPage() {
                   transition: "box-shadow 0.1s"
                 }}
               />
+
+              <motion.div
+                initial={{
+                  opacity: 1,
+                  position: "absolute"
+                }}
+                variants={{
+                  normal: {
+                    opacity: 0
+                  },
+                  scrolled: {
+                    opacity: 1
+                  }
+                }}>
+                <Button className="rounded-[20px] h-[35px] w-[35px]" onClick={() => {
+                  if (currentTheme == "dark") {
+                    setCurrentTheme("light");
+                  }
+                  else {
+                    setCurrentTheme("dark")
+                  }
+                }}>{currentTheme == "dark" ? <Sun size={20} /> : <Moon size={20} />}</Button>
+              </motion.div>
             </motion.div>
           </motion.div>
 
