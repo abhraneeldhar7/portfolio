@@ -46,7 +46,7 @@ export default function RotPage() {
   }, {
     name: "Nebula",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751134937/Screenshot_2025-06-12_214101_suvhah_lenfpy.png",
-    description: "Online document editor with friends system to share docs around.Features an in-built anonymous chat room",
+    description: "Online document editor with friends system to share docs around. Features an in-built anonymous chat room",
     liveLink: "https://nebula0.vercel.app",
     techStack: ["Next.js", "Typescript", "Auth js", "Mongodb", "Supabase"],
     work: "Solo work",
