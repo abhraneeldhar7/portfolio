@@ -119,10 +119,11 @@ export default function RotPage() {
         "[background-size:20px_20px]",
         "[background-image:radial-gradient(var(--fgColor)_1px,transparent_1px)]",
         "dark:[background-image:radial-gradient(var(--fgColor)_1px,transparent_1px)]",
-        "[opacity:0.25]"
+        "[opacity:0.25]",
+        "transition-colors duration-400"
       )}
       />
-      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-[var(--bgColor)] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[var(--bgColor)]"></div>
+      <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-[var(--bgColor)] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-[var(--bgColor)] transition-colors duration-400"></div>
 
 
 

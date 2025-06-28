@@ -185,6 +185,7 @@
     height: 1px;
     opacity: 0.4;
     margin: 0px auto;
+    transition: background-color 0.3s;
 }
 
 .showMore {
@@ -197,6 +198,7 @@
     border-radius: 7px;
     transition: all 0.1s;
     color: var(--fgColor);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .showMore svg {
@@ -240,20 +242,20 @@
     justify-content: center;
 }
 
-.resumeBtn{
+.resumeBtn {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.resumeBtn svg{
+
+.resumeBtn svg {
     transition: all 0.2s;
 }
+
 .resumeBtn:hover svg {
     transform: translateY(-2px);
 }
 
 
-@media(max-width:500px) {
-    
-}
+@media(max-width:500px) {}
