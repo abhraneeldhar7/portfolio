@@ -4,7 +4,7 @@ import styles from "./projectCard.module.css"
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { ArrowUpRight, Book, BookOpenText, Github } from "lucide-react";
+import { ArrowUpRight, Book, BookOpenText, Dot, Github } from "lucide-react";
 import Link from "next/link";
 import { Marquee } from "../magicui/marquee";
 
@@ -14,7 +14,14 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
     return (
         <div className={styles.main} onClick={() => { setShowFooter(!showFooter) }}>
             <div className={styles.projectItem}>
-                <Image alt="" src={projectDetails.imageUrl} height={150} width={300} priority={true} />
+                <div className="overflow-hidden h-[fit-content] w-[100%] min-w-[240px] rounded-[10px] relative">
+                    <Image alt="" src={projectDetails.imageUrl} height={150} width={300} priority={true} />
+                    <div className={styles.p1}>{projectDetails.work}</div>
+                    <div className={projectDetails.status=="Active"?styles.p2:styles.devp2}>
+                        {projectDetails.status == "Active" ? <div className={styles.activeDot} /> : <div className={styles.devDot} />}
+                        {projectDetails.status}
+                    </div>
+                </div>
                 <p>{projectDetails.description}</p>
             </div>
             <div className={`${styles.footerDiv} ${showFooter && styles.showFooter}`}>
@@ -33,7 +40,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
                 }
 
                 <div className="flex gap-[10px] items-center">
-                    {projectDetails.blogLink && 
+                    {projectDetails.blogLink &&
                         <Button variant="ghost" >
                             Read<BookOpenText size={20} />
                         </Button>
@@ -44,7 +51,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
                             <Button variant="secondary" className="bg-black">
                                 <Github size={20} color="white" /> Github
                             </Button>
-                        </Link> }
+                        </Link>}
 
                     {projectDetails.liveLink &&
                         <Link href={projectDetails.liveLink} target="_blank">

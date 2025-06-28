@@ -1,10 +1,11 @@
-.main{
+.main {
     display: flex;
     flex-direction: column;
     gap: 5px;
     height: 100%;
     transition: all 0.3s;
 }
+
 .projectItem {
     display: flex;
     gap: 20px;
@@ -24,9 +25,77 @@
     background-color: black;
 }
 
-.projectItem:hover img {
-    opacity: 0.7;
+.projectItem .p1,
+.projectItem .p2,
+.projectItem .devp2 {
+    position: absolute;
+    font-family: "Poppins";
+    font-size: 12px;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+    padding: 5px 7px;
+    border-radius: 5px;
 }
+
+.projectItem .activeDot,
+.projectItem .devDot {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: #178903;
+    margin-left: 2px;
+}
+
+.projectItem .devDot {
+    background-color: black;
+}
+
+
+.projectItem .p1 {
+    top: -30px;
+    left: 10px;
+    color: black;
+    /* background-color: white; */
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 85%);
+}
+
+.projectItem .p2,
+.projectItem .devp2 {
+    bottom: -30px;
+    right: 10px;
+    background-color: rgb(181, 248, 181)f9;
+    /* color: #178903; */
+    color: #156c06;
+}
+
+.projectItem .devp2 {
+    color: black;
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 85%);
+}
+
+
+.projectItem:hover img {
+    filter: blur(5px);
+    overflow: hidden;
+}
+
+.projectItem:hover .p1 {
+    top: 10px;
+    left: 10px;
+}
+
+.projectItem:hover .p2,
+.projectItem:hover .devp2 {
+    bottom: 10px;
+    right: 10px;
+}
+
+
 @keyframes unBlur {
     from {
         filter: blur(20px);
@@ -41,11 +110,12 @@
 }
 
 
-.techStack{
+.techStack {
     font-size: 14px;
-    
+
 }
-.footerDiv{
+
+.footerDiv {
     /* overflow: hidden; */
     transform: scale(0);
     transform-origin: right;
@@ -60,11 +130,13 @@
     width: 100%;
     border-radius: 8px;
 }
-.showFooter{
+
+.showFooter {
     height: 40px;
     transform: scale(1);
 }
-.footerDiv button{
+
+.footerDiv button {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 

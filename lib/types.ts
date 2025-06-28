@@ -5,5 +5,7 @@ export interface ProjectType {
     githubRepo?: string | null,
     liveLink: string,
     techStack: string[],
-    blogLink?:string|null
+    blogLink?: string | null,
+    work: string,
+    status: string
 }
