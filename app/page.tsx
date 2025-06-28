@@ -204,7 +204,7 @@ export default function RotPage() {
 
               <motion.div
                 initial={{
-                  opacity: 1,
+                  opacity: 0,
                   position: "absolute"
                 }}
                 variants={{
