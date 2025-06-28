@@ -6,14 +6,15 @@ import { ArrowUpRight, ChevronLeft, ChevronRight, CircleUserRound, Github, Linke
 import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Marquee } from "@/components/magicui/marquee"
 import { div, h2 } from "motion/react-client"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import ProjectCard from "@/components/projectCard/projectCard"
-import { ProjectType } from "@/lib/types"
+import { BlogType, ProjectType } from "@/lib/types"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import DefaultBlogCard from "@/components/blogs/blogCards"
 
 
 export default function RotPage() {
@@ -110,8 +111,20 @@ export default function RotPage() {
     setIsScrolled(latest > 140);
   });
 
-  const [displayTab, setDisplayTab] = useState("photos");
+  const [displayTab, setDisplayTab] = useState("info");
 
+  const [blogsArray, setBlogsArray] = useState<BlogType[] | null>(null)
+  useEffect(() => {
+    const a = async () => {
+      const res = await fetch("/api/getBlogs");
+      if (res.ok) {
+        const blogsArray = await res.json();
+        setBlogsArray(blogsArray);
+        console.log("blogs: ", blogsArray);
+      }
+    }
+    a();
+  }, [])
 
   return (
     <div className={styles.main}>
@@ -381,6 +394,17 @@ export default function RotPage() {
 
           </div>
 
+        </>}
+
+
+        {displayTab == "articles" && <>
+          {/* <h1 className="text-[27px]">Articles</h1> */}
+
+          <div className="flex flex-col mx-auto gap-[10px] w-[100%] max-w-[500px] mt-[50px]">
+            {blogsArray && blogsArray.map((blog, index) => (
+              <DefaultBlogCard blogData={blog} key={index} />
+            ))}
+          </div>
         </>}
 
         <div className={styles.pageFooter}>
