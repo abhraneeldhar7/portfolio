@@ -64,15 +64,14 @@ export default function DefaultBlogCard({ blogData }: { blogData: BlogType }) {
             .trim();
     }
     return (<div className={styles.main}>
-        <div className={styles.imageHolder}>
-            <Link href={`https://bugspot.in/profile/${blogData.ownerId}`} target="_blank">
-                <Image src={`https://res.cloudinary.com/dytynwrxu/image/upload/profilePics/${blogData.ownerId}.jpg`} width={40} height={40} alt="" unoptimized />
-            </Link>
-        </div>
+
         <div className={styles.mainContent}>
-            <div className={styles.userDetails}>
-                <Link className={styles.name} href={`https://bugspot.in/profile/${blogData.ownerId}`} target="_blank">{blogData.ownerName}</Link>
-                <p>{formatTimestampToTwitterStyle(blogData.updatedAt)}</p>
+            <div className="flex gap-[10px]">
+                <Image className="h-[40px] w-[40px] rounded-[50%]" src={`https://res.cloudinary.com/dytynwrxu/image/upload/profilePics/${blogData.ownerId}.jpg`} width={40} height={40} alt="" unoptimized />
+                <div className={styles.userDetails}>
+                    <Link className={styles.name} href={`https://bugspot.in/profile/${blogData.ownerId}`} target="_blank">{blogData.ownerName}</Link>
+                    <p>{formatTimestampToTwitterStyle(blogData.updatedAt)}</p>
+                </div>
             </div>
             <Link href={`https://bugspot.in/blog/${blogData.blogId}`} target="_blank">
                 <div className={styles.previewText}>

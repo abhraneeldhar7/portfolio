@@ -28,7 +28,9 @@
     gap: 2px;
     width: 100%;
 }
-
+.userDetails{
+    margin-bottom: 10px;
+}
 .userDetails .name {
     font-size: 14px;
     width: 100%;
