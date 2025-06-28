@@ -1,6 +1,7 @@
 .main {
     min-height: 100vh;
     position: relative;
+    padding: 0px 15px;
 }
 
 .detailsHolder {
@@ -254,8 +255,5 @@
 
 
 @media(max-width:500px) {
-    .detailsHolder {
-        padding: 30px 15px;
-        padding-bottom: 40px;
-    }
+    
 }
