@@ -14,10 +14,10 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
     return (
         <div className={styles.main} onClick={() => { setShowFooter(!showFooter) }}>
             <div className={styles.projectItem}>
-                <div className="overflow-hidden h-[fit-content] w-[100%] min-w-[240px] rounded-[10px] relative">
+                <div className="overflow-hidden h-[fit-content] w-[fit-content] min-w-[240px] rounded-[10px] relative">
                     <Image alt="" src={projectDetails.imageUrl} height={150} width={300} priority={true} />
                     <div className={styles.p1}>{projectDetails.work}</div>
-                    <div className={projectDetails.status=="Active"?styles.p2:styles.devp2}>
+                    <div className={projectDetails.status == "Active" ? styles.p2 : styles.devp2}>
                         {projectDetails.status == "Active" ? <div className={styles.activeDot} /> : <div className={styles.devDot} />}
                         {projectDetails.status}
                     </div>
