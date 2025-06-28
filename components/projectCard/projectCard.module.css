@@ -13,7 +13,14 @@
     border-radius: 10px;
 }
 
-
+.projectItem .imgContainer{
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+    min-width: 240px;
+    border-radius: 10px;
+    position: relative;
+}
 .projectItem img {
     border-radius: 10px;
     min-width: 240px;
@@ -150,6 +157,10 @@
 
     .projectItem p {
         padding: 0px 10px;
+    }
+
+    .projectItem .imgContainer {
+        width: 100%;
     }
 
     .projectItem img {

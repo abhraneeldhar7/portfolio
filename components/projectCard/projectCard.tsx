@@ -14,7 +14,7 @@ export default function ProjectCard({ projectDetails }: { projectDetails: Projec
     return (
         <div className={styles.main} onClick={() => { setShowFooter(!showFooter) }}>
             <div className={styles.projectItem}>
-                <div className="overflow-hidden h-[fit-content] w-[fit-content] min-w-[240px] rounded-[10px] relative">
+                <div className={styles.imgContainer}>
                     <Image alt="" src={projectDetails.imageUrl} height={150} width={300} priority={true} />
                     <div className={styles.p1}>{projectDetails.work}</div>
                     <div className={projectDetails.status == "Active" ? styles.p2 : styles.devp2}>
