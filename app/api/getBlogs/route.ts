@@ -1,5 +1,5 @@
 export async function GET() {
-    const res = await fetch(`${process.env.BUGSPOT_API}?userId=101766837132725568508`);
+    const res = await fetch(`https://bugspot.vercel.app/api/getBlogs?userId=101766837132725568508`);
   
     if (res.ok) {
       const data = await res.json();
