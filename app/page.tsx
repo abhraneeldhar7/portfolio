@@ -2,7 +2,7 @@
 import styles from "./root.module.css"
 import Image from "next/image"
 import Xlogo from "../public/x-social-media-white-icon.svg"
-import { ArrowUpRight, ChevronLeft, ChevronRight, Github, Linkedin, Mail, Moon, Sun } from "lucide-react"
+import { ArrowUpRight, ChevronLeft, ChevronRight, CircleUserRound, Github, Linkedin, Mail, Moon, Rss, Smile, Sun } from "lucide-react"
 import bugspotLogo from "../public/bugspotLogo.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
@@ -265,19 +265,21 @@ export default function RotPage() {
             <span>Web2</span> <span>Mobile Apps</span> <span>Micro controllers</span>
           </div>
         </div>
-        {/* 
-        <Button onClick={() => {
-          if (currentTheme == "dark") {
-            setCurrentTheme("light");
-          }
-          else {
-            setCurrentTheme("dark")
-          }
-        }}>
-          {currentTheme}
-        </Button> */}
 
-
+        <div className={styles.tabsHolder}>
+          <div className={`${styles.tabItem} ${styles.tabItemActive}`}>
+            <CircleUserRound size={18} /> Info
+            <div className={styles.hoverThing} />
+          </div>
+          <div className={`${styles.tabItem}`}>
+            <Smile size={18} /> Photos
+            <div className={styles.hoverThing} />
+          </div>
+          <div className={`${styles.tabItem}`}>
+            <Rss size={18} /> Articles
+            <div className={styles.hoverThing} />
+          </div>
+        </div>
 
         <div className={styles.projectsSection}>
           <h1 className="text-[27px]">Proof of work</h1>

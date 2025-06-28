@@ -97,6 +97,8 @@
 
 .bio p {
     opacity: 0.8;
+    text-align: center;
+    line-height: 1.4em;
 }
 
 .bio span {
@@ -110,57 +112,69 @@
     white-space: nowrap;
 }
 
-.statusDiv {
+
+.tabsHolder {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    /* padding: 0px 10px; */
 }
 
-.statusDiv .learningDiv {
+.tabsHolder .tabItem {
     display: flex;
-    gap: 10px;
-    background-color: #111010;
-    color: rgb(216, 216, 216);
-    border-radius: 12px;
-    padding: 4px;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+    line-height: 1em;
+    position: relative;
+    cursor: pointer;
+    padding: 0px 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.statusDiv .learningDiv img {
-    min-width: 50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    animation: breathing 1s infinite linear;
+.tabsHolder .tabItem .hoverThing {
+    background-color: rgba(138, 138, 138, 0.3);
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: all 0.2s;
 }
 
-.statusDiv .learningDiv h2 {
-    font-size: 22px;
-    line-height: 1.2em;
-    font-family: "Poppins";
-}
-
-.statusDiv .learningDiv p {
-    font-size: 15px;
-    line-height: 1.2em;
-}
-
-.statusDiv .learningDiv {
-    width: 250px;
+.tabsHolder .tabItem:hover .hoverThing {
+    opacity: 1;
 }
 
 
-@keyframes breathing {
-    0% {
-        opacity: 1;
-    }
 
-    50% {
-        opacity: 0.7;
-    }
+.tabItemActive::after {
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    border-radius: 5px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    background-color: var(--fgColor);
+    transition: all 0.2s;
+    opacity: 0.5;
+}
 
-    100% {
-        opacity: 1;
-    }
+.tabsHolder .tabItemActive:hover::after {
+    opacity: 0;
 }
 
 .projectsSection {
@@ -258,4 +272,9 @@
 }
 
 
-@media(max-width:500px) {}
+@media(max-width:500px) {
+    .tabsHolder .tabItem:hover .hoverThing {
+        opacity: 0;
+    }
+
+}
