@@ -408,7 +408,9 @@ export default function RotPage() {
         </>}
 
         <div className={styles.pageFooter}>
-          <p className={`opacity-[0.7] text-[17px] flex items-center gap-[5px] ${styles.resumeBtn}`}>resume <ArrowUpRight size={16} /></p>
+          <Link href="/AbhraneelDhar_resume">
+            <p className={`text-[20px] flex items-center gap-[5px] ${styles.resumeBtn}`}>resume <ArrowUpRight size={16} /></p>
+          </Link>
           <p className="text-[15px] text-center opacity-[0.7] max-w-[580px]">One shared pursuit shall tell you the difference between a regular contributor and the guy who goes to war with the market to put your vision ahead of competitors.</p>
         </div>
       </div>
