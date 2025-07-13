@@ -1,70 +1,58 @@
+![Live Screenshot](./public/assets/landingpage-9179.png)
 # Portfolio
 
 ## 🗂️ Description
 
-This repository contains the code for a personal portfolio website. The portfolio showcases projects, blog posts, and other relevant information about the owner. It's built using Next.js, React, and various UI components.
+This project is a personal portfolio website built using Next.js, TypeScript, and Tailwind CSS. It showcases various sections, including a hero section, social media links, bio, projects showcase, tech stack, photos, and articles. The website is designed to be visually appealing and interactive, with features like animated content and a theme switcher.
 
-The portfolio is designed to be open-source and can be cloned by anyone interested. However, the owner requests that similar portfolios be checked for originality to ensure that the work is not copied.
+The portfolio website is intended for developers and individuals who want to showcase their projects and skills. It provides a clean and organized way to display projects, blogs, and other relevant information.
 
-The website features a clean and modern design, with interactive elements and animations. It's a great example of a personal portfolio website built with modern web technologies.
+The website is built with a focus on reusability, maintainability, and scalability, making it easy to update and extend in the future.
 
 ## ✨ Key Features
 
+### **Core Features**
+
+* Personal portfolio website with various sections (hero, social media links, bio, projects showcase, tech stack, photos, and articles)
+* Interactive globe and animated content
+* Theme switcher with light and dark modes
+* Projects showcase with customizable project cards
+* Blog feature with API route to fetch blog data
+
 ### **UI Components**
 
-* Reusable UI components, such as:
-	+ Buttons
-	+ Alert dialogs
-	+ Project cards
-	+ Blog cards
-	+ Marquee
-	+ Globe
-
-### **Pages**
-
-* Main page with hero sections, social media links, project showcases, and article listings
-* Resume redirect page
-
-### **API**
-
-* API route for fetching blogs
-
-### **Styling**
-
-* Tailwind CSS integration
-* PostCSS configuration
+* Reusable UI components (Button, AlertDialog, Marquee, Globe)
+* Customizable project cards and blog cards
 
 ## 🗂️ Folder Structure
 
 ```mermaid
 graph TD;
-  src-->components;
-  src-->pages;
-  src-->api;
-  src-->lib;
-  components-->ui;
-  components-->magicui;
-  components-->blogs;
-  components-->projectCard;
-  pages-->index.tsx;
-  pages-->resume;
-  api-->getBlogs;
+src-->app;
+app-->api;
+app-->components;
+app-->layout;
+app-->page;
+app-->resume;
+components-->blogs;
+components-->magicui;
+components-->projectCard;
+components-->ui;
 ```
 
 ## 🛠️ Tech Stack
 
 * Next.js
-* React
 * TypeScript
 * Tailwind CSS
-* PostCSS
+* React
 * ESLint
-* Shadcn UI components
-* Cobe library for interactive globe
+* PostCSS
 
 ## ⚙️ Setup Instructions
 
-* Git clone the repository: `https://github.com/abhraneeldhar7/portfolio.git`
+* Git clone the repository: https://github.com/abhraneeldhar7/portfolio.git
 * Install dependencies: `npm install` or `yarn install`
 * Start the development server: `npm run dev` or `yarn dev`
-* Open the website in a browser: `http://localhost:3000`
+* Build the project: `npm run build` or `yarn build`
+* Lint the code: `npm run lint` or `yarn lint`
