@@ -75,6 +75,6 @@ The project features an API route (`/api/getBlogs`) that fetches blog data from 
 </div>
 <br>
 <p align="right">
-<img src="https://gitfull.vercel.app/appLogo.png" width="20"/>  <a href="https://www.gitfull.vercel.app">Made by GitFull</a>
+<img src="https://gitfull.vercel.app/appLogo.png" width="20"/>  <a href="https://gitfull.vercel.app">Made by GitFull</a>
 </p>
     
