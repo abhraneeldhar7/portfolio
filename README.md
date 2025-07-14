@@ -57,19 +57,7 @@ src-->lib;
 lib-->utils.ts;
 lib-->types.ts;
 src-->api-->getBlogs-->route.ts;
-graph TD;
- src-->app;
- app-->layout.tsx;
- app-->page.tsx;
- app-->providers.tsx;
- app-->resume-->page.tsx;
- src-->components;
- components-->projectCard-->projectCard.tsx;
- components-->blogs-->blogCards.tsx;
- src-->lib;
- lib-->utils.ts;
- lib-->types.ts;
- src-->api-->getBlogs-->route.ts;
+
 ```
 
 ## 🛠️ Tech Stack
