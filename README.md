@@ -1,4 +1,3 @@
-![Live Screenshot](./public/assets/landingpage-9179.png)
 # Abhraneel Dhar's Portfolio
 
 ## 🗂️ Description
