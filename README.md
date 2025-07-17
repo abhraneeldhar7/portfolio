@@ -3,21 +3,27 @@
 
 ## 🗂️ Description
 
-This repository contains the source code for my personal portfolio website, built using Next.js, React, and TypeScript. The website showcases my projects, blog posts, and resume, and is designed to be a one-stop destination for anyone looking to learn more about me and my work. The portfolio is structured into three main sections: 'Proof of work' (projects), 'Photos', and 'Articles' (blog posts), providing a clear and concise overview of my accomplishments and experiences.
+This repository contains the source code for my personal portfolio website, built using Next.js, TypeScript, and Tailwind CSS. The website showcases my projects, blog posts, and resume, and is designed to demonstrate my skills and experience as a developer. The portfolio is intended for anyone who wants to learn more about my work, including potential employers, collaborators, and fellow developers.
+
+The website features a clean and modern design, with a focus on showcasing my projects and blog posts in a visually appealing way. It also includes a theme toggle button, allowing users to switch between light and dark modes.
 
 ## ✨ Key Features
 
-### **Core Features**
+### **Projects**
+* Project cards with images, descriptions, tech stacks, and links to GitHub, live links, and blog posts
+* Project data stored in a typesafe format using TypeScript interfaces
 
-* **Project Showcase**: A section dedicated to showcasing my projects, with descriptions, images, and links to GitHub and live links.
-* **Blog**: A section for my blog posts, with summaries and links to read more.
-* **Resume**: A link to my resume, easily accessible from the website.
+### **Blog Posts**
+* Blog post cards with images, titles, text content, and links to the blog post
+* API route for retrieving blog posts from an external API
 
-### **Technical Features**
+### **Resume**
+* Resume redirect component that redirects users to a resume PDF file
 
-* **Theme Management**: The website features a theme toggle button, allowing users to switch between light and dark modes.
-* **API Integration**: The website fetches blog data from an external API route (`/api/getBlogs`).
-* **TypeScript and Next.js**: The website is built using TypeScript and Next.js, providing a robust and scalable foundation.
+### **Theme and Styling**
+* Theme provider using `next-themes`
+* Global CSS styles and Tailwind CSS configuration
+* Utility functions for working with CSS class names
 
 ## 🗂️ Folder Structure
 
@@ -26,12 +32,12 @@ graph TD;
   src-->app;
   src-->components;
   src-->lib;
-  app-->layout.tsx;
   app-->page.tsx;
+  app-->layout.tsx;
   app-->providers.tsx;
   app-->api;
   components-->projectCard;
-  components-->blogs;
+  components-->blogCards;
   lib-->utils.ts;
   lib-->types.ts;
 ```
@@ -40,30 +46,48 @@ graph TD;
 
 ![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white&style=for-the-badge)
-![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61DAFB&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white&style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
 ![ESLint](https://img.shields.io/badge/ESLint-4B4B4B?logo=eslint&logoColor=white&style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?logo=mongodb&logoColor=white&style=for-the-badge)
 
 ## ⚙️ Setup Instructions
 
 To run the project locally, follow these steps:
 
-* Git clone the repository: `https://github.com/abhraneeldhar7/portfolio.git`
+* Clone the repository: `git clone https://github.com/abhraneeldhar7/portfolio.git`
 * Install dependencies: `npm install` or `yarn install`
 * Start the development server: `npm run dev` or `yarn dev`
 
-## 📁 Configuration Files
+## GitHub Actions
 
-The project uses several configuration files to manage its dependencies and settings:
+The repository uses GitHub Actions to automate tasks such as linting and building the project. The workflow is defined in the `.github/workflows` directory.
 
-* **`.eslintrc.json`**: Configures ESLint, a JavaScript linter, for the project.
-* **`next.config.ts`**: Configures Next.js, a React-based framework, for the project.
-* **`postcss.config.mjs`**: Configures PostCSS, a CSS post-processor, with the Tailwind CSS plugin.
-* **`tsconfig.json`**: Configures the TypeScript compiler for the project.
+## Configuration Files
 
-## 📚 API Documentation
+The project uses several configuration files to manage dependencies, linting, and TypeScript settings. These files include:
 
-The project features an API route (`/api/getBlogs`) that fetches blog data from an external API and returns it in JSON format. This route is used by the `page.tsx` component to display blog posts on the website.
+* `package.json`: project metadata and dependencies
+* `.eslintrc.json`: ESLint configuration
+* `tsconfig.json`: TypeScript configuration
+* `next.config.ts`: Next.js configuration
+* `postcss.config.mjs`: PostCSS configuration
+* `components.json`: Shadcn configuration
+
+## API Routes
+
+The project defines an API route for retrieving blog posts:
+
+* `app/api/getBlogs/route.ts`: API route for retrieving blog posts from an external API
+
+## Components
+
+The project uses several React components to render the portfolio website:
+
+* `app/page.tsx`: main page component
+* `components/projectCard/projectCard.tsx`: project card component
+* `components/blogCards/blogCards.tsx`: blog post card component
+* `app/layout.tsx`: root layout component
+* `app/providers.tsx`: theme provider component
 
 
 
