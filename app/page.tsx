@@ -27,7 +27,17 @@ export default function RotPage() {
     techStack: ["Next.js", "Typescript", "Auth js", "MongoDb", "Cloudinary"],
     work: "Solo work",
     status: "Active"
-  }, {
+  },
+  {
+    name: "Gitfull",
+    imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1753049626/Screenshot_2025-07-21_034339_r0huwz.png",
+    description: "One-click AI powered readme crafter. No context, no description, your codebase is the context. Also includes capturing image of thumbnail and pushing the file to repo in that one click.",
+    liveLink: "https://gitfull.vercel.app",
+    techStack: ["Next.js", "Typescript", "Auth js", "Mongodb", "Groq"],
+    work: "Solo work",
+    status: "Active"
+  },
+  {
     name: "IIC protal",
     imageUrl: "https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749741925/Screenshot_2025-06-12_205508_rlcvtw.png",
     description: "Official registration and submission portal for IIC.\nFeatures 3 fully customisable portals and one general purpose form builder, profile editor and in-depth admin panel",
