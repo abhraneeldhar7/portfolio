@@ -15,6 +15,7 @@ import ProjectCard from "@/components/projectCard/projectCard"
 import { BlogType, ProjectType } from "@/lib/types"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import DefaultBlogCard from "@/components/blogs/blogCards"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 
 export default function RotPage() {
@@ -225,14 +226,15 @@ export default function RotPage() {
                     opacity: 1
                   }
                 }}>
-                <Button className="rounded-[20px] h-[35px] w-[35px]" onClick={() => {
+                <AnimatedThemeToggler className="rounded-[20px] h-[35px] w-[35px]" />
+                {/* <Button className="rounded-[20px] h-[35px] w-[35px]" onClick={() => {
                   if (currentTheme == "dark") {
                     setCurrentTheme("light");
                   }
                   else {
                     setCurrentTheme("dark")
                   }
-                }}>{currentTheme == "dark" ? <Sun size={20} /> : <Moon size={20} />}</Button>
+                }}>{currentTheme == "dark" ? <Sun size={20} /> : <Moon size={20} />}</Button> */}
               </motion.div>
             </motion.div>
           </motion.div>

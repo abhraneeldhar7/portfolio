@@ -113,7 +113,6 @@ body {
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
 
-
   --bgColor: white;
   --fgColor: black;
   --bgColor2: #ffffe9;
@@ -165,4 +164,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }
