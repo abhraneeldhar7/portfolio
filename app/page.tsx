@@ -105,8 +105,8 @@ export default function RotPage() {
               <div className="flex items-center gap-[10px]">
                 <div className="flex gap-[7px]">
                   <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                    <Image src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                    NextJs</div>
+                    <Image src="https://docs.flutter.dev/assets/images/flutter-logo-sharing.png" className="object-contain h-[16px] w-[20px]" unoptimized alt="" height={40} width={40} />
+                    Flutter</div>
 
                   <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
