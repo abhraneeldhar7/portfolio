@@ -26,6 +26,19 @@ body {
   font-family: "Sans3";
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
