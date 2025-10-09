@@ -134,15 +134,26 @@ export default function RotPage() {
   const ReachOutComponent = () => {
     return (
       <div className="flex-1 flex md:justify-end justify-center">
+
         <div className="flex gap-[10px] h-fit">
           <div className="rounded-[10px] h-[full] w-[200px] bg-muted/50 border-[2px] flex flex-col">
-            <div className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]">
+            <Link className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]" href="/AbhraneelDhar_resume.pdf" target="_blank">
               Resume
               <ArrowUpRight size={14} />
-            </div>
+            </Link>
             <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
-              <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
-              <DownloadIcon size={18} className="opacity-[0.9]" />
+              <Link href="/AbhraneelDhar_resume.pdf" target="_blank">
+                <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
+              </Link>
+              <DownloadIcon size={18} className="opacity-[0.9] transition-all hover:translate-y-[3px]" onClick={(e) => {
+                e.stopPropagation();
+                const link = document.createElement("a");
+                link.href = "/AbhraneelDhar_resume.pdf";
+                link.download = "AbhraneelDhar_resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }} />
             </div>
           </div>
 
@@ -157,7 +168,7 @@ export default function RotPage() {
           </div>
         </div>
 
-      </div>
+      </div >
     )
   }
 
@@ -400,7 +411,7 @@ export default function RotPage() {
 
               <div className="flex mt-[20px]">
                 <div className="w-[20px]">
-                  <UndoIcon size={27} className="rotate-[185deg] translate-x-[-5px] translate-y-[-2px]"  />
+                  <UndoIcon size={27} className="rotate-[185deg] translate-x-[-5px] translate-y-[-2px]" />
                 </div>
                 <div className="flex flex-col ml-[2px]">
                   <h1 className="font-[Satoshi] text-[18px]">Mobile</h1>
