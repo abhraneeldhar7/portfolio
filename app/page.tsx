@@ -155,11 +155,13 @@ export default function RotPage() {
         </div>
 
         <div className="flex flex-col gap-[10px] flex-1">
+
           <div className="flex items-center gap-[10px] text-[14px] border font-[400] bg-muted w-full py-[8px] px-[12px] rounded-[15px] leading-[1em]">
             <PillIndicator pulse variant="success" />
             <p className="text-center w-full">Open to work</p>
           </div>
-          <Button className="w-full">
+          <Button className="w-full bg-[#e83b74] hover:bg-[#f05085] text-[white] relative">
+            <div className="absolute w-[120%] h-full rounded-[50%] z-[-1] bg-[#C21E56] blur-[30px]"></div>
             <Send />  Get in touch
           </Button>
         </div>
@@ -322,7 +324,7 @@ export default function RotPage() {
       )}
       />
       <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,var(--background))] dark:bg-background transition-colors duration-400"></div>
-      <div className="w-full pt-[50px] pb-[15px] md:px-0 relative">
+      <div className="w-full pt-[50px] pb-[25px] md:px-0 relative">
 
 
         <div className={`transition-all h-[60px] flex justify-end items-center w-full fixed left-0 backdrop-blur-[40px] ${showTab ? "top-[0px]" : "top-[-65px]"}  z-[5]`}>
@@ -478,7 +480,7 @@ export default function RotPage() {
                     <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
                   </Link>
                 </div>
-               
+
                 <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted">
                   <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://www.linkedin.com/in/abhraneeldhar" target="_blank">
                     <Image src="https://static.vecteezy.com/system/resources/previews/023/986/608/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
