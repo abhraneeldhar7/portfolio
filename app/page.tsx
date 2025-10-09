@@ -322,7 +322,7 @@ export default function RotPage() {
       )}
       />
       <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,var(--background))] dark:bg-background transition-colors duration-400"></div>
-      <div className="w-full py-[50px] relative">
+      <div className="w-full pt-[50px] pb-[15px] md:px-0 relative">
 
 
         <div className={`transition-all h-[60px] flex justify-end items-center w-full fixed left-0 backdrop-blur-[40px] ${showTab ? "top-[0px]" : "top-[-65px]"}  z-[5]`}>
