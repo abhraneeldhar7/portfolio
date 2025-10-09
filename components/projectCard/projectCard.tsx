@@ -15,10 +15,10 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
                 <div>
                     <ArrowUpRight size={16} className="absolute top-[8px] right-[8px] text-white mix-blend-difference" />
                     <div>
-                        <Image src={project.thumbnailUrl} className="w-full rounded-[5px] h-[180px]" unoptimized alt="" height={100} width={200} />
+                        <Image src={project.thumbnailUrl} className="w-full rounded-[5px] object-cover h-[180px]" unoptimized alt="" height={100} width={200} />
                         <div className="px-[6px]">
                             <h1 className="text-[22px] leading-[1.1em] mt-[8px]">{project.title}</h1>
-                            <p className="text-[14px] opacity-[0.8] font-[400] mt-[2px]">{project.description}</p>
+                            <p className="text-[14px] opacity-[0.8] font-[400] mt-[2px] overflow-hidden h-[2.8em]">{project.description}</p>
                         </div>
                     </div>
                 </div>
