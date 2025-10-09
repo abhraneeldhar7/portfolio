@@ -6,7 +6,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight, DownloadIcon, RedoIcon, Send, UndoIcon } from "lucide-react"
+import { ArrowDownIcon, ArrowDownLeft, ArrowDownRight, ArrowUpRight, DownloadIcon, RedoIcon, Send, UndoIcon } from "lucide-react"
 import GitHubCalendar from 'react-github-calendar';
 import { ProjectType } from "@/lib/types"
 import { PillIndicator } from "@/components/ui/shadcn-io/pill"
@@ -405,6 +405,12 @@ export default function RotPage() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-[20px] flex justify-end">
+              <Link href="#skillset">
+                <p className="text-[15px] flex gap-[6px] items-center opacity-[0.9] font-[Sans3]"> All skillset <ArrowDownIcon size={15} /> </p>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -412,7 +418,7 @@ export default function RotPage() {
 
 
         {/* projects */}
-        <div className="max-w-[1000px] w-full mx-auto px-[15px] mt-[50px]">
+        <div className="max-w-[1000px] w-full mx-auto px-[15px] mt-[50px] md:mt-[70px]">
           <h1 className="font-[500] font-[Satoshi] text-[24px]">Projects</h1>
           <div className={`grid grid-cols-1 md:grid-cols-3 overflow-hidden mt-[10px] gap-[15px] transition-all duration-400 ${showAllProjects ? "h-[1000px]" : "h-[320px]"}`}>
             {projectsArray.map((project, index) => (
@@ -428,8 +434,9 @@ export default function RotPage() {
           </div>
         </div>
 
+        <div id="skillset" className="h-[50px]"></div>
         {/* skills n shi */}
-        <div className="md:px-[50px] px-[15px] md:mt-[80px] mt-[50px] flex flex-col md:flex-row gap-[20px]">
+        <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[20px]">
 
           <div className="flex-1">
             <SkillsComponent />
