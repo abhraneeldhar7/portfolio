@@ -12,6 +12,7 @@ import ProjectCardContent from "@/components/projectCard/cardContent"
 import { ProjectType } from "@/lib/types"
 import { useRouter } from "next/navigation"
 import { PillIndicator } from "@/components/ui/shadcn-io/pill"
+import ProjectCard from "@/components/projectCard/projectCard"
 
 
 export default function RotPage() {
@@ -287,38 +288,9 @@ export default function RotPage() {
 
 
             <h1 className="font-[Poppins] font-[500] text-[28px] mt-[50px]">Projects</h1>
-            <div className={`grid grid-cols-1 md:grid-cols-3 overflow-hidden mt-[10px] gap-[15px] transition-all duration-400 ${showAllProjects ? "h-[980px]" : "h-[320px]"}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-3 overflow-hidden mt-[10px] gap-[15px] transition-all duration-400 ${showAllProjects ? "h-[1000px]" : "h-[320px]"}`}>
               {projectsArray.map((project, index) => (
-                <div key={index} className="p-[5px] rounded-[10px] h-[320px] flex flex-col justify-between border-[1px] border-foreground/20 dark:bg-[#101010] bg-muted relative">
-                  <Dialog >
-                    <DialogTrigger asChild>
-                      <div>
-                        <ArrowUpRight size={16} className="absolute top-[8px] right-[8px] text-white mix-blend-difference" />
-                        <div>
-                          <Image src={project.thumbnailUrl} className="w-full rounded-[5px] h-[180px]" unoptimized alt="" height={100} width={200} />
-                          <div className="px-[6px]">
-                            <h1 className="text-[22px] leading-[1.1em] mt-[8px]">{project.title}</h1>
-                            <p className="text-[14px] opacity-[0.8] font-[400] mt-[2px]">{project.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </DialogTrigger>
-                    <DialogTitle className="hidden" />
-                    <DialogDescription className="hidden" />
-                    <DialogContent className="dark:bg-[#101010] bg-muted outline-none p-[5px]">
-                      <ProjectCardContent initCurrentProjectDetails={project} />
-                    </DialogContent>
-                  </Dialog>
-
-                  <div className="flex gap-[5px] justify-end">
-                    <Button variant="outline" className="border-[1px] h-[37px]">View details</Button>
-                    <Link href={project.liveLink || ""} target="_blank">
-                      <Button onClick={(e) => {
-                        e.stopPropagation();
-                      }}>Visit <ArrowUpRight /></Button>
-                    </Link>
-                  </div>
-                </div>
+                <ProjectCard key={index} project={project} />
               ))}
             </div>
             <div className="flex justify-center mt-[15px] md:hidden">
@@ -330,20 +302,21 @@ export default function RotPage() {
             </div>
           </div>
 
-          <div className="mt-[50px] md:hidden">
+          <div className="mt-[30px] md:hidden">
             <ReachOutComponent />
           </div>
 
 
-          <div className="flex-1 flex flex-col mt-[50px]">
+          <div className="flex-1 flex flex-col mt-[30px]">
             <h1 className="font-[Poppins] font-[500] text-[28px]">Skills</h1>
             <div className="mt-[10px] ml-[10px] relative">
-              <div className="top-0 md:left-[-2px] left-[-3px] md:w-[2px] w-[3px] md:h-[88%] h-[87%] bg-foreground absolute"></div>
+              {/* <div className="top-0 md:left-[-2px] left-[-3px] md:w-[2px] w-[3px] md:h-[88%] h-[87%] bg-foreground absolute"></div> */}
 
-              <div className="flex">
+              <div className="flex gap-[5px]">
                 <div className="w-[20px]">
                   <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
-                </div>                <div className="flex flex-col">
+                </div>
+                <div className="flex flex-col">
                   <h1 className="font-[Satoshi] text-[18px]">Front-end</h1>
                   <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                     <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
@@ -363,7 +336,7 @@ export default function RotPage() {
               </div>
 
 
-              <div className="flex mt-[20px]">
+              <div className="flex mt-[20px] gap-[5px]">
                 <div className="w-[20px]">
                   <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
                 </div>
@@ -394,7 +367,7 @@ export default function RotPage() {
               </div>
 
 
-              <div className="flex mt-[20px]">
+              <div className="flex mt-[20px] gap-[5px]">
                 <div className="w-[20px]">
                   <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
                 </div>
@@ -421,11 +394,11 @@ export default function RotPage() {
               </div>
 
 
-              <div className="flex mt-[20px]">
+              <div className="flex mt-[20px] gap-[5px]">
                 <div className="w-[20px]">
-                  <UndoIcon size={27} className="rotate-[185deg] translate-x-[-5px] translate-y-[-2px]" />
+                  <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
                 </div>
-                <div className="flex flex-col ml-[2px]">
+                <div className="flex flex-col">
                   <h1 className="font-[Satoshi] text-[18px]">Mobile</h1>
                   <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                     <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
