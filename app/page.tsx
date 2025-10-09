@@ -277,7 +277,7 @@ export default function RotPage() {
                       <p className="md:text-[24px] text-[18px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
                         Apps
                       </p>
-                      <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] left-[-2px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                      <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] md:left-[-2px] left-[-4px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
                     </div>
                   </div>
 
