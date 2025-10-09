@@ -330,7 +330,7 @@ export default function RotPage() {
             </div>
           </div>
 
-          <div className="mt-[50px]">
+          <div className="mt-[50px] md:hidden">
             <ReachOutComponent />
           </div>
 
