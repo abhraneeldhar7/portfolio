@@ -237,7 +237,7 @@ export default function RotPage() {
               <div className="max-w-[500px] mx-auto w-full">
                 <div className="mt-[10px] flex gap-[15px] items-end">
                   <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[12px] md:rounded-[14px] relative md:h-[50px] h-[40px] md:w-[120px] w-[100px] flex justify-center items-center">
-                    <p className="text-white mix-blend-difference md:text-[21px] text-[16px] font-[370] z-[2]">
+                    <p className="text-[white] mix-blend-difference md:text-[24px] text-[18px] font-[500] z-[2] font-[Sans3]">
                       Websites
                     </p>
                     <Image src="/img3.png" className="absolute bottom-[0px] md:h-[80px] h-[60px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
@@ -257,7 +257,7 @@ export default function RotPage() {
                   </div>
                 </div>
 
-                <div className="pt-[18px] flex justify-end gap-[15px] items-end md:text-[14px] text-[12px]">
+                <div className="flex justify-end gap-[15px] items-end md:text-[14px] text-[12px]">
                   <div className="flex items-center gap-[10px]">
                     <p className="md:text-[18px] text-[16px] opacity-[0.8]">and</p>
                     <div className="flex gap-[7px]">
@@ -271,14 +271,17 @@ export default function RotPage() {
                     </div>
                   </div>
                   <p className="md:text-[18px] text-[16px] opacity-[0.8]">for</p>
-                  <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[14px] relative md:h-[50px] h-[40px] md:w-[100px] w-[70px] flex justify-center items-center">
-                    <p className="md:text-[21px] text-[16px] font-[500] z-[2]
-                text-[white] pl-[16px] font-bold bg-[linear-gradient(to_left,black_10%,white_20%)] bg-clip-text text-transparent
-                ">
-                      Apps
-                    </p>
-                    <Image src="/img2.png" className="absolute bottom-[0px] md:h-[80px] h-[60px] left-[6px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                  
+                  <div className="overflow-hidden pt-[15px] rounded-[14px]">
+                    <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[14px] relative md:h-[50px] h-[40px] md:w-[100px] w-[70px] flex justify-center items-center">
+                      <p className="md:text-[24px] text-[18px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
+                        Apps
+                      </p>
+                      <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] left-[-2px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                    </div>
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -288,26 +291,28 @@ export default function RotPage() {
             <div className="grid grid-cols-1 md:grid-cols-3  mt-[10px] gap-[15px]">
               {projectsArray.map((project, index) => (
                 <div key={index} className="p-[5px] rounded-[10px] h-[320px] flex flex-col justify-between border-[1px] border-foreground/20 dark:bg-[#101010] bg-muted relative">
-                  <ArrowUpRight size={16} className="absolute top-[8px] right-[8px] text-white mix-blend-difference" />
-                  <div>
-                    <Image src={project.thumbnailUrl} className="w-full rounded-[5px] h-[180px]" unoptimized alt="" height={100} width={200} />
-                    <div className="px-[6px]">
-                      <h1 className="text-[22px] leading-[1.1em] mt-[8px]">{project.title}</h1>
-                      <p className="text-[14px] opacity-[0.8] font-[400] mt-[2px]">{project.description}</p>
-                    </div>
-                  </div>
+                  <Dialog >
+                    <DialogTrigger asChild>
+                      <div>
+                        <ArrowUpRight size={16} className="absolute top-[8px] right-[8px] text-white mix-blend-difference" />
+                        <div>
+                          <Image src={project.thumbnailUrl} className="w-full rounded-[5px] h-[180px]" unoptimized alt="" height={100} width={200} />
+                          <div className="px-[6px]">
+                            <h1 className="text-[22px] leading-[1.1em] mt-[8px]">{project.title}</h1>
+                            <p className="text-[14px] opacity-[0.8] font-[400] mt-[2px]">{project.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogTitle className="hidden" />
+                    <DialogDescription className="hidden" />
+                    <DialogContent className="dark:bg-[#101010] bg-muted outline-none p-[5px]">
+                      <ProjectCardContent initCurrentProjectDetails={project} />
+                    </DialogContent>
+                  </Dialog>
 
                   <div className="flex gap-[5px] justify-end">
-                    <Dialog >
-                      <DialogTrigger asChild>
-                        <Button variant="outline" className="border-[1px] h-[37px]">View details</Button>
-                      </DialogTrigger>
-                      <DialogTitle className="hidden" />
-                      <DialogDescription className="hidden" />
-                      <DialogContent className="dark:bg-[#101010] bg-muted outline-none p-[5px]">
-                        <ProjectCardContent initCurrentProjectDetails={project} />
-                      </DialogContent>
-                    </Dialog>
+                    <Button variant="outline" className="border-[1px] h-[37px]">View details</Button>
                     <Link href={project.liveLink || ""} target="_blank">
                       <Button onClick={(e) => {
                         e.stopPropagation();
