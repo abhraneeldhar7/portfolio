@@ -1,0 +1,14 @@
+.timelineDiv {
+    animation: timelineMoving infinite linear;
+    /* transition: all ; */
+}
+
+@keyframes timelineMoving {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

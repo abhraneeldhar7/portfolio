@@ -1,13 +1,20 @@
 export interface ProjectType {
-    name: string,
-    description: String,
-    imageUrl: string,
-    githubRepo?: string | null,
-    liveLink: string,
+    projectId: string,
+
+    title: string,
+    description: string,
+    thumbnailUrl: string,
+    gitRepoUrl: string | null,
+    liveLink: string | null,
+    blogLink: string | null,
     techStack: string[],
-    blogLink?: string | null,
-    work: string,
-    status: string
+
+    storyFragments: {
+        index: number,
+        title: string,
+        textContent: string,
+        cardColor: string
+    }[],
 }
 
 export interface BlogType {
@@ -18,16 +25,16 @@ export interface BlogType {
     ownerId: string;
     ownerName: string;
     lastEditTime: number | null,
-    parentNodeIdArray?:string[]|null,
-  
+    parentNodeIdArray?: string[] | null,
+
     viewStatus: string;
     blogTitle: string;
     blogTextContent: string;
     thumbnailUrl?: string | null;
-  
+
     tags: string[];
     likes: string[];
     views: number;
     bookmarks: number;
     commentsNumber: number;
-  }
+}
