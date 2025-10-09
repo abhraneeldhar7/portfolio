@@ -129,7 +129,7 @@ export default function RotPage() {
     }],
   }
   ]
-
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const ReachOutComponent = () => {
     return (
@@ -271,7 +271,7 @@ export default function RotPage() {
                     </div>
                   </div>
                   <p className="md:text-[18px] text-[16px] opacity-[0.8]">for</p>
-                  
+
                   <div className="overflow-hidden pt-[15px] rounded-[14px]">
                     <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[14px] relative md:h-[50px] h-[40px] md:w-[100px] w-[70px] flex justify-center items-center">
                       <p className="md:text-[24px] text-[18px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
@@ -288,7 +288,7 @@ export default function RotPage() {
 
 
             <h1 className="font-[Poppins] font-[500] text-[28px] mt-[50px]">Projects</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3  mt-[10px] gap-[15px]">
+            <div className={`grid grid-cols-1 md:grid-cols-3 overflow-hidden mt-[10px] gap-[15px] transition-all duration-400 ${showAllProjects ? "h-[980px]" : "h-[320px]"}`}>
               {projectsArray.map((project, index) => (
                 <div key={index} className="p-[5px] rounded-[10px] h-[320px] flex flex-col justify-between border-[1px] border-foreground/20 dark:bg-[#101010] bg-muted relative">
                   <Dialog >
@@ -321,8 +321,13 @@ export default function RotPage() {
                   </div>
                 </div>
               ))}
-
-
+            </div>
+            <div className="flex justify-center mt-[15px] md:hidden">
+              <Button className="max-w-[400px] w-full" onClick={() => {
+                setShowAllProjects(!showAllProjects)
+              }}>
+                Show {showAllProjects ? "less" : "more"}
+              </Button>
             </div>
           </div>
 
