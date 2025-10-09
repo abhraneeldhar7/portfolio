@@ -426,19 +426,18 @@ export default function RotPage() {
             ))}
           </div>
           <div className="flex justify-center mt-[15px] md:hidden">
-            <Button className="max-w-[400px] w-full" onClick={() => {
+            <Button  className="max-w-[400px] w-full" onClick={() => {
               setShowAllProjects(!showAllProjects)
             }}>
               Show {showAllProjects ? "less" : "more"}
             </Button>
           </div>
+            <div id="skillset" ></div>
         </div>
 
-        <div id="skillset" className="h-[50px]"></div>
         {/* skills n shi */}
         <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[20px]">
-
-          <div className="flex-1">
+          <div className="flex-1 mt-[50px]">
             <SkillsComponent />
           </div>
 
