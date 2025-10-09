@@ -134,7 +134,6 @@ export default function RotPage() {
   const ReachOutComponent = () => {
     return (
       <div className="flex-1 flex md:justify-end justify-center">
-
         <div className="flex gap-[10px] h-fit">
           <div className="rounded-[10px] h-[full] w-[200px] bg-muted/50 border-[2px] flex flex-col">
             <Link className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]" href="/AbhraneelDhar_resume.pdf" target="_blank">
@@ -331,9 +330,12 @@ export default function RotPage() {
             </div>
           </div>
 
+          <div className="mt-[50px]">
+            <ReachOutComponent />
+          </div>
 
 
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col mt-[50px]">
             <h1 className="font-[Poppins] font-[500] text-[28px]">Skills</h1>
             <div className="mt-[10px] ml-[10px] relative">
               <div className="top-0 md:left-[-2px] left-[-3px] md:w-[2px] w-[3px] md:h-[88%] h-[87%] bg-foreground absolute"></div>
