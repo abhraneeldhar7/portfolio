@@ -6,11 +6,12 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, DownloadIcon, Send } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import ProjectCardContent from "@/components/projectCard/cardContent"
 import { ProjectType } from "@/lib/types"
 import { useRouter } from "next/navigation"
+import { PillIndicator } from "@/components/ui/shadcn-io/pill"
 
 
 export default function RotPage() {
@@ -130,6 +131,36 @@ export default function RotPage() {
   ]
 
 
+  const ReachOutComponent = () => {
+    return (
+      <div className="flex-1 flex md:justify-end justify-center">
+        <div className="flex gap-[10px] h-fit">
+          <div className="rounded-[10px] h-[full] w-[200px] bg-muted/50 border-[2px] flex flex-col">
+            <div className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]">
+              Resume
+              <ArrowUpRight size={14} />
+            </div>
+            <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
+              <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
+              <DownloadIcon size={18} className="opacity-[0.9]" />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-[10px] w-[140px]">
+            <div className="flex items-center gap-[10px] text-[14px] border font-[400] bg-muted w-full py-[8px] px-[12px] rounded-[15px] leading-[1em]">
+              <PillIndicator pulse variant="success" />
+              <p>Open to work</p>
+            </div>
+            <Button className="w-full">
+              <Send />  Get in touch
+            </Button>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
+
   return (
     <>
       <div className={cn(
@@ -156,7 +187,7 @@ export default function RotPage() {
         </div>
 
 
-        <div className="flex md:flex-row flex-col gap-[20px]">
+        <div className="flex md:flex-row flex-col md:gap-[20px] gap-[50px] max-w-[1100px] w-full mx-auto">
 
           <div className="md:px-[50px] px-[15px] flex-1 mx-auto">
             <div ref={tabDivRef} />
@@ -226,13 +257,8 @@ export default function RotPage() {
             </div>
           </div>
 
-          <div className="flex-1">
-
-            <div>
-
-            </div>
-
-
+          <div className="hidden md:flex">
+            <ReachOutComponent />
           </div>
 
 
