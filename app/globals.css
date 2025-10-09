@@ -36,7 +36,9 @@ body {
   -ms-overflow-style: none;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 @theme inline {

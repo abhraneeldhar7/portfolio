@@ -7,16 +7,14 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, DownloadIcon, RedoIcon, Send, UndoIcon } from "lucide-react"
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import ProjectCardContent from "@/components/projectCard/cardContent"
+import GitHubCalendar from 'react-github-calendar';
 import { ProjectType } from "@/lib/types"
-import { useRouter } from "next/navigation"
 import { PillIndicator } from "@/components/ui/shadcn-io/pill"
 import ProjectCard from "@/components/projectCard/projectCard"
+import { NumberTicker } from "@/components/ui/number-ticker"
 
 
 export default function RotPage() {
-  const router = useRouter()
   const tabDivRef = useRef<HTMLDivElement | null>(null);
   const [showTab, setShowTab] = useState(false);
 
@@ -134,54 +132,50 @@ export default function RotPage() {
 
   const ReachOutComponent = () => {
     return (
-      <div className="flex-1 flex md:justify-end justify-center">
-        <div className="flex gap-[10px] h-fit">
-          <div className="rounded-[10px] h-[full] w-[200px] bg-muted/50 border-[2px] flex flex-col">
-            <Link className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]" href="/AbhraneelDhar_resume.pdf" target="_blank">
-              Resume
-              <ArrowUpRight size={14} />
+      <div className="flex gap-[10px] h-fit">
+        <div className="rounded-[10px] h-[full] bg-muted/50 border-[2px] flex flex-col flex-1">
+          <Link className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]" href="/AbhraneelDhar_resume.pdf" target="_blank">
+            Resume
+            <ArrowUpRight size={14} />
+          </Link>
+          <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
+            <Link href="/AbhraneelDhar_resume.pdf" target="_blank">
+              <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
             </Link>
-            <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
-              <Link href="/AbhraneelDhar_resume.pdf" target="_blank">
-                <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
-              </Link>
-              <DownloadIcon size={18} className="opacity-[0.9] transition-all hover:translate-y-[3px]" onClick={(e) => {
-                e.stopPropagation();
-                const link = document.createElement("a");
-                link.href = "/AbhraneelDhar_resume.pdf";
-                link.download = "AbhraneelDhar_resume.pdf";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }} />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-[10px] w-[140px]">
-            <div className="flex items-center gap-[10px] text-[14px] border font-[400] bg-muted w-full py-[8px] px-[12px] rounded-[15px] leading-[1em]">
-              <PillIndicator pulse variant="success" />
-              <p>Open to work</p>
-            </div>
-            <Button className="w-full">
-              <Send />  Get in touch
-            </Button>
+            <DownloadIcon size={18} className="opacity-[0.9] transition-all hover:translate-y-[3px]" onClick={(e) => {
+              e.stopPropagation();
+              const link = document.createElement("a");
+              link.href = "/AbhraneelDhar_resume.pdf";
+              link.download = "AbhraneelDhar_resume.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }} />
           </div>
         </div>
 
-      </div >
-    )
+        <div className="flex flex-col gap-[10px] flex-1">
+          <div className="flex items-center gap-[10px] text-[14px] border font-[400] bg-muted w-full py-[8px] px-[12px] rounded-[15px] leading-[1em]">
+            <PillIndicator pulse variant="success" />
+            <p className="text-center w-full">Open to work</p>
+          </div>
+          <Button className="w-full">
+            <Send />  Get in touch
+          </Button>
+        </div>
+      </div>)
   }
   const SkillsComponent = () => {
     return (
-      <div className="flex-1 flex flex-col mt-[30px] max-w-[450px]">
-        <h1 className="font-[Poppins] font-[500] text-[28px]">Skills</h1>
+      <div className="flex-1 flex flex-col max-w-[450px] font-[Satoshi]">
+        <h1 className="font-[500] text-[24px]">Skillset</h1>
         <div className="mt-[10px] ml-[10px] relative">
           <div className="flex gap-[5px]">
             <div className="w-[20px]">
               <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="font-[Satoshi] text-[18px]">Front-end</h1>
+              <h1 className="ftext-[18px]">Front-end</h1>
               <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                 <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
                   <Image src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
@@ -204,7 +198,7 @@ export default function RotPage() {
               <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="font-[Satoshi] text-[18px]">Back-end</h1>
+              <h1 className="text-[18px]">Back-end</h1>
               <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                 <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
                   <Image src="https://cdn.worldvectorlogo.com/logos/fastapi.svg" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
@@ -235,7 +229,7 @@ export default function RotPage() {
               <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="font-[Satoshi] text-[18px]">Database</h1>
+              <h1 className="text-[18px]">Database</h1>
               <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                 <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
                   <Image src="https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
@@ -262,7 +256,7 @@ export default function RotPage() {
               <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="font-[Satoshi] text-[18px]">Mobile</h1>
+              <h1 className="text-[18px]">Mobile</h1>
               <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
                 <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
                   <Image src="https://img.icons8.com/color/512/flutter.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
@@ -280,7 +274,39 @@ export default function RotPage() {
     )
   }
 
+  const [totalGithubContributions, setTotalGithubContributions] = useState<number | null>(null);
+  const contriHelper = (contriNumber: number) => {
+    setTimeout(() => {
+      setTotalGithubContributions(contriNumber)
+    }, 0)
+  }
+  const selectLastHalfYear = (
+    contributions: {
+      date: string;
+      count: number;
+      level: 0 | 1 | 2 | 3 | 4;
+    }[]
+  ) => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const shownMonths = 6;
 
+    const filtered = contributions.filter((activity) => {
+      const date = new Date(activity.date);
+      const monthOfDay = date.getMonth();
+
+      return (
+        date.getFullYear() === currentYear &&
+        monthOfDay > currentMonth - shownMonths &&
+        monthOfDay <= currentMonth
+      );
+    });
+
+    const total = filtered.reduce((acc, activity) => acc + activity.count, 0);
+    contriHelper(total)
+
+    return filtered;
+  };
 
 
   return (
@@ -296,7 +322,7 @@ export default function RotPage() {
       )}
       />
       <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,var(--background))] dark:bg-background transition-colors duration-400"></div>
-      <div className="w-full py-[50px]">
+      <div className="w-full py-[50px] relative">
 
 
         <div className={`transition-all h-[60px] flex justify-end items-center w-full fixed left-0 backdrop-blur-[40px] ${showTab ? "top-[0px]" : "top-[-65px]"}  z-[5]`}>
@@ -323,15 +349,7 @@ export default function RotPage() {
               </Link>
             </div>
           </div>
-          {/* <div className="hidden md:flex flex-col">
-            <ReachOutComponent />
-          </div> */}
-
         </div>
-
-
-
-
 
 
 
@@ -392,8 +410,8 @@ export default function RotPage() {
 
 
         {/* projects */}
-        <div className="max-w-[1000px] w-full mx-auto px-[15px]">
-          <h1 className="font-[Poppins] font-[500] text-[28px] mt-[50px]">Projects</h1>
+        <div className="max-w-[1000px] w-full mx-auto px-[15px] mt-[50px]">
+          <h1 className="font-[500] font-[Satoshi] text-[24px]">Projects</h1>
           <div className={`grid grid-cols-1 md:grid-cols-3 overflow-hidden mt-[10px] gap-[15px] transition-all duration-400 ${showAllProjects ? "h-[1000px]" : "h-[320px]"}`}>
             {projectsArray.map((project, index) => (
               <ProjectCard key={index} project={project} />
@@ -409,9 +427,84 @@ export default function RotPage() {
         </div>
 
         {/* skills n shi */}
-        <div className="md:px-[50px] px-[15px] mt-[50px]">
-          <SkillsComponent />
+        <div className="md:px-[50px] px-[15px] md:mt-[80px] mt-[50px] flex flex-col md:flex-row gap-[20px]">
+
+          <div className="flex-1">
+            <SkillsComponent />
+          </div>
+
+
+
+
+          <div className="flex-1 flex flex-col md:items-end">
+            <div className="flex flex-col items-end md:w-fit w-full">
+              <div className="rounded-[10px] py-[8px] gap-[10px] w-full px-[8px] flex justify-between">
+                <div className="flex gap-[10px]">
+                  {totalGithubContributions &&
+                    <NumberTicker className="font-[Sans3] font-[700] text-[30px]" value={totalGithubContributions} />
+                  }
+                </div>
+                <Link href={`https://github.com/abhraneeldhar7`} target="_blank" className="flex items-center gap-[5px]">
+                  <p>abhraneeldhar7</p>
+                  <ArrowUpRight size={16} />
+                </Link>
+              </div>
+              <div className="max-w-[500px] w-full overflow-hidden">
+                <GitHubCalendar
+                  errorMessage="Please provide correct Github Username"
+                  transformData={selectLastHalfYear}
+                  username="abhraneeldhar7" hideMonthLabels hideColorLegend hideTotalCount
+                  transformTotalCount={false} />
+              </div>
+              <div className="w-full mt-[25px]">
+                <ReachOutComponent />
+              </div>
+
+              <div className="flex w-full mt-[20px] gap-[5px]">
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted">
+                  <Link className="p-[30%]" href="https://x.com/abhraneeldhar" target="_blank">
+                    <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" className="dark:invert object-contain" unoptimized alt="" height={50} width={50} />
+                  </Link>
+                </div>
+
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-[black] bg-[white] overflow-hidden">
+                  <Link className="flex-1 h-full w-full relative overflow-hidden m-[10%]" href="mailto:abhraneeldhar@gmail.com" target="_blank">
+                    <Image src="https://i.pinimg.com/474x/32/5a/4b/325a4bd7b5041b4455e9a0b64c92190d.jpg" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full invert dark:invert-0" unoptimized alt="" height={50} width={50} />
+                  </Link>
+                </div>
+
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted overflow-hidden">
+                  <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://peerlist.io/abhraneeldhar" target="_blank">
+                    <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
+                  </Link>
+                </div>
+               
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted">
+                  <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://www.linkedin.com/in/abhraneeldhar" target="_blank">
+                    <Image src="https://static.vecteezy.com/system/resources/previews/023/986/608/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
+                  </Link>
+                </div>
+
+
+
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
         </div>
+
+
+        {/* banner */}
+        <div className="w-full h-fit">
+          <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-contain w-full h-fit opacity-[0.8] invert dark:invert-0 md:block hidden" alt="" />
+        </div>
+
+
 
         {
           false && <>
