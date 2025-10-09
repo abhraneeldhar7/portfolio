@@ -313,6 +313,7 @@ export default function RotPage() {
 
   return (
     <>
+      <div id="me" />
       <div className={cn(
         "z-[-1]",
         "absolute inset-0",
@@ -331,7 +332,6 @@ export default function RotPage() {
           <AnimatedThemeToggler className="m-[20px] rounded-[50%] h-[40px] w-[40px]" />
         </div>
 
-
         <div>
           <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-contain w-full h-fit invert dark:invert-0 mb-[30px] md:hidden" alt="" />
         </div>
@@ -340,7 +340,7 @@ export default function RotPage() {
         <div className="md:px-[50px] px-[15px] flex-1 mx-auto max-w-[800] w-full">
           <div ref={tabDivRef} />
           <div className="flex md:gap-[25px] gap-[15px]">
-            <Link href="/">
+            <Link href="/#me">
               <Image src="/pfp.jpeg" className={`rounded-[10px] z-[6] transition-all object-cover ${showTab ? "fixed top-[10px] left-[15px] rounded-[50%] h-[40px] w-[40px]" : "md:h-[140px] md:w-[140px] w-[110px] h-[110px]  border-[2px] border-foreground/20 p-[2px]"}`} alt="" height={100} width={100} unoptimized />
             </Link>
 
@@ -503,7 +503,7 @@ export default function RotPage() {
 
         {/* banner */}
         <div className="w-full h-fit">
-          <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-contain w-full h-fit opacity-[0.8] invert dark:invert-0 md:block hidden" alt="" />
+          <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-cover w-full invert dark:invert-0 md:block hidden" alt="" />
         </div>
 
 
