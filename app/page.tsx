@@ -6,12 +6,13 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowDownIcon, ArrowDownLeft, ArrowDownRight, ArrowUpRight, DownloadIcon, RedoIcon, Send, UndoIcon } from "lucide-react"
-import GitHubCalendar from 'react-github-calendar';
+import { ArrowUpRight, DownloadIcon, RedoIcon, Send, UndoIcon } from "lucide-react"
 import { ProjectType } from "@/lib/types"
 import { PillIndicator } from "@/components/ui/shadcn-io/pill"
 import ProjectCard from "@/components/projectCard/projectCard"
 import { NumberTicker } from "@/components/ui/number-ticker"
+import DesignerHero from "@/components/heroComp/designer"
+import FrontendBox from "@/components/heroComp/frontend"
 
 
 export default function RotPage() {
@@ -34,10 +35,21 @@ export default function RotPage() {
       observer.observe(tabDivRef.current);
     }
 
+
+    const interval = setInterval(() => {
+      setHeroCardIndex((prev) => (prev >= 1 ? 0 : prev + 1));
+    }, 5000);
+
+
     return () => {
       if (tabDivRef.current) observer.unobserve(tabDivRef.current);
+      clearInterval(interval)
     };
   }, []);
+
+
+  const [heroCardIndex, setHeroCardIndex] = useState(0);
+
 
 
   const projectsArray: ProjectType[] = [{
@@ -139,7 +151,7 @@ export default function RotPage() {
             <ArrowUpRight size={14} />
           </Link>
           <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
-            <Link href="/AbhraneelDhar_resume.pdf" target="_blank">
+            <Link href="/AbhraneelDhar_resume.pdf" target="_blank" className="h-full flex-1">
               <p className="font-[350] font-[Sans3] text-[16px]">resume.pdf</p>
             </Link>
             <DownloadIcon size={18} className="opacity-[0.9] transition-all hover:translate-y-[3px]" onClick={(e) => {
@@ -341,7 +353,7 @@ export default function RotPage() {
           <div ref={tabDivRef} />
           <div className="flex md:gap-[25px] gap-[15px]">
             <Link href="/#me">
-              <Image src="/pfp.jpeg" className={`rounded-[10px] z-[6] transition-all object-cover ${showTab ? "fixed top-[10px] left-[15px] rounded-[50%] h-[40px] w-[40px]" : "md:h-[140px] md:w-[140px] w-[110px] h-[110px]  border-[2px] border-foreground/20 p-[2px]"}`} alt="" height={100} width={100} unoptimized priority/>
+              <Image src="/pfp.jpeg" className={`rounded-[10px] z-[6] transition-all object-cover ${showTab ? "fixed top-[10px] left-[15px] rounded-[50%] h-[40px] w-[40px]" : "md:h-[140px] md:w-[140px] w-[110px] h-[110px]  border-[2px] border-foreground/20 p-[2px]"}`} alt="" height={100} width={100} unoptimized priority />
             </Link>
 
             <div>
@@ -349,6 +361,19 @@ export default function RotPage() {
               <Link href="https://x.com/abhraneeldhar" target="_blank">
                 <p className="text-[15px] leading-[1.2em] opacity-[0.5]">@abhraneeldhar</p>
               </Link>
+
+
+              <div className="mt-[10px] h-[100px] w-[200px]">
+                {heroCardIndex == 0 &&
+                  // <FrontendBox />
+                  <DesignerHero />
+                }
+                {heroCardIndex == 1 &&
+                  <FrontendBox />
+                }
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -356,15 +381,17 @@ export default function RotPage() {
 
 
 
-        <div className="md:text-[22px] text-[19px] font-[Satoshi] mt-[50px] px-[15px]">
-          <p className="text-center font-[Sans3] font-[600] md:text-[32px] text-[25px]">I'm a <span className="">software engineer</span> building</p>
+        <div className="md:text-[22px] text-[19px] font-[Satoshi] mt-[20px] px-[15px]">
+          {/* <p className="text-center font-[Sans3] font-[600] md:text-[32px] text-[25px]">I'm a <span className="">software engineer</span> building</p> */}
           <div className="max-w-[500px] mx-auto w-full">
-            <div className="mt-[10px] flex gap-[15px] items-end">
-              <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[12px] md:rounded-[14px] relative md:h-[50px] h-[40px] md:w-[120px] w-[100px] flex justify-center items-center">
-                <p className="text-[white] mix-blend-difference md:text-[24px] text-[18px] font-[500] z-[2] font-[Sans3]">
-                  Websites
-                </p>
-                <Image src="/img3.png" className="absolute bottom-[0px] md:h-[80px] h-[60px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+            <div className="flex gap-[15px] items-end">
+              <div className="pt-[24px] overflow-hidden">
+                <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[12px] md:rounded-[14px] relative md:h-[50px] h-[40px] md:w-[120px] w-[110px] flex justify-center items-center">
+                  <p className="text-[white] mix-blend-difference md:text-[24px] text-[20px] font-[500] z-[2] font-[Sans3]">
+                    Websites
+                  </p>
+                  <Image src="/img3.png" className="absolute bottom-[-2px] md:h-[80px] h-[60px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                </div>
               </div>
 
               <div className="flex items-center gap-[10px] md:text-[14px] text-[12px]">
@@ -397,8 +424,8 @@ export default function RotPage() {
               <p className="md:text-[18px] text-[16px] opacity-[0.8]">for</p>
 
               <div className="overflow-hidden pt-[15px] rounded-[14px]">
-                <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[14px] relative md:h-[50px] h-[40px] md:w-[100px] w-[70px] flex justify-center items-center">
-                  <p className="md:text-[24px] text-[18px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
+                <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[14px] relative md:h-[50px] h-[40px] md:w-[100px] w-[85px] flex justify-center items-center">
+                  <p className="md:text-[24px] text-[20px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
                     Apps
                   </p>
                   <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] md:left-[-2px] left-[-4px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
@@ -406,11 +433,6 @@ export default function RotPage() {
               </div>
             </div>
 
-            <div className="mt-[20px] flex justify-end">
-              <Link href="#skillset">
-                <p className="text-[15px] flex gap-[6px] items-center opacity-[0.9] font-[Sans3]"> All skillset <ArrowDownIcon size={15} /> </p>
-              </Link>
-            </div>
           </div>
         </div>
 
@@ -426,19 +448,26 @@ export default function RotPage() {
             ))}
           </div>
           <div className="flex justify-center mt-[15px] md:hidden">
-            <Button  className="max-w-[400px] w-full" onClick={() => {
+            <Button className="max-w-[400px] w-full" onClick={() => {
               setShowAllProjects(!showAllProjects)
             }}>
               Show {showAllProjects ? "less" : "more"}
             </Button>
           </div>
-            <div id="skillset" ></div>
         </div>
 
         {/* skills n shi */}
         <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[20px]">
-          <div className="flex-1 mt-[50px]">
-            <SkillsComponent />
+          <div className="flex-2 flex flex-col-reverse md:flex-row gap-[20px] mt-[50px]">
+            <div className="flex-1">
+              <SkillsComponent />
+            </div>
+
+
+            <div className="flex-1">
+              a
+            </div>
+
           </div>
 
 
@@ -458,11 +487,11 @@ export default function RotPage() {
                 </Link>
               </div>
               <div className="max-w-[500px] w-full overflow-hidden">
-                <GitHubCalendar
+                {/* <GitHubCalendar
                   errorMessage="Please provide correct Github Username"
                   transformData={selectLastHalfYear}
                   username="abhraneeldhar7" hideMonthLabels hideColorLegend hideTotalCount
-                  transformTotalCount={false} />
+                  transformTotalCount={false} /> */}
               </div>
               <div className="w-full mt-[25px]">
                 <ReachOutComponent />

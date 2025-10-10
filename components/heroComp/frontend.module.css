@@ -1,0 +1,156 @@
+.main {
+    background: linear-gradient(to bottom left, #ffe4e6, #ccfbf1);
+    overflow: hidden;
+    position: absolute;
+    animation: main 5s ease-in-out;
+    border-radius: 3px;
+}
+
+@keyframes main {
+    0% {
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        top: 100%;
+    }
+
+    10% {
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        top: 100%;
+    }
+
+    20% {
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+    }
+
+    85% {
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        bottom: 100%;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.main img {
+    position: absolute;
+    animation: laptop 5s infinite ease-in-out;
+}
+
+@keyframes laptop {
+    0% {
+        top: 100%;
+    }
+
+    20% {
+        top: 100%;
+    }
+
+    32% {
+        top: 10px;
+    }
+
+    80% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 10px;
+        opacity: 1;
+    }
+
+}
+
+.main h1 {
+    animation: heading 5s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes heading {
+    0% {
+        opacity: 0;
+        filter: blur(40px);
+    }
+
+    20% {
+        opacity: 0;
+        filter: blur(40px);
+    }
+
+    45% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    85% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    95% {
+        opacity: 0;
+        filter: blur(40px);
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(0);
+    }
+}
+
+.bottomDiv {
+    left: -5px;
+    right: -5px;
+    height: 5px;
+    filter: blur(50px);
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+
+    animation: bottomDiv 5s ease-in-out;
+
+}
+
+@keyframes bottomDiv {
+    0% {
+        opacity: 0;
+        filter: blur(50px);
+    }
+
+    10% {
+        opacity: 0;
+        filter: blur(50px);
+    }
+
+    20% {
+        opacity: 1;
+        filter: blur(10px);
+    }
+
+    85% {
+        opacity: 1;
+        filter: blur(10px);
+    }
+
+    90% {
+        opacity: 0;
+        filter: blur(50px);
+    }
+
+    100% {
+        opacity: 0;
+        filter: blur(50px);
+    }
+}
