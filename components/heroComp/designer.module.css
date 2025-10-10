@@ -36,16 +36,16 @@
         transform: translateY(0);
     }
 
-    70% {
+    85% {
         width: 200px;
         height: 50px;
         transform-origin: bottom right;
     }
 
-    90% {
+    /* 95% {
         width: 0px;
         height: 50px;
-    }
+    } */
 
     100% {
         width: 0px;
