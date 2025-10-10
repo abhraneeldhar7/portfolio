@@ -3,7 +3,7 @@
     overflow: hidden;
     position: absolute;
     animation: main 5s ease-in-out;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 
 @keyframes main {
@@ -41,6 +41,7 @@
         left: 0px;
         top: 0px;
     }
+
     100% {
         bottom: 100%;
         right: 0px;
@@ -52,6 +53,7 @@
 .main img {
     position: absolute;
     animation: laptop 5s infinite ease-in-out;
+    z-index: 2;
 }
 
 @keyframes laptop {
@@ -59,7 +61,7 @@
         top: 100%;
     }
 
-    20% {
+    10% {
         top: 100%;
     }
 
@@ -79,7 +81,7 @@
 
 }
 
-.main h1 {
+.heading {
     animation: heading 5s ease-in-out;
     opacity: 0;
 }
@@ -158,5 +160,114 @@
     100% {
         opacity: 0;
         filter: blur(50px);
+    }
+}
+
+
+.shadowDiv {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    background-color: var(--muted);
+
+    animation: shadowDiv 5s ease-in-out;
+}
+
+@keyframes shadowDiv {
+    0% {
+        height: 0%;
+        width: 0%;
+        top: 0;
+        right: 0;
+        background-color: var(--foreground);
+    }
+
+    20% {
+        height: 0%;
+        width: 0%;
+        top: 0;
+        right: 0;
+    }
+
+    30% {
+        height: 100%;
+        width: 100%;
+        top: 5px;
+        right: -5px;
+    }
+
+    50% {
+        height: 100%;
+        width: 100%;
+        top: 5px;
+        right: -5px;
+    }
+
+    65% {
+
+        background-color: var(--muted);
+    }
+
+    70% {
+        height: 100%;
+        width: 100%;
+        top: 5px;
+        right: -5px;
+    }
+
+    80% {
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        right: 0px;
+    }
+
+    82% {
+        height: 0%;
+        width: 0%;
+        top: 0px;
+        right: 0px;
+    }
+
+    100% {
+        height: 0%;
+        width: 0%;
+        top: 0px;
+        right: 0px;
+        background-color: var(--foreground);
+    }
+}
+
+
+.orb {
+    position: absolute;
+    width: 110%;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: linear-gradient(to right, #0e7490, #3b82f6, #4f46e5);
+    top: 100%;
+    z-index: 1;
+    filter: blur(7px);
+
+    animation: orb 5s ease-in-out;
+}
+
+@keyframes orb {
+    0% {
+        top: 100%;
+    }
+
+    20% {
+        top: 100%;
+    }
+
+    40% {
+        top: 10px;
+    }
+
+    100% {
+        top: 10px;
     }
 }
