@@ -1,29 +1,24 @@
 # Abhraneel Dhar's Portfolio
 ![thumbnail](./public/assets/readmeBanner.png)
 
-## 🗂️ Description
+## 🗂️  Description
 
-This repository contains the source code for my personal portfolio website, built using Next.js, TypeScript, and Tailwind CSS. The website showcases my projects, blog posts, and resume, and is designed to demonstrate my skills and experience as a developer. The portfolio is intended for anyone who wants to learn more about my work, including potential employers, collaborators, and fellow developers.
+This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and experiences as a developer. The portfolio is built using Next.js, TypeScript, and Tailwind CSS, with a focus on performance, accessibility, and visual appeal. This project is for anyone interested in learning more about my work, skills, and experiences.
 
-The website features a clean and modern design, with a focus on showcasing my projects and blog posts in a visually appealing way. It also includes a theme toggle button, allowing users to switch between light and dark modes.
+The portfolio features a clean and modern design, with a responsive layout that adapts to different screen sizes and devices. It includes sections for projects, skills, and contact information, providing a comprehensive overview of my abilities and interests.
 
 ## ✨ Key Features
 
-### **Projects**
-* Project cards with images, descriptions, tech stacks, and links to GitHub, live links, and blog posts
-* Project data stored in a typesafe format using TypeScript interfaces
+### **Core Features**
 
-### **Blog Posts**
-* Blog post cards with images, titles, text content, and links to the blog post
-* API route for retrieving blog posts from an external API
+* **Project Showcase**: A showcase of my projects, with details on technologies used, project descriptions, and live links.
+* **Skills**: A section highlighting my technical skills, including programming languages, frameworks, and tools.
+* **Contact**: A contact form that allows visitors to send me a message.
 
-### **Resume**
-* Resume redirect component that redirects users to a resume PDF file
+### **UI Components**
 
-### **Theme and Styling**
-* Theme provider using `next-themes`
-* Global CSS styles and Tailwind CSS configuration
-* Utility functions for working with CSS class names
+* **Project Card**: A reusable component for displaying project information, with features like thumbnail images, project titles, descriptions, and links to source code and live links.
+* **Hero Components**: Customizable hero components for different sections, such as front-end and designer.
 
 ## 🗂️ Folder Structure
 
@@ -32,12 +27,11 @@ graph TD;
   src-->app;
   src-->components;
   src-->lib;
-  app-->page.tsx;
+  components-->heroComp;
+  components-->projectCard;
+  components-->mailBox;
   app-->layout.tsx;
   app-->providers.tsx;
-  app-->api;
-  components-->projectCard;
-  components-->blogCards;
   lib-->utils.ts;
   lib-->types.ts;
 ```
@@ -46,56 +40,41 @@ graph TD;
 
 ![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white&style=for-the-badge)
+![PostCSS](https://img.shields.io/badge/PostCSS-DD00FF?logo=postcss&logoColor=white&style=for-the-badge)
 ![ESLint](https://img.shields.io/badge/ESLint-4B4B4B?logo=eslint&logoColor=white&style=for-the-badge)
-![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?logo=mongodb&logoColor=white&style=for-the-badge)
 
 ## ⚙️ Setup Instructions
 
-To run the project locally, follow these steps:
+To run the project locally:
 
 * Clone the repository: `git clone https://github.com/abhraneeldhar7/portfolio.git`
 * Install dependencies: `npm install` or `yarn install`
 * Start the development server: `npm run dev` or `yarn dev`
 
-## GitHub Actions
+## 📁 Configuration Files
 
-The repository uses GitHub Actions to automate tasks such as linting and building the project. The workflow is defined in the `.github/workflows` directory.
+The project uses the following configuration files:
 
-## Configuration Files
+* `.eslintrc.json`: ESLint configuration file that extends Next.js and TypeScript configurations.
+* `next.config.ts`: Next.js configuration file that sets up ESLint and image processing settings.
+* `postcss.config.mjs`: PostCSS configuration file that sets up the Tailwind CSS plugin.
+* `tsconfig.json`: TypeScript configuration file that sets up compiler options, includes, and excludes.
 
-The project uses several configuration files to manage dependencies, linting, and TypeScript settings. These files include:
+## 🤖 GitHub Actions
 
-* `package.json`: project metadata and dependencies
-* `.eslintrc.json`: ESLint configuration
-* `tsconfig.json`: TypeScript configuration
-* `next.config.ts`: Next.js configuration
-* `postcss.config.mjs`: PostCSS configuration
-* `components.json`: Shadcn configuration
+The project uses GitHub Actions for automated workflows, including:
 
-## API Routes
-
-The project defines an API route for retrieving blog posts:
-
-* `app/api/getBlogs/route.ts`: API route for retrieving blog posts from an external API
-
-## Components
-
-The project uses several React components to render the portfolio website:
-
-* `app/page.tsx`: main page component
-* `components/projectCard/projectCard.tsx`: project card component
-* `components/blogCards/blogCards.tsx`: blog post card component
-* `app/layout.tsx`: root layout component
-* `app/providers.tsx`: theme provider component
+* **Linting and Formatting**: Automated linting and formatting checks using ESLint and Prettier.
+* **Build and Deployment**: Automated build and deployment of the portfolio website to a hosting platform.
 
 
 
 <br><br>
 <div align="center">
 <img src="https://avatars.githubusercontent.com/u/89008279?v=4" width="120" />
-<h3>Abhra the Neel</h3>
-<p>Full-stack developer with expertise in web, Android, and server-side development. Most projects are private due to being production code.</p>
+<h3>Abhraneel Dhar</h3>
+<p>Full-stack developer with experience in web, Android, and server development. Most of their repositories are private due to containing production code.</p>
 </div>
 <br>
 <p align="right">
