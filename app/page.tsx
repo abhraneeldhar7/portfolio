@@ -458,9 +458,9 @@ export default function RotPage() {
         </div>
 
         {/* skills n shi */}
-        <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[10px]">
-          <div className="flex-2 flex flex-col-reverse md:flex-row md:gap-[60px] gap-[20px] mt-[50px]">
-            <div className="flex-1">
+        <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[60px]">
+          <div className="flex-2 flex flex-col-reverse md:flex-row gap-[60px] mt-[50px]">
+            <div className="flex-1 max-w-[400px]">
               <SkillsComponent />
             </div>
 

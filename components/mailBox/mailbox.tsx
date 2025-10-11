@@ -70,7 +70,7 @@ export default function MailboxComponent() {
                     <Wand2Icon /> Ask AI
                 </Button>
 
-                <Button className="bg-foreground rounded-[4px] rounded-br-[15px]" onClick={() => {
+                <Button className="bg-[#e83b74] hover:bg-[#f7538a] text-[white] rounded-[4px] rounded-br-[15px]" onClick={() => {
                     setTriggered(true)
                     setTimeout(() => {
                         mailtoLinkRef.current?.click()
