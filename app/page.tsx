@@ -13,7 +13,8 @@ import ProjectCard from "@/components/projectCard/projectCard"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import DesignerHero from "@/components/heroComp/designer"
 import FrontendBox from "@/components/heroComp/frontend"
-
+import GitHubCalendar from "react-github-calendar"
+import MailboxComponent from "@/components/mailBox/mailbox"
 
 export default function RotPage() {
   const tabDivRef = useRef<HTMLDivElement | null>(null);
@@ -465,7 +466,7 @@ export default function RotPage() {
 
 
             <div className="flex-1">
-              mail n shi
+              <MailboxComponent />
             </div>
 
           </div>
@@ -486,7 +487,7 @@ export default function RotPage() {
                   <ArrowUpRight size={16} />
                 </Link>
               </div>
-              <div className="max-w-[500px] w-full overflow-hidden">
+              <div className="max-w-[400px] w-full overflow-hidden">
                 {/* <GitHubCalendar
                   errorMessage="Please provide correct Github Username"
                   transformData={selectLastHalfYear}

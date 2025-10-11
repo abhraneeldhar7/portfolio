@@ -1,0 +1,62 @@
+.curtain {
+    background-color: #fff;
+    height: 120vh;
+    width: 120vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+
+    animation: curtain 0.5s ease-in;
+}
+
+.mailTextDiv {
+    width: 100%;
+    position: sticky;
+    z-index: 7;
+}
+
+@keyframes curtain {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+.mailtop {
+    animation: mailtop 1.2s ease-in;
+}
+
+@keyframes mailtop {
+    0% {
+        top: -100vh;
+    }
+    30% {
+        top: -100vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.mailbottom {
+    animation: mailbottom 0.7s ease-in;
+}
+
+@keyframes mailbottom {
+    0% {
+        top: 100vh;
+    }
+
+    20% {
+        top: 100vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}
