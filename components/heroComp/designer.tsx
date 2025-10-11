@@ -5,10 +5,12 @@ export default function DesignerHero() {
     return (
         <div className={styles.main}>
             <p>Designer</p>
-            <MousePointer2 fill="white" color="white" size={25} className={styles.cursor} />
+            <MousePointer2 color="var(--foreground)" fill="var(--foreground)" size={25} className={styles.cursor} />
 
-            <Plus size={18} className={styles.plus1}/>
-            <Plus size={18} className={styles.plus2}/>
+            <div className="text-foreground/70">
+                <Plus size={18} className={styles.plus1} />
+                <Plus size={18} className={styles.plus2} />
+            </div>
 
             <div className="absolute top-0 left-0 overflow-hidden h-full w-full z-[1]">
                 <div className="relative h-full w-full">

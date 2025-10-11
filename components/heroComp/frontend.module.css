@@ -3,7 +3,7 @@
     overflow: hidden;
     position: absolute;
     animation: main 5s ease-in-out;
-    /* border-radius: 3px; */
+    border-radius: 7px;
 }
 
 @keyframes main {

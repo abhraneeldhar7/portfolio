@@ -93,6 +93,7 @@
     position: absolute;
     animation: cursorAnimation 5s;
     opacity: 0;
+    z-index: 2;
 }
 
 @keyframes cursorAnimation {

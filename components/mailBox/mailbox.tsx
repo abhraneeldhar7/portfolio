@@ -27,17 +27,17 @@ export default function MailboxComponent() {
 
     return (
         <div className="rounded-[20px] relative border">
+
             <div className="flex gap-[10px] px-[20px] py-[10px] items-center dark:bg-[#111111] bg-[#f0ebdc] rounded-tl-[20px] rounded-tr-[20px]">
                 <MailIcon size={17} />
                 <p className="text-[15px]">Compose Mail</p>
             </div>
             <div className="bg-[#FAF9F6] dark:bg-[#303030] transition-all duraiton-400">
+
                 <div className={`transition-all duraiton-400 pb-[10px] h-full ${triggered && styles.mailTextDiv} relative`}>
 
-                    {triggered && <>
-                        <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute z-[2] ${styles.mailtop}`} priority />
-                        <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute z-[2] ${styles.mailbottom}`} priority />
-                    </>}
+                    <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[-400vh]"}  z-[2] ${triggered && styles.mailtop}`} />
+                    <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[400vh]"} z-[2] ${triggered && styles.mailbottom}`} />
 
                     <div className="p-[20px] pb-[15px] flex flex-col gap-[10px]">
                         <div className="flex gap-[20px] items-center">
@@ -57,10 +57,10 @@ export default function MailboxComponent() {
                         </div>
                     </div>
                     <div className="bg-[#101010]/20 dark:bg-foreground/40 rounded-[10px] h-[2px] w-[92%] mx-auto"></div>
-                    <div className="py-[15px] px-[20px] flex flex-col gap-[15px] dark:bg-[#212121] bg-[#F9F6EE] mx-[10px] mt-[10px] border-[1px] border-[black]/10 rounded-[12px]">
+                    <div className={`py-[15px] px-[20px] flex flex-col gap-[15px] dark:bg-[#212121] bg-[#F9F6EE] mx-[10px] mt-[10px] border-[1px] border-[black]/10 rounded-[12px]`}>
                         <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="subject" className="md:text-[16px] text-[14px] font-[450] outline-0 border-0 bg-[unset] opacity-[0.8]" spellCheck={false} />
 
-                        <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="body" className="w-full outline-0 border-0 bg-[unset] font-[Satoshi] h-[80px] max-h-[80px] min-h-[80px] " spellCheck={false} />
+                        <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="body" className={`w-full outline-0 border-0 bg-[unset] font-[Satoshi] h-[70px] max-h-[70px] min-h-[70px] ${triggered && styles.textbox}`} spellCheck={false} />
 
                     </div>
                 </div>

@@ -12,7 +12,7 @@ export default function FrontendBox() {
                     <div className="relative w-full h-full">
                         <Image src="/laptop-mockup.png" unoptimized alt="" height={200} width={200} priority />
                     </div>
-                    <h1 className={`font-[Satoshi] absolute top-[40px] left-[50%] translate-x-[-50%] text-[22px] font-[600] z-[2] ${styles.heading}`}>
+                    <h1 className={`font-[Satoshi] absolute top-[40px] left-[50%] translate-x-[-50%] text-[22px] font-[600] text-[white] z-[2] ${styles.heading}`}>
                         Front-end
                     </h1>
                     <div className={styles.orb}></div>

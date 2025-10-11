@@ -27,15 +27,20 @@
 }
 
 .mailtop {
-    animation: mailtop 1.2s ease-in;
+    animation: mailtop 1.5s ease-in-out;
 }
 
 @keyframes mailtop {
     0% {
         top: -100vh;
     }
+
     30% {
         top: -100vh;
+    }
+
+    80% {
+        top: 0;
     }
 
     100% {
@@ -44,7 +49,7 @@
 }
 
 .mailbottom {
-    animation: mailbottom 0.7s ease-in;
+    animation: mailbottom 1s ease-in-out;
 }
 
 @keyframes mailbottom {
@@ -56,7 +61,36 @@
         top: 100vh;
     }
 
+    80% {
+        top: 0;
+    }
+
     100% {
         top: 0;
+    }
+}
+
+
+.textbox {
+    overflow: hidden;
+    animation: textbox 2s ease-in-out;
+}
+
+@keyframes textbox {
+    0% {
+        height: 100%;
+    }
+    
+    40% {
+        height: 100%;
+    }
+    
+    60% {
+        height: 0%;
+    }
+    
+    100% {
+        height: 0%;
+
     }
 }
