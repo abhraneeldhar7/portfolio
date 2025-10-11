@@ -58,9 +58,9 @@ export default function MailboxComponent() {
                     </div>
                     <div className="bg-[#101010]/20 dark:bg-foreground/40 rounded-[10px] h-[2px] w-[92%] mx-auto"></div>
                     <div className="py-[15px] px-[20px] flex flex-col gap-[15px] dark:bg-[#212121] bg-[#F9F6EE] mx-[10px] mt-[10px] border-[1px] border-[black]/10 rounded-[12px]">
-                        <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="subject" className="text-[16px] font-[450] outline-0 border-0 bg-[unset] opacity-[0.8]" spellCheck={false} />
+                        <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="subject" className="md:text-[16px] text-[14px] font-[450] outline-0 border-0 bg-[unset] opacity-[0.8]" spellCheck={false} />
 
-                        <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="body" className="w-full outline-0 border-0 bg-[unset] font-[Satoshi] h-full max-h-[80px] " spellCheck={false} />
+                        <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="body" className="w-full outline-0 border-0 bg-[unset] font-[Satoshi] h-[80px] max-h-[80px] min-h-[80px] " spellCheck={false} />
 
                     </div>
                 </div>
