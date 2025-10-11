@@ -1,5 +1,5 @@
 # Abhraneel Dhar's Portfolio
-![thumbnail](./public/assets/landingpage-793f.png)
+![thumbnail](./public/assets/readmeBanner.png)
 
 ## 🗂️ Description
 
