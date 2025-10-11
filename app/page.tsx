@@ -338,14 +338,15 @@ export default function RotPage() {
       )}
       />
       <div className="z-[-1] pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,var(--background))] dark:bg-background transition-colors duration-400"></div>
-      <div className="w-full pt-[50px] pb-[25px] md:px-0 relative">
+      <div className="w-full md:pt-[50px] pb-[25px] md:pb-0 relative">
 
 
         <div className={`transition-all h-[60px] flex justify-end items-center w-full fixed left-0 backdrop-blur-[40px] ${showTab ? "top-[0px]" : "top-[-65px]"}  z-[5]`}>
           <AnimatedThemeToggler className="m-[20px] rounded-[50%] h-[40px] w-[40px]" />
         </div>
 
-        <div>
+        <div className="relative">
+          <div className="z-2 top-0 left-0 h-full w-full absolute" />
           <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-contain w-full h-fit invert dark:invert-0 mb-[30px] md:hidden" alt="" />
         </div>
 
@@ -537,7 +538,8 @@ export default function RotPage() {
 
 
         {/* banner */}
-        <div className="w-full h-fit">
+        <div className="w-full h-fit relative">
+          <div className="z-2 top-0 left-0 h-full w-full absolute" />
           <Image unoptimized src="/dotsHand.png" height={250} width={400} className="object-cover w-full invert dark:invert-0 md:block hidden" alt="" />
         </div>
 
