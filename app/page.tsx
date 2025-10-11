@@ -458,12 +458,11 @@ export default function RotPage() {
         </div>
 
         {/* skills n shi */}
-        <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[20px]">
-          <div className="flex-2 flex flex-col-reverse md:flex-row gap-[20px] mt-[50px]">
+        <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[10px]">
+          <div className="flex-2 flex flex-col-reverse md:flex-row md:gap-[60px] gap-[20px] mt-[50px]">
             <div className="flex-1">
               <SkillsComponent />
             </div>
-
 
             <div className="flex-1">
               <MailboxComponent />
@@ -499,25 +498,25 @@ export default function RotPage() {
               </div>
 
               <div className="flex w-full mt-[20px] gap-[5px]">
-                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted">
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
                   <Link className="p-[30%]" href="https://x.com/abhraneeldhar" target="_blank">
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" className="dark:invert object-contain" unoptimized alt="" height={50} width={50} />
                   </Link>
                 </div>
 
-                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-[black] bg-[white] overflow-hidden">
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-[black] bg-[white] overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
                   <Link className="flex-1 h-full w-full relative overflow-hidden m-[10%]" href="mailto:abhraneeldhar@gmail.com" target="_blank">
                     <Image src="https://i.pinimg.com/474x/32/5a/4b/325a4bd7b5041b4455e9a0b64c92190d.jpg" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full invert dark:invert-0" unoptimized alt="" height={50} width={50} />
                   </Link>
                 </div>
 
-                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted overflow-hidden">
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
                   <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://peerlist.io/abhraneeldhar" target="_blank">
                     <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
                   </Link>
                 </div>
 
-                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted">
+                <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
                   <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://www.linkedin.com/in/abhraneeldhar" target="_blank">
                     <Image src="https://static.vecteezy.com/system/resources/previews/023/986/608/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
                   </Link>
