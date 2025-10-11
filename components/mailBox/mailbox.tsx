@@ -75,7 +75,7 @@ export default function MailboxComponent() {
                     setTimeout(() => {
                         mailtoLinkRef.current?.click()
                         setTriggered(false)
-                    }, 1600);
+                    }, 1800);
                 }}>
                     <Send />Send</Button>
             </div>
