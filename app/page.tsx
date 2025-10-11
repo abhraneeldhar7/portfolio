@@ -385,12 +385,12 @@ export default function RotPage() {
           {/* <p className="text-center font-[Sans3] font-[600] md:text-[32px] text-[25px]">I'm a <span className="">software engineer</span> building</p> */}
           <div className="max-w-[500px] mx-auto w-full">
             <div className="flex gap-[15px] items-end">
-              <div className="pt-[24px] overflow-hidden">
+              <div className="pt-[25px] overflow-hidden">
                 <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[12px] md:rounded-[14px] relative md:h-[50px] h-[40px] md:w-[120px] w-[110px] flex justify-center items-center">
                   <p className="text-[white] mix-blend-difference md:text-[24px] text-[20px] font-[500] z-[2] font-[Sans3]">
                     Websites
                   </p>
-                  <Image src="/img3.png" className="absolute bottom-[-2px] md:h-[80px] h-[60px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                  <Image src="/img3.png" className="absolute bottom-[-2px] md:h-[80px] h-[60px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized priority />
                 </div>
               </div>
 
@@ -428,7 +428,7 @@ export default function RotPage() {
                   <p className="md:text-[24px] text-[20px] font-[Sans3] font-[500] z-[2] pl-[20px] text-[white] mix-blend-difference">
                     Apps
                   </p>
-                  <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] md:left-[-2px] left-[-4px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized />
+                  <Image src="/img2.png" className="absolute bottom-[-6px] md:h-[70px] h-[60px] md:left-[-2px] left-[-4px] object-contain w-fit z-[1]" alt="" height={100} width={100} unoptimized priority />
                 </div>
               </div>
             </div>
@@ -465,7 +465,7 @@ export default function RotPage() {
 
 
             <div className="flex-1">
-              a
+              mail n shi
             </div>
 
           </div>
