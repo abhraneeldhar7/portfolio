@@ -182,7 +182,7 @@ export default function RotPage() {
   }
   const SkillsComponent = () => {
     return (
-      <div className="flex-1 flex flex-col max-w-[450px] font-[Satoshi]">
+      <div className="flex-1 flex flex-col max-w-[450px] font-[Satoshi] overflow-hidden">
         <h1 className="font-[500] text-[24px]">Skillset</h1>
         <div className="mt-[10px] ml-[10px] relative">
           <div className="flex gap-[5px]">

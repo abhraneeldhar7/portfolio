@@ -26,7 +26,7 @@ export default function MailboxComponent() {
     }, [subject, body]);
 
     return (
-        <div className="rounded-[20px] relative border">
+        <div className="rounded-[20px] relative border overflow-hidden">
 
             <div className="flex gap-[10px] px-[20px] py-[10px] items-center dark:bg-[#111111] bg-[#f0ebdc] rounded-tl-[20px] rounded-tr-[20px]">
                 <MailIcon size={17} />
