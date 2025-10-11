@@ -488,11 +488,11 @@ export default function RotPage() {
                 </Link>
               </div>
               <div className="max-w-[400px] w-full overflow-hidden">
-                {/* <GitHubCalendar
+                <GitHubCalendar
                   errorMessage="Please provide correct Github Username"
                   transformData={selectLastHalfYear}
                   username="abhraneeldhar7" hideMonthLabels hideColorLegend hideTotalCount
-                  transformTotalCount={false} /> */}
+                  transformTotalCount={false} />
               </div>
               <div className="w-full mt-[25px]">
                 <ReachOutComponent />
