@@ -36,14 +36,14 @@ export default function MailboxComponent() {
 
                 <div className={`transition-all duraiton-400 pb-[10px] h-full ${triggered && styles.mailTextDiv} relative`}>
 
-                    <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[-400vh]"}  z-[2] ${triggered && styles.mailtop}`} />
-                    <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[400vh]"} z-[2] ${triggered && styles.mailbottom}`} />
+                    <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[-400vh]"}  z-[2] ${triggered && styles.mailtop}`} priority/>
+                    <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[400vh]"} z-[2] ${triggered && styles.mailbottom}`} priority/>
 
                     <div className="p-[20px] pb-[15px] flex flex-col gap-[10px]">
                         <div className="flex gap-[20px] items-center">
                             <p className="opacity-[0.8]">To</p>
                             <div className="dark:bg-[#3e3e32] bg-[white] p-[2px] border border-[black]/10 rounded-[30px] flex items-center gap-[10px] shadow-sm">
-                                <Image className="rounded-[50%] object-cover min-w-[25px] w-[25px] h-[25px]" unoptimized src="/pfp.jpeg" alt="" height={30} width={30} />
+                                <Image className="rounded-[50%] object-cover min-w-[25px] w-[25px] h-[25px]" unoptimized src="/pfp.jpeg" alt="" height={30} width={30}/>
                                 <p className="pr-[10px] text-[14px]">abhraneeldhar@gmail.com</p>
                             </div>
                         </div>
