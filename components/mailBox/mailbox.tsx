@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Button } from "../ui/button"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../ui/dialog"
+import { writeMessage } from "@/app/actions/groqActions"
 
 export default function MailboxComponent() {
 
@@ -25,6 +27,10 @@ export default function MailboxComponent() {
         setMailtoLink(link);
     }, [subject, body]);
 
+    const [userText, setUserText] = useState("");
+    const [aiDialogOpen, setAiDialog] = useState(false);
+    const [fetchingAIRes, setfetchingAIRes] = useState(false);
+
     return (
         <div className="rounded-[20px] relative border overflow-hidden">
 
@@ -36,14 +42,14 @@ export default function MailboxComponent() {
 
                 <div className={`transition-all duraiton-400 pb-[10px] h-full ${triggered && styles.mailTextDiv} relative`}>
 
-                    <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[-400vh]"}  z-[2] ${triggered && styles.mailtop}`} priority/>
-                    <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[400vh]"} z-[2] ${triggered && styles.mailbottom}`} priority/>
+                    <Image unoptimized alt="" src="mailtop.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[-400vh]"}  z-[2] ${triggered && styles.mailtop}`} priority />
+                    <Image unoptimized alt="" src="mailbottom.png" height={300} width={300} className={`w-full h-fit object-contain absolute ${!triggered && "top-[400vh]"} z-[2] ${triggered && styles.mailbottom}`} priority />
 
                     <div className="p-[20px] pb-[15px] flex flex-col gap-[10px]">
                         <div className="flex gap-[20px] items-center">
                             <p className="opacity-[0.8]">To</p>
                             <div className="dark:bg-[#3e3e32] bg-[white] p-[2px] border border-[black]/10 rounded-[30px] flex items-center gap-[10px] shadow-sm">
-                                <Image className="rounded-[50%] object-cover min-w-[25px] w-[25px] h-[25px]" unoptimized src="/pfp.jpeg" alt="" height={30} width={30}/>
+                                <Image className="rounded-[50%] object-cover min-w-[25px] w-[25px] h-[25px]" unoptimized src="/pfp.jpeg" alt="" height={30} width={30} />
                                 <p className="pr-[10px] text-[14px]">abhraneeldhar@gmail.com</p>
                             </div>
                         </div>
@@ -66,9 +72,42 @@ export default function MailboxComponent() {
                 </div>
             </div>
             <div className="dark:bg-[#111111] bg-[#f0ebdc] rounded-bl-[20px] rounded-br-[20px] w-full flex gap-[10px] justify-end p-[5px]">
-                <Button variant="outline" className="dark:bg-[unset] bg-[white] border-[1px] border-foreground/20">
-                    <Wand2Icon /> Ask AI
-                </Button>
+                <Dialog open={aiDialogOpen} onOpenChange={(e) => {
+                    setUserText("");
+                    setAiDialog(e);
+                    setfetchingAIRes(false)
+                }}>
+                    <DialogTrigger asChild>
+                        <Button variant="outline" className="dark:bg-[unset] bg-[white] border-[1px] border-foreground/20">
+                            <Wand2Icon /> Ask AI
+                        </Button>
+                    </DialogTrigger>
+
+                    <DialogContent className="p-[15px]">
+                        <DialogTitle>Write with AI</DialogTitle>
+                        <DialogDescription>Briefly describe your message and AI will make it beautiful.</DialogDescription>
+                        <form onSubmit={async (e) => {
+                            e.preventDefault();
+                            if (!userText.length) return;
+                            setfetchingAIRes(true)
+                            const res = JSON.parse(await writeMessage(userText));
+                            setfetchingAIRes(false)
+                            console.log(res)
+                            setSubject(res.subject)
+                            setBody(res.body)
+                            setAiDialog(false)
+
+                        }} className="flex flex-col gap-[15px]">
+                            <textarea value={userText} onChange={(e) => {
+                                setUserText(e.target.value)
+                            }} placeholder="Main talking points" className="dark:bg-muted/50 bg-muted rounded-[8px] text-[14px] p-[12px] font-[350] outline-none" spellCheck={false} />
+
+                            <div className="flex justify-end">
+                                <Button loading={fetchingAIRes} disabled={!userText.length} type="submit"><Wand2Icon /> Generate</Button>
+                            </div>
+                        </form>
+                    </DialogContent>
+                </Dialog>
 
                 <Button className="bg-[#e83b74] hover:bg-[#f7538a] text-[white] rounded-[4px] rounded-br-[15px]" onClick={() => {
                     setTriggered(true)
@@ -82,10 +121,11 @@ export default function MailboxComponent() {
             <Link href={mailtoLink} className="hidden" ref={mailtoLinkRef} target="_blank" />
 
 
-            {triggered &&
+            {
+                triggered &&
                 <div className={styles.curtain} />
             }
 
-        </div>
+        </div >
     )
 }
