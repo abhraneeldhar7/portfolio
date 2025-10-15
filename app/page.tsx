@@ -360,7 +360,7 @@ export default function RotPage() {
 
             <div>
               <h1 className="md:text-[35px] text-[25px] font-[600] font-[Poppins] leading-[1.]">Abhraneel Dhar</h1>
-              <Link href="https://x.com/abhraneeldhar" target="_blank">
+              <Link href="https://x.com/veryNeel" target="_blank">
                 <p className="text-[15px] leading-[1.2em] opacity-[0.5]">@abhraneeldhar</p>
               </Link>
 
@@ -500,7 +500,7 @@ export default function RotPage() {
 
               <div className="flex w-full mt-[20px] gap-[5px]">
                 <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
-                  <Link className="p-[30%]" href="https://x.com/abhraneeldhar" target="_blank">
+                  <Link className="p-[30%]" href="https://x.com/veryNeel" target="_blank">
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" className="dark:invert object-contain" unoptimized alt="" height={50} width={50} />
                   </Link>
                 </div>
