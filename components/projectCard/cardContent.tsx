@@ -22,18 +22,21 @@ export default function ProjectCardContent({ initCurrentProjectDetails, fullscre
 
 
             <div className="flex flex-col flex-1 overflow-hidden relative">
-                <ScrollArea className="absolute left-0 bottom-0 h-full">
-                    <div className="p-[15px] pt-0">
+                <div className="p-[15px] pt-0 flex flex-col justify-between h-full">
+                    <div>
                         <div className="flex justify-between items-start gap-[10px]">
                             <h1 className="font-[500] text-[25px] leading-[1.4em]">{currentProjectDetails.title}</h1>
-                            <div className="flex justify-end gap-[10px] relative">
-                                {/* <div className="bg-[#FA2A55] text-[10px] leading-[1em] h-fit py-[3px] px-[6px] rounded-[4px] absolute bottom-[-8px] right-[-5px] text-[white]">New</div> */}
-                                <Button className="h-[30px] bg-[#FA2A55] text-[white]" onClick={() => setViewMode("story")}>Story Mode</Button>
+                            <div className="flex justify-end gap-[10px]">
+                                <Button className="h-[30px] bg-[#FA2A55] hover:bg-[#FA2A55]/80 text-[white]" onClick={() => setViewMode("story")}>Story Mode</Button>
 
                             </div>
                         </div>
-                        <p className="text-[15px] font-[350]">{currentProjectDetails.description}</p>
+                        <p className="text-[15px] font-[380]">{currentProjectDetails.description}</p>
+                    </div>
 
+
+
+                    <div>
                         {currentProjectDetails.techStack.length > 0 &&
                             <>
                                 <h1 className="font-[400] text-[18px] mt-[18px] flex gap-[6px] items-center opacity-[0.9]">Techstacks</h1>
@@ -62,7 +65,7 @@ export default function ProjectCardContent({ initCurrentProjectDetails, fullscre
                             }
                         </div>
                     </div>
-                </ScrollArea>
+                </div>
             </div>
             {/* {globalProjectsArray && globalProjectsArray.length > 1 &&
                 <div className="flex justify-between px-[4px] pb-[4px]">
@@ -80,9 +83,8 @@ export default function ProjectCardContent({ initCurrentProjectDetails, fullscre
         </>}
 
         {viewMode == "story" &&
-            <div className="w-full h-full flex items-center justify-between flex-col gap-[5px]">
-                <div></div>
-                <div className="h-full w-full flex items-center px-[10px] pt-[5px] justify-center relative">
+            <div className="w-full h-full flex items-center justify-between flex-col gap-[15px]">
+                <div className="h-full w-full">
                     <StoryViewer storyFragments={currentProjectDetails.storyFragments} />
                 </div>
                 <div className="flex w-full p-[10px]">
