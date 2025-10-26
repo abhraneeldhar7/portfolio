@@ -181,107 +181,112 @@ export default function RotPage() {
       </div>)
   }
   const SkillsComponent = () => {
+    const skillsArray = {
+      frontEnd: [
+        { img: "https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default", name: "NextJs" },
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/862px-React-icon.svg.png", name: "ReactJs" },
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png", name: "TypeScript" },
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png", name: "Tailwind" }
+      ],
+      backEnd: [
+        { img: "https://cdn.worldvectorlogo.com/logos/fastapi.svg", name: "FastAPI" },
+        { img: "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png", name: "Redis" },
+        { img: "https://logowik.com/content/uploads/images/express-js1720895493.logowik.com.webp", name: "ExpressJs" },
+        { img: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/cloudinary-icon-ug0qqy8ms6ozyzy6cntbll.png/cloudinary-icon-hz05evx1htrghud89kpab4.png?_a=DATAg1AAZAA0", name: "Cloudinary" },
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png", name: "Python" }],
+      database: [
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1163px-Postgresql_elephant.svg.png", name: "Postgress" },
+        { img: "https://firebase.google.com/static/images/products/icons/build_firestore.svg", name: "Firestore" },
+        { img: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg", name: "MongoDB" },
+      ],
+      mobile: [
+        { img: "https://img.icons8.com/color/512/flutter.png", name: "Flutter" },
+        { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png", name: "React Native" }
+      ]
+    }
     return (
-      <div className="flex-1 flex flex-col max-w-[450px] font-[Satoshi] overflow-hidden">
+      <div className="flex-1 flex flex-col max-w-[450px] font-[Satoshi]">
         <h1 className="font-[500] text-[24px]">Skillset</h1>
-        <div className="mt-[10px] ml-[10px] relative">
-          <div className="flex gap-[5px]">
-            <div className="w-[20px]">
-              <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
+        <div className="mt-[5px] ml-[8px] flex flex-col gap-[20px]">
+
+
+          <div className="flex gap-[2px]">
+            <div className="">
+              <UndoIcon size={20} className="rotate-[190deg] translate-x-[-5px] opacity-[0.7]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="ftext-[18px]">Front-end</h1>
-              <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://marcbruederlin.gallerycdn.vsassets.io/extensions/marcbruederlin/next-icons/0.1.0/1723747598319/Microsoft.VisualStudio.Services.Icons.Default" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  NextJs</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/862px-React-icon.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  ReactJs</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" className="object-contain h-[17px] w-[17px] rounded-[3px]" unoptimized alt="" height={40} width={40} />
-                  Typescript</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Tailwind</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex mt-[20px] gap-[5px]">
-            <div className="w-[20px]">
-              <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-[18px]">Back-end</h1>
-              <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://cdn.worldvectorlogo.com/logos/fastapi.svg" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  FastAPI</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Redis</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://logowik.com/content/uploads/images/express-js1720895493.logowik.com.webp" className="object-contain h-[20px] w-[20px] bg-[black] rounded-[50%] p-[1px]" alt="" height={40} width={40} />
-                  ExpressJs</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/cloudinary-icon-ug0qqy8ms6ozyzy6cntbll.png/cloudinary-icon-hz05evx1htrghud89kpab4.png?_a=DATAg1AAZAA0" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Cloudinary</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Python</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" className="object-contain h-[17px] w-[17px] rounded-[3px]" unoptimized alt="" height={40} width={40} />
-                  Typescript</div>
-
+              <h1 className="text-[16px]">Front-end</h1>
+              <div className="flex gap-[10px] flex-wrap mt-[5px]">
+                {skillsArray.frontEnd.map((stack, index) => (
+                  <div className="bg-[#303030] px-[5px] py-[4px] rounded-[5px] flex items-center gap-[6px] leading-[1em] text-[white] border text-[12px]" key={index}>
+                    <Image src={stack.img} className="object-contain h-[17px] w-[17px]" unoptimized alt="" height={40} width={40} />
+                    {stack.name}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
 
-          <div className="flex mt-[20px] gap-[5px]">
-            <div className="w-[20px]">
-              <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
+
+          <div className="flex gap-[2px]">
+            <div className="">
+              <UndoIcon size={20} className="rotate-[190deg] translate-x-[-5px] opacity-[0.7]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[18px]">Database</h1>
-              <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Redis</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1163px-Postgresql_elephant.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Postgress</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://firebase.google.com/static/images/products/icons/build_firestore.svg" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Firestore</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  MongoDb</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://logo.svgcdn.com/d/supabase-original-8x.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Supabase</div>
+              <h1 className="text-[16px]">Back-end</h1>
+              <div className="flex gap-[10px] flex-wrap mt-[5px]">
+                {skillsArray.backEnd.map((stack, index) => (
+                  <div className="bg-[#303030] px-[6px] py-[4px] rounded-[5px] flex items-center gap-[6px] leading-[1em] text-[white] border text-[12px]" key={index}>
+                    <Image src={stack.img} className="object-contain h-[17px] w-[17px]" unoptimized alt="" height={40} width={40} />
+                    {stack.name}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
 
-          <div className="flex mt-[20px] gap-[5px]">
-            <div className="w-[20px]">
-              <UndoIcon className="rotate-[190deg] translate-x-[-5px]" />
+          <div className="flex gap-[2px]">
+            <div className="">
+              <UndoIcon size={20} className="rotate-[190deg] translate-x-[-5px] opacity-[0.7]" />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[18px]">Mobile</h1>
-              <div className="flex gap-[10px] flex-wrap mt-[5px] md:text-[14px] text-[12px]">
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://img.icons8.com/color/512/flutter.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  Flutter</div>
-                <div className="bg-[#303030] px-[7px] py-[5px] rounded-[10px] flex items-center gap-[6px] leading-[1em] text-[white] border-border border-[2px]">
-                  <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" className="object-contain h-[20px] w-[20px]" unoptimized alt="" height={40} width={40} />
-                  React Native</div>
+              <h1 className="text-[16px]">Mobile</h1>
+              <div className="flex gap-[10px] flex-wrap mt-[5px]">
+                {skillsArray.mobile.map((stack, index) => (
+                  <div className="bg-[#303030] px-[6px] py-[4px] rounded-[5px] flex items-center gap-[6px] leading-[1em] text-[white] border text-[12px]" key={index}>
+                    <Image src={stack.img} className="object-contain h-[17px] w-[17px]" unoptimized alt="" height={40} width={40} />
+                    {stack.name}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+
+
+          <div className="flex gap-[2px]">
+            <div className="">
+              <UndoIcon size={20} className="rotate-[190deg] translate-x-[-5px] opacity-[0.7]" />
+            </div>
+            <div className="flex flex-col">
+              <h1 className="text-[16px]">Database</h1>
+              <div className="flex gap-[10px] flex-wrap mt-[5px]">
+                {skillsArray.database.map((stack, index) => (
+                  <div className="bg-[#303030] px-[6px] py-[4px] rounded-[5px] flex items-center gap-[6px] leading-[1em] text-[white] border text-[12px]" key={index}>
+                    <Image src={stack.img} className="object-contain h-[17px] w-[17px]" unoptimized alt="" height={40} width={40} />
+                    {stack.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
 
 
         </div>
@@ -388,6 +393,7 @@ export default function RotPage() {
           <div className="max-w-[500px] mx-auto w-full">
             <div className="flex gap-[15px] items-end">
               <div className="pt-[25px] overflow-hidden">
+                
                 <div className="py-[7px] px-[15px] dark:bg-[#f4f5f5] bg-[#262626] rounded-[12px] md:rounded-[14px] relative md:h-[50px] h-[40px] md:w-[120px] w-[110px] flex justify-center items-center">
                   <p className="text-[white] mix-blend-difference md:text-[24px] text-[20px] font-[500] z-[2] font-[Sans3]">
                     Websites
@@ -437,7 +443,6 @@ export default function RotPage() {
 
           </div>
         </div>
-
 
 
 
