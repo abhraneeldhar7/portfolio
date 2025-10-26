@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                 <DialogTitle className="hidden" />
                 <DialogDescription className="hidden" />
-                <DialogContent className="dark:bg-[#101010] bg-muted outline-none p-[5px]">
+                <DialogContent className="bg-muted/60 dark:bg-muted/40 border-none backdrop-blur-[20px] outline-none p-[8px]">
                     <ProjectCardContent initCurrentProjectDetails={project} />
                 </DialogContent>
             </Dialog>

@@ -156,7 +156,7 @@ export function StoryViewer({ storyFragments }: StoryViewerProps) {
                         return (
                             <div
                                 key={index}
-                                className={`h-full flex items-center justify-center px-2 relative transition-all duration-300 rounded-[6px] ${isActive ? "" : "bg-foreground/6 border-[2px]"}`}
+                                className={`h-full flex items-center justify-center px-2 relative transition-all duration-300 rounded-[6px] ${isActive ? "" : "bg-background/80 border border-border/80"}`}
                                 style={{
                                     width: `${segmentWidths[index] || 0}%`,
                                     backgroundColor: isActive ? fragment.cardColor : ""

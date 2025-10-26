@@ -15,29 +15,31 @@ export default function ProjectCardContent({ initCurrentProjectDetails, fullscre
 
 
     return (<div className={`w-full flex flex-col justify-between gap-[10px]`}>
-        {viewMode == "details" && <><div className="w-full h-[250px] bg-muted rounded-[6px] overflow-hidden relative">
+        {viewMode == "details" && <>
+
             {currentProjectDetails.thumbnailUrl &&
-                <Image src={`${currentProjectDetails.thumbnailUrl}`} className="rounded-[6px] h-full w-full object-cover" height={300} width={500} alt="" unoptimized />}
-        </div>
+                <Image src={`${currentProjectDetails.thumbnailUrl}`} className="rounded-[10px] w-full object-cover h-[280px] object-top" height={300} width={500} alt="" unoptimized />}
+
+
             <div className="flex flex-col flex-1 overflow-hidden relative">
                 <ScrollArea className="absolute left-0 bottom-0 h-full">
                     <div className="p-[15px] pt-0">
                         <div className="flex justify-between items-start gap-[10px]">
-                            <h1 className="font-[500] text-[25px]">{currentProjectDetails.title}</h1>
+                            <h1 className="font-[500] text-[25px] leading-[1.4em]">{currentProjectDetails.title}</h1>
                             <div className="flex justify-end gap-[10px] relative">
-                                <div className="bg-[#FA2A55] text-[10px] leading-[1em] h-fit py-[3px] px-[6px] rounded-[4px] absolute bottom-[-8px] right-[-5px] text-[white]">New</div>
-                                <Button className="h-[30px]" onClick={() => setViewMode("story")}>Story Mode</Button>
+                                {/* <div className="bg-[#FA2A55] text-[10px] leading-[1em] h-fit py-[3px] px-[6px] rounded-[4px] absolute bottom-[-8px] right-[-5px] text-[white]">New</div> */}
+                                <Button className="h-[30px] bg-[#FA2A55] text-[white]" onClick={() => setViewMode("story")}>Story Mode</Button>
 
                             </div>
                         </div>
-                        <p className="text-[15px] font-[300] mt-[2px]">{currentProjectDetails.description}</p>
+                        <p className="text-[15px] font-[350]">{currentProjectDetails.description}</p>
 
                         {currentProjectDetails.techStack.length > 0 &&
                             <>
                                 <h1 className="font-[400] text-[18px] mt-[18px] flex gap-[6px] items-center opacity-[0.9]">Techstacks</h1>
                                 <div className="flex flex-wrap gap-[6px] mt-[5px]">
                                     {currentProjectDetails?.techStack.map((ts, index) => (
-                                        <div className="border-[2px] text-[14px] py-[6px] px-[14px] rounded-[30px] bg-foreground/10 leading-[1em] font-[480] flex items-center gap-[6px] " key={index}>{ts}</div>
+                                        <div className="border border-border/60 text-[12px] py-[6px] px-[14px] rounded-[30px] bg-primary text-background leading-[1em]  flex items-center gap-[6px] " key={index}>{ts}</div>
                                     ))}
                                 </div>
                             </>}
