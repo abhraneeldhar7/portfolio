@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
     const [openDialog, setOpenDialog] = useState(false);
     return (
         <>
-            <div className="p-[5px] rounded-[10px] h-[320px] flex flex-col justify-between border-[1px] border-foreground/20 dark:bg-[#101010] bg-muted relative" onClick={() => setOpenDialog(true)}>
+            <div className="p-[5px] rounded-[10px] h-[320px] flex flex-col justify-between border-[1px] border-foreground/10 dark:bg-[#101010] bg-muted relative" onClick={() => setOpenDialog(true)}>
                 <div>
                     <ArrowUpRight size={16} className="absolute top-[8px] right-[8px] text-white mix-blend-difference" />
                     <div>
