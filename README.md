@@ -1,26 +1,29 @@
 # Abhraneel Dhar's Portfolio
-![thumbnail](./public/assets/readmeBanner.png)
+![thumbnail](./public/assets/landingPage-81ec2e93-6c15-45d8-b65e-6c5150b242a1)
 
 ## 🗂️  Description
 
-This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and experience as a developer. The website is built using Next.js, TypeScript, and Tailwind CSS, and features a range of interactive components and animations.
+This repository contains the source code for my personal portfolio website, showcasing my projects, skills, and experiences as a developer. The portfolio is built using Next.js, TypeScript, and Tailwind CSS, and is designed to be a visually appealing and interactive representation of my work.
 
-The portfolio website is designed to provide a visually appealing and engaging experience for visitors, while also demonstrating my technical skills and expertise as a developer.
+The portfolio features a range of projects, each with its own unique characteristics and technologies used. It also includes a mailbox interface for contacting me, as well as a story card component for displaying interactive stories.
 
 ## ✨ Key Features
 
 ### **Core Features**
 
-* Interactive project showcase with filtering and sorting capabilities
-* Animated UI components and transitions
-* Integration with Groq API for dynamic content generation
-* Client-side email composition and sending functionality
+* **Project Showcase**: A showcase of my projects, each with its own unique characteristics and technologies used.
+* **Mailbox Interface**: A mailbox interface for contacting me.
+* **Story Card Component**: An interactive story card component for displaying stories.
 
-### **Technical Features**
+### **Design and Layout**
 
-* Built with Next.js and TypeScript for performance and maintainability
-* Styled with Tailwind CSS for a consistent and responsive design
-* Utilizes ESLint and TypeScript for code quality and error detection
+* **Responsive Design**: A responsive design that adapts to different screen sizes and devices.
+* **Tailwind CSS**: Utilizes Tailwind CSS for styling and layout.
+
+### **Interactivity**
+
+* **AI-powered Email Generation**: The mailbox interface includes an option to use AI to generate email content.
+* **Interactive Story Cards**: The story card component allows users to interact with the story through animations and timelines.
 
 ## 🗂️ Folder Structure
 
@@ -42,49 +45,33 @@ graph TD;
 
 ![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwind-css&logoColor=white&style=for-the-badge)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![ESLint](https://img.shields.io/badge/ESLint-4B4B4B?logo=eslint&logoColor=white&style=for-the-badge)
-![Groq API](https://img.shields.io/badge/Groq%20API-007bff?logo=api&logoColor=white&style=for-the-badge)
 
 ## ⚙️ Setup Instructions
 
 To run the project locally, follow these steps:
 
 * Clone the repository: `git clone https://github.com/abhraneeldhar7/portfolio.git`
-* Install dependencies: `npm install` or `yarn install`
-* Start the development server: `npm run dev` or `yarn dev`
+* Install dependencies: `npm install`
+* Start the development server: `npm run dev`
 
 ## 🤖 GitHub Actions
 
-The repository uses GitHub Actions for automated testing and deployment. The workflow is defined in the `.github/workflows/main.yml` file and includes steps for:
+This repository uses GitHub Actions for continuous integration and deployment. The workflow is defined in the `.github/workflows/main.yml` file and includes the following steps:
 
-* Building and testing the project
-* Deploying to a production environment
+* **Linting and Type Checking**: Runs ESLint and TypeScript checks on the codebase.
+* **Building and Deploying**: Builds the project and deploys it to a hosting platform.
 
 ## 📝 Configuration Files
 
-The project uses several configuration files to manage dependencies, scripts, and settings:
+The project uses several configuration files to manage its settings and dependencies. These include:
 
-* `package.json`: contains metadata and dependencies for the project
-* `next.config.ts`: configures Next.js settings and behavior
-* `tsconfig.json`: configures TypeScript compiler settings
-* `.eslintrc.json`: configures ESLint settings and rules
-* `postcss.config.mjs`: configures PostCSS settings and plugins
-
-## 📚 Utility Functions
-
-The project includes several utility functions and types:
-
-* `lib/utils.ts`: exports utility functions for working with CSS class names
-* `lib/types.ts`: exports type definitions for the project
-
-## 📊 Components
-
-The project includes several React components:
-
-* `components/heroComp/frontend.tsx`: displays a visual representation of a front-end development environment
-* `components/projectCard/projectCard.tsx`: displays information about a project
-* `components/mailBox/mailbox.tsx`: provides a UI for composing and sending emails
+* **`.eslintrc.json`**: ESLint configuration file.
+* **`next.config.ts`**: Next.js configuration file.
+* **`postcss.config.mjs`**: PostCSS configuration file.
+* **`tsconfig.json`**: TypeScript configuration file.
 
 
 
@@ -92,7 +79,7 @@ The project includes several React components:
 <div align="center">
 <img src="https://avatars.githubusercontent.com/u/89008279?v=4" width="120" />
 <h3>Abhraneel Dhar</h3>
-<p>Full-stack developer with experience in web, Android, and server development. Most of their work is private due to being production code.</p>
+<p>Full-stack developer with experience in web, Android, and server development. Most of their code is private due to being production code.</p>
 </div>
 <br>
 <p align="right">
