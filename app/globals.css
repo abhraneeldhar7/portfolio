@@ -3,27 +3,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Regular.otf') format('opentype');
-}
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.otf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: 'Sans3';
-  src: url('/fonts/SourceSans3.ttf') format('truetype');
+  font-family: 'ClashGrotesk';
+  src: url('/fonts/ClashGrotesk.ttf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: "Sans3";
+  font-family: "ClashGrotesk";
 }
 
 ::-webkit-scrollbar {
@@ -139,7 +134,7 @@ html {
 }
 
 .dark {
-  --background: #050505;
+  --background: #070707;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
