@@ -2,14 +2,8 @@ import styles from "./root.module.css"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowUpRight, DownloadIcon, Send, UndoIcon } from "lucide-react"
+import { UndoIcon } from "lucide-react"
 import { ProjectType } from "@/lib/types"
-import { PillIndicator } from "@/components/ui/shadcn-io/pill"
-import ProjectCard from "@/components/projectCard/projectCard"
-import { NumberTicker } from "@/components/ui/number-ticker"
-import GitHubCalendar from "react-github-calendar"
-import MailboxComponent from "@/components/mailBox/mailbox"
 import CardAnimComponent from "@/components/cardsAnimationComponent/cardsAnimationComponent"
 import ProfileImageComp from "@/components/profileImage/profileImage"
 import GithubCalendarCustom from "@/components/githubCalendar/githubCalendar"
@@ -236,7 +230,7 @@ export default function RootPage() {
           "[background-size:20px_20px]",
           "[background-image:radial-gradient(var(--foreground)_1px,transparent_1px)]",
           "dark:[background-image:radial-gradient(var(--foreground)_1px,transparent_1px)]",
-          "[opacity:0.1]",
+          "[opacity:0.15]",
           "transition-colors duration-400"
         )}
         />
@@ -257,7 +251,7 @@ export default function RootPage() {
       </div>
 
 
-      <div className="max-w-[650px] w-full mx-auto md:border md:border-b-0 md:px-[25px] mt-[40px] relative md:rounded-tl-[40px] md:rounded-tr-[40px] pt-[40px]">
+      <div className="max-w-[650px] w-full mx-auto  md:border-b-0 md:px-[25px] mt-[40px] relative md:rounded-tl-[40px] md:rounded-tr-[40px] pt-[40px]">
 
         <DotsPatter />
 
