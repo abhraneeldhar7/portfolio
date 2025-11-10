@@ -13,6 +13,7 @@ import MailboxComponent from "@/components/mailBox/mailbox"
 import CardAnimComponent from "@/components/cardsAnimationComponent/cardsAnimationComponent"
 import ProfileImageComp from "@/components/profileImage/profileImage"
 import GithubCalendarCustom from "@/components/githubCalendar/githubCalendar"
+import { ReachOutComponent } from "@/components/reachoutComp/reachoutComp"
 
 export default function Ro0tPage() {
 
@@ -108,45 +109,7 @@ export default function Ro0tPage() {
   ]
   // const [showAllProjects, setShowAllProjects] = useState(false);
 
-  const ReachOutComponent = ({ className }: { className: string }) => {
-    return (
-      <div className={`flex gap-[10px] h-fit mt-[40px] md:mt-[50px] ${className}`}>
-        {/* <div className="rounded-[10px] h-[full] bg-muted/50 border-[2px] flex flex-col flex-1">
-          <Link className="text-[14px] font-[300] pb-[5px] pt-[7px] leading-[1em] px-[14px] border-b-[2px] opacity-[0.8] flex justify-between pr-[8px]" href="/AbhraneelDhar_resume.pdf" target="_blank">
-            Resume
-            <ArrowUpRight size={14} />
-          </Link>
-          <div className="py-[10px] px-[15px] flex gap-[10px] items-center justify-between">
-            <Link href="/AbhraneelDhar_resume.pdf" target="_blank" className="h-full flex-1">
-              <p className="font-[350] text-[16px]">resume.pdf</p>
-            </Link>
 
-            <DownloadIcon size={18} className="opacity-[0.8] transition-all hover:translate-y-[3px]" />
-            <DownloadIcon size={18} className="opacity-[0.9] transition-all hover:translate-y-[3px]" onClick={(e) => {
-              e.stopPropagation();
-              const link = document.createElement("a");
-              link.href = "/AbhraneelDhar_resume.pdf";
-              link.download = "AbhraneelDhar_resume.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }} />
-          </div>
-        </div> */}
-
-        <div className="flex flex-col gap-[10px] flex-1 items-center">
-          <Button className="w-[200px] rounded-[10px] bg-[#e83b74] hover:bg-[#f05085] text-[white] relative">
-            <div className="absolute w-[120%] h-full rounded-[50%] z-[-1] bg-[#C21E56] blur-[30px]"></div>
-            <Send />  Get in touch
-          </Button>
-
-          <div className="flex items-center gap-[10px] text-[11px] border font-[400] h-[30px] bg-muted w-[120px] py-[8px] px-[12px] rounded-[15px] leading-[1em]">
-            <PillIndicator pulse variant="success" />
-            <p className="text-center w-full">Open to work</p>
-          </div>
-        </div>
-      </div>)
-  }
   const SkillsComponent = () => {
     const skillsArray = {
       frontEnd: [
@@ -397,7 +360,7 @@ export default function Ro0tPage() {
             <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full" height={100} width={100} unoptimized alt="" src="/batman.png" />
             <div className="w-full z-[2] h-[60px] bg-gradient-to-t from-background absolute bottom-[-2px] to-transparent"></div>
 
-            <ReachOutComponent className="absolute z-[3] bottom-[20px] left-[50%] translate-x-[-50%]" />
+            <ReachOutComponent className="absolute z-[3] top-[70%] left-[50%] translate-x-[-50%]" />
 
           </div>
 
@@ -496,7 +459,7 @@ export default function Ro0tPage() {
 
 
         {/* banner */}
-        <Image unoptimized src="/footerBanner.png" height={250} width={400} className="object-cover mx-auto w-full invert dark:invert-0 dark:opacity-[0.6] " alt="" />
+        <Image unoptimized src="/footerBanner.png" height={250} width={400} className="object-cover mx-auto w-full invert dark:invert-0 dark:opacity-[0.6] px-[10px] " alt="" />
 
       </div >
 
