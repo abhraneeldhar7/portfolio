@@ -4,7 +4,7 @@ import styles from "./designer.module.css"
 export default function DesignerHero() {
     return (
         <div className={styles.main}>
-            <p>Designer</p>
+            <p className="text-[22px] whitespace-nowrap">Design Engineer</p>
             <MousePointer2 color="var(--foreground)" fill="var(--foreground)" size={25} className={styles.cursor} />
 
             <div className="text-foreground/70">

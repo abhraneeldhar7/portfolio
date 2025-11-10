@@ -15,7 +15,7 @@ import ProfileImageComp from "@/components/profileImage/profileImage"
 import GithubCalendarCustom from "@/components/githubCalendar/githubCalendar"
 import { ReachOutComponent } from "@/components/reachoutComp/reachoutComp"
 
-export default function Ro0tPage() {
+export default function RootPage() {
 
 
 

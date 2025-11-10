@@ -2,14 +2,15 @@
     background: linear-gradient(to right, #f43f5e, #db2777, #ef4444);
     /* overflow: hidden; */
     /* padding: 10px; */
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     font-family: "Satoshi";
-
+    /* border-top-right-radius: 4px; */
+    /* border-bottom-left-radius: 4px; */
     animation: mainContainer 5s ease-in-out;
 }
 
@@ -186,6 +187,7 @@
     animation: plusAnimation 5s;
     opacity: 0;
 }
+
 .plus2 {
     position: absolute;
     bottom: -9px;
@@ -199,6 +201,7 @@
         opacity: 0;
         transform: rotate(90deg);
     }
+
     5% {
         opacity: 0;
         transform: rotate(90deg);
@@ -218,6 +221,7 @@
         opacity: 0;
         transform: rotate(-90deg);
     }
+
     100% {
         opacity: 0;
         transform: rotate(-90deg);
