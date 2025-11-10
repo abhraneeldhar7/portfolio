@@ -357,7 +357,8 @@ export default function Ro0tPage() {
           <GithubCalendarCustom />
 
           <div className="relative mt-[50px]">
-            <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full" height={100} width={100} unoptimized alt="" src="/batman.png" />
+            <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full dark:hidden" height={100} width={100} unoptimized alt="" src="/batman.png" />
+            <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full hidden dark:block" height={100} width={100} unoptimized alt="" src="/batman1.png" />
             <div className="w-full z-[2] h-[60px] bg-gradient-to-t from-background absolute bottom-[-2px] to-transparent"></div>
 
             <ReachOutComponent className="absolute z-[3] top-[70%] left-[50%] translate-x-[-50%]" />
