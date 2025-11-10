@@ -460,7 +460,7 @@ export default function Ro0tPage() {
 
 
         {/* banner */}
-        <Image unoptimized src="/footerBanner.png" height={250} width={400} className="object-cover mx-auto w-full invert dark:invert-0 dark:opacity-[0.6] px-[10px] " alt="" />
+        <Image unoptimized src="/footerBanner.png" height={250} width={400} className="object-cover mx-auto w-full invert dark:invert-0 dark:opacity-[0.7] px-[10px] " alt="" />
 
       </div >
 
