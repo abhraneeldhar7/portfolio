@@ -242,8 +242,6 @@ export default function RootPage() {
   return (
     <div className="overflow-hidden relative" id="me">
 
-      <Image src="/f22.png" alt="" height={100} width={100} className="absolute top-[50%] translate-y-[-50%] left-[-350px] hidden md:block object-contain w-[600px] h-full dark:invert z-[-1] dark:opacity-[0.5]" unoptimized />
-      <Image src="/f22.png" alt="" height={100} width={100} className="absolute top-[50%] translate-y-[-50%] right-[-350px] hidden md:block object-contain w-[600px] h-full dark:invert z-[-1] dark:opacity-[0.5]" unoptimized />
 
       <div className="relative">
         <div className="z-2 top-0 left-0 h-full w-full absolute" />
