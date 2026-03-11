@@ -348,103 +348,42 @@ export default function RootPage() {
 
           <GithubCalendarCustom />
 
-          <div className="relative mt-[50px]">
-            <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full dark:hidden" height={100} width={100} unoptimized alt="" src="/batman.png" />
-            <Image className="object-contain h-full max-w-[400px] mx-auto dark:invert dark:opacity-[0.4] w-full hidden dark:block" height={100} width={100} unoptimized alt="" src="/batman1.png" />
-            <div className="w-full z-[2] h-[60px] bg-gradient-to-t from-background absolute bottom-[-2px] to-transparent"></div>
-
-            <ReachOutComponent className="absolute z-[3] top-[70%] left-[50%] translate-x-[-50%]" />
-
-          </div>
-
-
-
-          {/* skills n shi */}
-          <div className="md:px-[50px] px-[15px] md:mt-[80px] flex flex-col md:flex-row gap-[60px]">
-
-
-            <div className="flex-1 flex flex-col md:items-end">
-              <div className="flex flex-col items-end md:w-fit w-full">
 
 
 
 
-
-                <div className="w-full mt-[25px]">
-                </div>
-
-                <div className="flex w-full mt-[20px] gap-[5px]">
-                  <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
-                    <Link className="p-[30%]" href="https://x.com/veryNeel" target="_blank">
-                      <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" className="dark:invert object-contain" unoptimized alt="" height={50} width={50} />
-                    </Link>
-                  </div>
-
-                  <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-[black] bg-[white] overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
-                    <Link className="flex-1 h-full w-full relative overflow-hidden m-[10%]" href="mailto:abhraneeldhar@gmail.com" target="_blank">
-                      <Image src="https://i.pinimg.com/474x/32/5a/4b/325a4bd7b5041b4455e9a0b64c92190d.jpg" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full invert dark:invert-0" unoptimized alt="" height={50} width={50} />
-                    </Link>
-                  </div>
-
-                  <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
-                    <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://peerlist.io/abhraneeldhar" target="_blank">
-                      <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
-                    </Link>
-                  </div>
-
-                  <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
-                    <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://www.linkedin.com/in/abhraneeldhar" target="_blank">
-                      <Image src="https://static.vecteezy.com/system/resources/previews/023/986/608/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
-                    </Link>
-                  </div>
-
-
-
-
-                </div>
-
-              </div>
-
-
-
+          <div className="flex w-full mt-[20px] gap-[5px]">
+            <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
+              <Link className="p-[30%]" href="https://x.com/veryNeel" target="_blank">
+                <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" className="dark:invert object-contain" unoptimized alt="" height={50} width={50} />
+              </Link>
             </div>
+
+            <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-[black] bg-[white] overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
+              <Link className="flex-1 h-full w-full relative overflow-hidden m-[10%]" href="mailto:abhraneeldhar@gmail.com" target="_blank">
+                <Image src="https://i.pinimg.com/474x/32/5a/4b/325a4bd7b5041b4455e9a0b64c92190d.jpg" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full invert dark:invert-0" unoptimized alt="" height={50} width={50} />
+              </Link>
+            </div>
+
+            <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted overflow-hidden transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
+              <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://peerlist.io/abhraneeldhar" target="_blank">
+                <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
+              </Link>
+            </div>
+
+            <div className="aspect-square flex-1 rounded-[10px] border-[1px] border-foreground/20 flex items-center justify-center dark:bg-muted/40 bg-muted transition-all duration-250 ease-in-out hover:translate-y-[-5px] active:translate-y-[5px] md:active:translate-y-[0px]">
+              <Link className="flex-1 h-full w-full relative overflow-hidden" href="https://www.linkedin.com/in/abhraneeldhar" target="_blank">
+                <Image src="https://static.vecteezy.com/system/resources/previews/023/986/608/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" className="grayscale object-contain absolute top-0 right-0 left-0 bottom-0 w-full h-full" unoptimized alt="" height={50} width={50} />
+              </Link>
+            </div>
+
+
+
+
           </div>
 
 
 
-          {
-            false && <>
-              <div className={styles.photosSection}>
-                <h1 className="text-[27px]">Photos</h1>
-
-                <div className={styles.imgHolderHolder}>
-
-                  <div className={styles.photoHolder}>
-                    <Image height={50} width={50} className="h-[fit-content] w-[100%] object-contain rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_4_2025-06-28_22-37-54_p4yw42.jpg" alt="" unoptimized />
-
-                    <div className="flex gap-[10px] h-[400px]">
-                      <Image height={50} width={50} className="flex-1 h-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_12_2025-06-28_22-37-54_uqiygy.jpg" alt="" unoptimized />
-
-                      <div className="flex flex-1 flex-col gap-[10px]">
-                        <Image height={50} width={50} className="w-[100%] h-[50%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_9_2025-06-28_22-37-54_uuchk4.jpg" alt="" unoptimized />
-                        <Image height={50} width={50} className="w-[100%] h-[50%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_5_2025-06-28_22-37-54_llb7jk.jpg" alt="" unoptimized />
-                      </div>
-                    </div>
-
-                  </div>
-                  <div className={styles.photoHolder}>
-                    <Image height={50} width={50} className="h-[fit-content] w-[100%] object-contain rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130834/photo_3_2025-06-28_22-37-54_a6sbyo.jpg" alt="" unoptimized />
-
-                    <div className="flex gap-[10px]">
-                      <Image height={50} width={50} className="flex-1 object-cover object-center rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_13_2025-06-28_22-37-54_adgtqn.jpg" alt="" unoptimized />
-                      <Image height={50} width={50} className="flex-1 h-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130835/photo_11_2025-06-28_22-37-54_qmieiu.jpg" alt="" unoptimized />
-                    </div>
-                    <Image height={50} width={50} className="h-[100%] w-[100%] object-cover rounded-[10px]" src="https://res.cloudinary.com/dbb7pkwdv/image/upload/v1751130833/photo_2025-06-28_22-40-33_mrklgq.jpg" alt="" unoptimized />
-                  </div>
-                </div>
-              </div>
-            </>
-          }
 
 
 
