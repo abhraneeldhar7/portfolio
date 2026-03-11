@@ -452,7 +452,7 @@ export default function RootPage() {
 
 
         {/* banner */}
-        <Image unoptimized src="/footerBanner.png" height={250} width={400} className="object-cover mx-auto w-full invert dark:invert-0 dark:opacity-[0.7] px-[10px] " alt="" />
+        <Image unoptimized src="/wings_wide.jpg" height={250} width={400} className="object-contain h-fit w-full px-[15px] rounded-[6px]" alt="" />
 
       </div >
 
